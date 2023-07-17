@@ -1,0 +1,92 @@
+/* ----------MAIN---------- */
+main {
+  margin-top: 120px;
+  padding: 0px 50px 0px 50px;
+}
+#linenext {
+  font-size: 15px;
+  font-weight: 800;
+  color: rgb(193, 19, 19);
+}
+#linenext a {
+  text-decoration: none;
+  color: black;
+  transition: 0.5s all;
+  text-shadow: 1px 1px 5px white;
+}
+#linenext a:hover {
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 0px 10px rgb(145, 7, 7);
+  text-decoration: 2px underline rgb(0, 0, 0);
+}
+#itemdetailproduct {
+  margin-bottom: 50px;
+  padding: 50px 20px 50px 20px;
+  height: 600px;
+  border-radius: 10px;
+}
+#carouselExampleControlsNoTouching {
+  width: 100%;
+  height: 500px;
+  /* background-color: aqua; */
+}
+#imageproductdetail {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  transform: scale(0.9);
+  object-fit: cover;
+}
+#nutslide {
+  background-color: lightgrey;
+  border-radius: 20%;
+  color: black;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+#name {
+  color: rgb(145, 7, 7);
+  font-weight: 800;
+  font-size: 25px;
+}
+#classifyss {
+  font-size: 19px;
+  font-weight: 600;
+}
+#classifys {
+  color: red;
+}
+#rates {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 15px;
+}
+#rates p {
+  margin: 0px 10px 0px 0px;
+  color: red;
+  font-weight: 600;
+  font-size: 19px;
+}
+#rates i {
+  color: orange;
+  font-size: 20px;
+  margin: 0px 3px;
+}
+#pricess {
+  display: flex;
+  margin-bottom: 8px;
+}
+#pricesss {
+  color: red;
+  text-decoration: line-through;
+  margin: 0px 0px 0px 5pzzx;
+  font-size: 12px;
+}
+#saleprice,
+#descc {
+  font-size: 19px;
+  font-weight: 600;
+}
