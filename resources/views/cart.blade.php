@@ -23,58 +23,26 @@
                     <div id="infonamecart" class="col-1 text-end">DELETE</div>
                 </div>
                 <hr>
+                @foreach ($orderList as $order)
                 <div id="cartlist" class="row">
                     <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/63871bfcf33f490d58571802/thumbnail/0/HEn2ULmgPeun71alsz.jpg" alt=""></div>
                     <div id="cartnameproduct" class="col-4">
-                        <a href=""> Nike Air Jordan 1 Low x Travis Scott ‘Sail and Ridgerock’</a><br>sz42
+                        <a href=""> {{ $order['name'] }}</a><br>sz42
                     </div>
                     <div id="cartpriceproduct" class="col text-center">
-                        45600000đ
+                        {{ $order['price'] }}đ
                     </div>
                     <div id="cartquantityproduct" class="col text-center"></div>
-                    <div id="cartlastpriceproduct" class="col text-center">45600000đ</div>
-                    <div id="cartdeleteproduct" class="col-1 text-end"><i class="fa fa-remove"></i></div>
+                    <div id="cartlastpriceproduct" class="col text-center"> {{ $order['quantity'] * $order['price'] }}đ</div>
+
+                    <form action="{{ route('cart.delete', $order['productId']) }}" class="col-1 text-end" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="fa fa-remove"></button>
+                    </form>
                 </div>
                 <hr>
-                <div id="cartlist" class="row">
-                    <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/63ddf55893da78f1d317bbcb/thumbnail/0/LklvghTzeSCfr6UzVP.jpg" alt=""></div>
-                    <div id="cartnameproduct" class="col-4">
-                        <a href=""> GUCCI RHYTON LOGO NY</a><br>sz42
-                    </div>
-                    <div id="cartpriceproduct" class="col text-center">
-                        37500000đ
-                    </div>
-                    <div id="cartquantityproduct" class="col text-center"></div>
-                    <div id="cartlastpriceproduct" class="col text-center">37500000đ</div>
-                    <div id="cartdeleteproduct" class="col-1 text-end"><i class="fa fa-remove"></i></div>
-                </div>
-                <hr>
-                <div id="cartlist" class="row">
-                    <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/617a580f8b520f05ab1fbcb0/thumbnail/0/OMtqxLcEEnumJXz1Je.jpg" alt=""></div>
-                    <div id="cartnameproduct" class="col-4">
-                        <a href=""> ULTRA BOOST 7.0 BLACK-WHITE</a><br>sz42
-                    </div>
-                    <div id="cartpriceproduct" class="col text-center">
-                        2500000đ
-                    </div>
-                    <div id="cartquantityproduct" class="col text-center"></div>
-                    <div id="cartlastpriceproduct" class="col text-center">2500000đ</div>
-                    <div id="cartdeleteproduct" class="col-1 text-end"><i class="fa fa-remove"></i></div>
-                </div>
-                <hr>
-                <div id="cartlist" class="row">
-                    <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/617a580f8b520f05ab1fbcb0/thumbnail/0/OMtqxLcEEnumJXz1Je.jpg" alt=""></div>
-                    <div id="cartnameproduct" class="col-4">
-                        <a href=""> ULTRA BOOST 7.0 BLACK-WHITE</a><br>sz42
-                    </div>
-                    <div id="cartpriceproduct" class="col text-center">
-                        2500000đ
-                    </div>
-                    <div id="cartquantityproduct" class="col text-center"></div>
-                    <div id="cartlastpriceproduct" class="col text-center">2500000đ</div>
-                    <div id="cartdeleteproduct" class="col-1 text-end"><i class="fa fa-remove"></i></div>
-                </div>
-                <hr>
+                @endforeach
             </div>
             <a href="_pay.php">Thanh Toán</a>
         </div>

@@ -12,10 +12,9 @@
             <div id="col_between" class="col-6">
                 <a id="menu1" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTs <i class="fa fa-arrow-down"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a id="menu2" class="dropdown-item" href="#">nike</a></li>
-                    <li><a id="menu2" class="dropdown-item" href="#">adidas</a></li>
-                    <li><a id="menu2" class="dropdown-item" href="#">vans</a></li>
-                    <li><a id="menu2" class="dropdown-item" href="#">converse</a></li>
+                    @foreach ($categoryList as $category)
+                    <li><a id="menu2" class="dropdown-item" href="{{ route('category.show', $category->id)}}">{{ $category->name}}</a></li>
+                    @endforeach
                 </ul>
                 <a id="menu1" href="#">ORDER LOOKING</a>
                 <a id="menu1" href="_gallery.php">SMATE BOOK</a>
@@ -28,7 +27,7 @@
                 <a id="menu1" href="_support.php">SUPPORT</a>
             </div>
             <div id="col_end" class="col-4">
-                <form id="search" action="_search.php" method="get">
+                <form id="search" action="{{ route('search.show') }}" method="get">
                     <input class="form-control" type="text" placeholder="search" name="key" />
                     <button class="btn"><i class="fa fa-search"></i></button>
                 </form>

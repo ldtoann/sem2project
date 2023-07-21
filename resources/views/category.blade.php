@@ -48,12 +48,13 @@
         <!-- <div id="line"></div>
             <p id="title">SẢN PHẨM NỔI BẬT</p> -->
         <div id="item">
-            <a id="item_link" href="">
+            @foreach ($category->products as $product)
+            <a id="item_link" href="{{ route('product.show', $product->id) }}">
                 <div id="item_col">
-                    <img src="{{ url('image/itemproduct1.jpg') }}">
-                    <img src="{{ url('image/itemproduct2.jpg') }}" alt="" id="img-change">
-                    <h6>le duy toan</h6>
-                    <p id="saleprice">ádasdasd</p>
+                    <img src="{{ url('image/nike/itemnike1.1.jpg') }}">
+                    <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change">
+                    <h6>{{ $product->name }}</h6>
+                    <p id="saleprice">{{ $product->price }}</p>
                     <p id="price">999.999.999đ</p>
                     <div id="rate">
                         <i class="fa fa-star"></i>
@@ -64,6 +65,7 @@
                     </div>
                 </div>
             </a>
+            @endforeach
         </div>
     </div>
     <div id="main5" class="text-center">
