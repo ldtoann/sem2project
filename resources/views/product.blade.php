@@ -35,9 +35,10 @@
                 </div>
             </div>
             <div class="col-4">
-                <form action="" method="get">
+                <form action="{{ route('cart.store')}}" method="post">
+                    <input type="hidden" name="productId" value="{{ $product->id }}">
                     <div id="name">
-                        <p>le duy toan</p>
+                        <p>{{ $product->name }}</p>
                     </div>
                     <div id="rates">
                         <p>Đánh Giá </p>
@@ -48,10 +49,10 @@
                         <i class="fa fa-star"></i>
                     </div>
                     <div id="pricess">
-                        <p id="saleprice">Giá Sản Phẩm : <strong> 1.000.000đ</strong> </p>
+                        <p id="saleprice">Giá Sản Phẩm : <strong>{{ $product->price }}đ</strong> </p>
                         <p id="pricesss">999.999.999đ</p>
                     </div>
-                    <p id="descc" style="margin-top: -2px;">Màu Sắc : <strong>xanh đỏ tím vàng</strong></p>
+                    <p id="descc" style="margin-top: -2px;">Màu Sắc : <strong>{{ $product->desc }}</strong></p>
                     <hr>
                     <select class="form-control" id="sel1" name="categoryId" autofocus>
                         <option>Size</option>
@@ -61,23 +62,12 @@
                     </select>
                     <div class="form-group">
                         <label for="exampleInputPassword1"></label>
-                        <input name="quantity" type="number" class="form-control" placeholder="soluong">
+                        <input name="quantity" type="number" class="form-control" value="1" min="1" max="100">
                     </div>
+                    <button type="submit" class="btn btn-primary" id="liveToastBtn">them vao gio hang</button>
                 </form>
-                <button href="" type="button" class="btn btn-primary" id="liveToastBtn">them vao gio hang</button>
-                <!-- <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="../../image/logo_page.png" class="rounded me-2" width="70px" height="auto">
-                            <strong class="me-auto">Thông báo</strong>
-                            <small>1 giây trước</small>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Đặt Hàng Thành Công
-                        </div>
-                    </div>
-                </div> -->
+
+
             </div>
         </div>
 </main>

@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\ProductController;
@@ -18,24 +21,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/category', function () {
-    return view('category');
-});
-Route::get('/product', function () {
-    return view('product');
-});
-Route::get('/search', function () {
-    return view('search');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+
+Route::get('/search', [SearchController::class, 'show'])->name('search.show');
+
 Route::get('/support', function () {
     return view('support');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+
 Route::get('/pay', function () {
     return view('pay');
 });
@@ -46,11 +46,3 @@ Route::get('/gallery', function () {
     return view('gallery');
 });
 // Route 
-
-
-
-route::resource('users', UserController::class);
-route::resource('categories', CategoryController::class);
-route::resource('products', ProductController::class);
-route::resource('orders', OrderController::class);
-route::resource('orderitems', OrderItemController::class);
