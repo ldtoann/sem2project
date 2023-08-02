@@ -36,6 +36,7 @@
             </div>
             <div class="col-4">
                 <form action="{{ route('cart.store')}}" method="post">
+                    @csrf
                     <input type="hidden" name="productId" value="{{ $product->id }}">
                     <div id="name">
                         <p>{{ $product->name }}</p>

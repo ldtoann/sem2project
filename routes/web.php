@@ -35,6 +35,7 @@ Route::get('/support', function () {
 Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
 
 Route::get('/pay', function () {
     return view('pay');
