@@ -23,17 +23,37 @@
                     <div id="infonamecart" class="col-1 text-end">DELETE</div>
                 </div>
                 <hr>
-                @foreach ($orderList as $order)
+                @foreach ($cart as $order)
                 <div id="cartlist" class="row">
                     <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/63871bfcf33f490d58571802/thumbnail/0/HEn2ULmgPeun71alsz.jpg" alt=""></div>
                     <div id="cartnameproduct" class="col-4">
                         <a href=""> {{ $order['name'] }}</a><br>sz42
                     </div>
-                    <div id="cartpriceproduct" class="col text-center">
+                    <div id="cartpriceproduct" class="col text-center" style="margin-left: 20px;">
                         {{ $order['price'] }}đ
                     </div>
-                    <div id="cartquantityproduct" class="col text-center"></div>
-                    <div id="cartlastpriceproduct" class="col text-center"> {{ $order['quantity'] * $order['price'] }}đ</div>
+                    <div id="cartquantityproduct" class="col text-center">
+                        <form action="{{ route('cart.update' ,$order['productId']) }}" method="post">
+                            @csrf
+                            @method('put')
+                            <input onchange="this.form.submit()" type="number" value="{{ $order['quantity'] }}" class="text" min="1" max="10" name="quantity">
+                            <!-- <input id="toan" type="number" class="text" name="quantity"> -->
+                            <!-- <td>
+                                <div class="form-row" style="margin-left: 25px;">
+                                    <div class="form-group">
+                                        <div class="input-group mx-auto">
+                                            <div class="number-input">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                                                <input onchange="this.form.submit()" type="number" value="{{ $order['quantity'] }}" class="quantity" min="1" max="10" name="quantity">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td> -->
+                        </form>
+                    </div>
+                    <div id="cartlastpriceproduct" class="col text-center" style="margin-left: 30px;"> {{ $order['quantity'] * $order['price'] }}đ</div>
 
                     <form action="{{ route('cart.delete', $order['productId']) }}" class="col-1 text-end" method="post">
                         @csrf
