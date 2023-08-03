@@ -1,8 +1,16 @@
 <header>
     <div id="headerusers">
-        <a href="_user.php"> <i class="fa-solid fa-right-to-bracket"></i> </a>
+        <div class="language-select">
+            <select id="language" name="language">
+                <option value="en">English</option>
+                <option value="vi">Vietnamese</option>
+                <option value="es">Spanish</option>
+            </select>
+        </div>
         <p> / </p>
-        <a href="_user.php"> <i class="fa-solid fa-user-plus"></i> </a>
+        <p>&nbsp;&nbsp;Lê Duy Toàn&nbsp;&nbsp;</p>
+        <p> / </p>
+        <a href="{{ route('login') }}"> <i class="fa-solid fa-user-plus"></i> </a>
     </div>
     <div id="header" class="shadow-lg">
         <div class="row">
