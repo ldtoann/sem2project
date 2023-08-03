@@ -1,92 +1,159 @@
 /* ----------MAIN---------- */
 main {
-  margin-top: 120px;
-  padding: 0px 50px 0px 50px;
+    margin-top: 120px;
+    padding: 0px 50px 0px 50px;
 }
 #linenext {
-  font-size: 15px;
-  font-weight: 800;
-  color: rgb(193, 19, 19);
+    font-size: 15px;
+    font-weight: 800;
+    color: rgb(193, 19, 19);
 }
 #linenext a {
-  text-decoration: none;
-  color: black;
-  transition: 0.5s all;
-  text-shadow: 1px 1px 5px white;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s all;
+    text-shadow: 1px 1px 5px white;
 }
 #linenext a:hover {
-  color: rgb(0, 0, 0);
-  text-shadow: 0px 0px 10px rgb(145, 7, 7);
-  text-decoration: 2px underline rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 10px rgb(145, 7, 7);
+    text-decoration: 2px underline rgb(0, 0, 0);
 }
 #itemdetailproduct {
-  margin-bottom: 50px;
-  padding: 50px 20px 50px 20px;
-  height: 600px;
-  border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 50px 20px 50px 20px;
+    height: 600px;
+    border-radius: 10px;
 }
 #carouselExampleControlsNoTouching {
-  width: 100%;
-  height: 500px;
-  /* background-color: aqua; */
+    width: 100%;
+    height: 500px;
+    /* background-color: aqua; */
 }
 #imageproductdetail {
-  width: 500px;
-  height: 500px;
-  object-fit: contain;
-  transform: scale(0.9);
-  object-fit: cover;
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    transform: scale(0.9);
+    object-fit: cover;
 }
 #nutslide {
-  background-color: lightgrey;
-  border-radius: 20%;
-  color: black;
+    background-color: lightgrey;
+    border-radius: 20%;
+    color: black;
 }
 .carousel-control-prev,
 .carousel-control-next {
-  width: 5%;
+    width: 5%;
 }
 #name {
-  color: rgb(145, 7, 7);
-  font-weight: 800;
-  font-size: 25px;
+    color: rgb(145, 7, 7);
+    font-weight: 800;
+    font-size: 23px;
+    /* border-bottom: 1px dashed black; */
+    margin-bottom: 3px;
 }
-#classifyss {
-  font-size: 19px;
-  font-weight: 600;
-}
-#classifys {
-  color: red;
+#name p {
+    margin: 0px;
 }
 #rates {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  margin-bottom: 15px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 6px;
 }
 #rates p {
-  margin: 0px 10px 0px 0px;
-  color: red;
-  font-weight: 600;
-  font-size: 19px;
+    margin: 0px 10px 0px 0px;
+    color: red;
+    font-weight: 600;
+    font-size: 19px;
 }
 #rates i {
-  color: orange;
-  font-size: 20px;
-  margin: 0px 3px;
+    color: orange;
+    font-size: 20px;
+    margin: 0px 3px;
 }
 #pricess {
-  display: flex;
-  margin-bottom: 8px;
+    display: flex;
+    margin-bottom: 8px;
 }
 #pricesss {
-  color: red;
-  text-decoration: line-through;
-  margin: 0px 0px 0px 5pzzx;
-  font-size: 12px;
+    color: red;
+    text-decoration: line-through;
+    margin: 0px 0px 0px 5px;
+    font-size: 10px;
 }
 #saleprice,
 #descc {
-  font-size: 19px;
-  font-weight: 600;
+    font-size: 17px;
+}
+#descc {
+    margin-top: 6px;
+}
+#size {
+    margin-top: -7px;
+}
+input[type="radio"] {
+    display: none; /* Ẩn radio button mặc định */
+}
+label {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.5s all;
+}
+label:hover {
+    /* background-color: rgb(145, 7, 7); */
+    border: 1px solid rgb(145, 7, 7);
+    /* color: white; */
+}
+/* Khi ô radio được chọn, làm nền màu sáng lên */
+input[type="radio"]:checked + label {
+    background-color: rgb(145, 7, 7);
+    color: white;
+}
+/* Hiển thị size giày được chọn */
+.selected-size::after {
+    content: attr(data-size);
+}
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    padding: 5px 10px 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    /* border: none; */
+    background-color: #f0f0f0;
+}
+
+.quantity-input {
+    padding: 5px 10px;
+    font-size: 16px;
+    text-align: center;
+    width: 60px;
+    height: 38px;
+}
+.quantity input[type="number"] {
+    -moz-appearance: textfield;
+}
+.quantity input[type="number"]::-webkit-inner-spin-button,
+.quantity input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#liveToastBtn {
+    width: 100%;
+    height: 45px;
+    color: white;
+    background-color: rgb(145, 7, 7);
+    transition: 0.1s all;
+}
+#liveToastBtn:hover {
+    font-weight: 800;
 }

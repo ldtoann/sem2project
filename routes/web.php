@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
@@ -29,21 +29,28 @@ Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.s
 
 Route::get('/search', [SearchController::class, 'show'])->name('search.show');
 
-Route::get('/support', function () {
-    return view('support');
-});
 Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+
 Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
 
 Route::get('/pay', function () {
     return view('pay');
-});
+})->name('pay');
+
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
+Route::get('/support', function () {
+    return view('support');
+})->name('support');
+
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/gallery', function () {
-    return view('gallery');
-});
+
 // Route 
