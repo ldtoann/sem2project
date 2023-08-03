@@ -15,62 +15,6 @@ class CartController extends Controller
         return view('cart', compact('cart'));
     }
 
-    // public function store(Request $request)
-    // {
-    //     // $productId = $request->productId;
-    //     // $quantity = $request->quantity;
-    //     $product = Product::findOrFail($request->productId);
-
-    //     $order = array(
-    //         'productId' => $product->id,
-    //         'name' => $product->name,
-    //         'quantity' => $request->quantity,
-    //         'price' => $product->price
-    //     );
-
-    //     $request->session()->push('cart', $order);
-
-    //     return redirect()->route('cart.index');
-    // }
-
-
-
-    // public function store(Request $request)
-    // {
-    //     $productId = $request->productId;
-    //     $quantity = $request->quantity;
-    //     $cart = $request->session()->get('cart');
-
-    //     $updated = false;
-
-    //     for ($i = 0; $i < count($cart); $i++) {
-    //         if ($cart[$i]['productId'] == $productId) {
-    //             // Nếu sản phẩm đã tồn tại trong giỏ hàng,
-    //             // cộng thêm số lượng mới vào số lượng hiện tại.
-    //             $cart[$i]['quantity'] += $quantity;
-    //             $updated = true;
-    //             break; // Thoát khỏi vòng lặp sau khi đã cập nhật số lượng.
-    //         }
-    //     }
-
-    //     // Nếu sản phẩm không tồn tại trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng.
-    //     if (!$updated) {
-    //         $product = Product::findOrFail($productId);
-
-    //         $order = [
-    //             'productId' => $product->id,
-    //             'name' => $product->name,
-    //             'quantity' => $quantity,
-    //             'price' => $product->price
-    //         ];
-
-    //         $cart[] = $order;
-    //     }
-
-    //     $request->session()->put('cart', $cart);
-
-    //     return redirect()->route('cart.index');
-    // }
     public function store(Request $request)
     {
         $productId = $request->productId;
@@ -89,7 +33,6 @@ class CartController extends Controller
             }
         }
 
-        // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm mới vào giỏ
         if (!$productExists) {
             $order = [
                 'productId' => $product->id,
@@ -105,29 +48,6 @@ class CartController extends Controller
         return redirect()->route('cart.index');
     }
 
-    // public function update(Request $request, string $id)
-    // {
-    //     $cart = $request->session()->get('cart');
-    //     $updated = false;
-
-    //     for ($i = 0; $i < count($cart); $i++) {
-    //         if ($cart[$i]['productId'] == $id) {
-    //             $cart[$i]['quantity'] += $request->quantity;
-    //             $updated = true;
-    //             break;
-    //         }
-    //     }
-    //     if (!$updated) {
-    //         $cart[] = [
-    //             'productId' => $id,
-    //             'quantity' => $request->quantity,
-    //         ];
-    //     }
-
-    //     $request->session()->put('cart', $cart);
-
-    //     return redirect()->route('cart.index');
-    // }
     public function update(Request $request, string $id)
     {
         $cart = $request->session()->get('cart'); //(cart mot mang chua id, name, quantity)
@@ -142,10 +62,6 @@ class CartController extends Controller
         return redirect()->route('cart.index');
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Request $request, string $id)
     {
         $cart = $request->session()->get('cart');

@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('css/login.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/cart.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/category.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('css/pay.css') }}">
     <link rel="shortcut icon" id="logotagg" href="{{ url('image/logo_page.png') }}" type="image/x-icon">
 
 </head>

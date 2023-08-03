@@ -21,6 +21,7 @@ class OrderFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'desc' => $this->faker->realText(),
+            'total' => $this->faker->numberBetween(1000000, 2000000),
             'status' => $status[0],
             'receiver' => $this->faker->name(),
             'user_id' =>  $this->faker->numberBetween(1, 10),

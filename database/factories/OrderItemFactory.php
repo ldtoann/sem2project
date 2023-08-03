@@ -18,7 +18,6 @@ class OrderItemFactory extends Factory
     {
         return [
             'quantity' => $this->faker->randomDigit(),
-            'price' => $this->faker->randomFloat(1, 20, 30),
             'order_id' => $this->faker->numberBetween(1, 10),
             'product_id' => $this->faker->numberBetween(1, 10),
         ];

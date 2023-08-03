@@ -22,7 +22,7 @@ class ProductFactory extends Factory
             'name' => $name,
             'desc' => $this->faker->realText(),
             'slug' => Str::slug($name, '-'),
-            'price' => $this->faker->randomDigit(),
+            'price' => $this->faker->numberBetween(1000000, 2000000),
             'quantity' => $this->faker->randomDigit(),
             'category_id' => $this->faker->numberBetween(1, 10),
         ];
