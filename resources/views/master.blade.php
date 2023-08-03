@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('css/home.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/productdetail.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/book.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('css/login.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url('css/login.css') }}"> -->
     <link rel="stylesheet" type="text/css" href="{{ url('css/cart.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/category.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('css/pay.css') }}">
