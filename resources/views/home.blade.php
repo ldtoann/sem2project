@@ -51,7 +51,7 @@
         <p id="title">POWERFUL PRODUCTS</p>
         <div id="item">
             @foreach ($productList as $product)
-            <a id="item_link" href="{{ route('product.show', $product->id) }}">
+            <a id="item_link" href="{{ route('product.show', $product->slug) }}">
                 <div id="item_col">
                     <img src="{{ url('image/nike/itemnike1.1.jpg') }}">
                     <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change">

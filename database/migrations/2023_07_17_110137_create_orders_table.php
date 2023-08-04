@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name', 128);
             $table->string('desc', 1024);
-            $table->double('total');
             $table->string('status');
             $table->string('receiver');
             $table->unsignedBigInteger('user_id');
