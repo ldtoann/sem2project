@@ -53,7 +53,7 @@
                         <p id="pricesss">999.999.999đ</p>
                     </div>
                     <div id="size">
-                        <p id="saleprice"><strong>Choose Size </strong> : <strong class="selected-size" style="color: rgb(145, 7, 7);"></strong></p>
+                        <p id="saleprice"><strong>Choose Size </strong> : <strong class="selected-size" style="color: rgb(145, 7, 7);">asdasd</strong></p>
                         <input type="radio" name="size" value="36" id="size-36">
                         <label for="size-36">36</label>
                         <input type="radio" name="size" value="37" id="size-37">

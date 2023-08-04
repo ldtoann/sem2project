@@ -17,8 +17,11 @@ class ProductController extends Controller
         return Product::create($request->all());
     }
 
-    public function show(string $id)
+    public function show(string $slug)
     {
+        $splits = explode('-', $slug);
+        $id = array_pop($splits);
+
         $product = Product::findOrFail($id);
         return view('product', compact('product'));
     }

@@ -38,7 +38,8 @@ class CartController extends Controller
                 'productId' => $product->id,
                 'name' => $product->name,
                 'quantity' => $quantity,
-                'price' => $product->price
+                'price' => $product->price,
+                'size' => $request->size
             ];
             $cart[] = $order;
         }
@@ -72,4 +73,9 @@ class CartController extends Controller
         $request->session()->put('cart', $cart);
         return redirect()->route('cart.index');
     }
+    // public function inputdata(Request $request)
+    // {
+    //     $data = $request->input('size');
+    //     return view('')
+    // }
 }

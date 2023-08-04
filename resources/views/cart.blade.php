@@ -28,7 +28,7 @@
                 <div id="cartlist" class="row">
                     <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/63871bfcf33f490d58571802/thumbnail/0/HEn2ULmgPeun71alsz.jpg" alt=""></div>
                     <div id="infoname" class="col-4"><a href="">{{ $order['name'] }}</a>
-                        <br>size : 42
+                        <br>size : {{ $order['size'] }}
                     </div>
                     <div id="infoprice" class="col text-center">{{ $order['price'] }} đ</div>
                     <div id="cartquantity" class="col text-center">
@@ -40,7 +40,7 @@
                             </div>
                         </form>
                     </div>
-                    <div id="infototal" class="col text-center">{{ $order['quantity'] * $order['price'] }} đ</div>
+                    <div id="infototal" class="col text-center">{{ format_money(order_item_total($order['quantity'], $order['price'])) }}</div>
                     <div id="infonamecart" class="col-1 text-end">
                         <form action="{{ route('cart.delete', $order['productId']) }}" class="col-1 text-end" method="post">
                             @csrf
@@ -53,10 +53,10 @@
                 @endforeach
                 <div id="totalcarts" class="row">
                     <div id="total" class="col">
-                        <p> -- <strong>TOTAL CART</strong> : 100000000 đ</p>
+                        <p> -- <strong>TOTAL CART</strong> : {{ format_money(cart_total($cart, 10)) }}</p>
                     </div>
                     <div id="totalpay" class="col text-end">
-                        <button type="submit">Pay</button>
+                        <a href="{{ route('checkout')}}">Pay</a>
                     </div>
                 </div>
             </div>
