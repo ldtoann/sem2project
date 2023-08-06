@@ -26,7 +26,7 @@ class CartController extends Controller
         // Kiểm tra xem sản phẩm đã có trong giỏ hàng hay chưa
         $productExists = false;
         foreach ($cart as $key => $item) {
-            if ($item['productId'] == $productId) {
+            if ($item['productId'] == $productId && $item['size'] == $request->size) {
                 $cart[$key]['quantity'] += $quantity;
                 $productExists = true;
                 break;
@@ -73,9 +73,4 @@ class CartController extends Controller
         $request->session()->put('cart', $cart);
         return redirect()->route('cart.index');
     }
-    // public function inputdata(Request $request)
-    // {
-    //     $data = $request->input('size');
-    //     return view('')
-    // }
 }

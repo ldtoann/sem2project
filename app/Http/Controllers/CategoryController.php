@@ -11,6 +11,8 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         return view('category', compact('category'));
+        // $categoryLists = Category::all();
+        // return view('category', compact('category', 'categoryLists'));
     }
 
     public function update(Request $request, string $id)

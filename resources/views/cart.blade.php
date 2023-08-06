@@ -13,11 +13,10 @@
     <p id="titlecart"><i class="fa-solid fa-cart-shopping"></i> CART LIST</p>
     <div class="row">
         <div class="col-8">
-            <!-- <form action="" method="post"> -->
             <div id="maincart">
                 <div id="rowinfonamecart" class="row">
                     <div id="infonamecart" class="col-2">PRODUCT</div>
-                    <div id="infonamecart" class="col-4"></div>
+                    <div id="infonamecart" class="col-3"></div>
                     <div id="infonamecart" class="col text-center">PRICE</div>
                     <div id="infonamecart" class="col text-center">QUANTITY</div>
                     <div id="infonamecart" class="col text-center">TOTAL</div>
@@ -27,10 +26,10 @@
                 @foreach ($cart as $order)
                 <div id="cartlist" class="row">
                     <div id="cartimgproduct" class="col-2"><img src="https://resources.smatestore.com/product/63871bfcf33f490d58571802/thumbnail/0/HEn2ULmgPeun71alsz.jpg" alt=""></div>
-                    <div id="infoname" class="col-4"><a href="">{{ $order['name'] }}</a>
+                    <div id="infoname" class="col-3"><a href="">{{ $order['name'] }}</a>
                         <br>size : {{ $order['size'] }}
                     </div>
-                    <div id="infoprice" class="col text-center">{{ $order['price'] }} đ</div>
+                    <div id="infoprice" class="col text-center">{{ format_money($order['price']) }}</div>
                     <div id="cartquantity" class="col text-center">
                         <form action="{{ route('cart.update' ,$order['productId']) }}" method="post">
                             @csrf
@@ -53,14 +52,14 @@
                 @endforeach
                 <div id="totalcarts" class="row">
                     <div id="total" class="col">
-                        <p> -- <strong>TOTAL CART</strong> : {{ format_money(cart_total($cart, 10)) }}</p>
+                        <p> -- <strong>TOTAL CART</strong> : {{ format_money(cart_total($cart, 0)) }}</p>
                     </div>
                     <div id="totalpay" class="col text-end">
                         <a href="{{ route('checkout')}}">Pay</a>
+                        <!-- <button type="submit">pay</button> -->
                     </div>
                 </div>
             </div>
-            <!-- </form> -->
         </div>
         <div id="cartpanel" class="col-4">
             <img class="shadow-lg" id="panelcart" src="{{ url('image/pano1.jpg') }}">

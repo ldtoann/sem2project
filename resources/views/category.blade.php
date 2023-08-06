@@ -8,10 +8,10 @@
         <ol class="breadcrumb">
             <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">HOME</a></li>
             <li id="linenext" class="breadcrumb-item"><a href="">PRODUCTs</a></li>
-            <li id="linenext" class="breadcrumb-item active" aria-current="page">tên hãng chọn</li>
+            <li id="linenext" class="breadcrumb-item active" aria-current="page">{{ $category->name }}</li>
         </ol>
     </nav>
-    <p id="titleee">tên hãng chọn Product Directory</p>
+    <p id="titleee">{{ $category->name }} Product Directory</p>
     <form id="selectformm" action="" method="get">
         <input type="hidden" name="category_id" value="">
         <select id="selectcategory" class="shadow-lg" name="category" onchange="handleChange(this)">
@@ -47,13 +47,13 @@
     <div id="main3" class="text-center">
         <div id="item">
             @foreach ($category->products as $product)
-            <a id="item_link" href="{{ route('product.show', $product->id) }}">
+            <a id="item_link" href="{{ route('product.show', $product->slug) }}">
                 <div id="item_col">
                     <img src="{{ url('image/nike/itemnike1.1.jpg') }}">
                     <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change">
                     <h6>{{ $product->name }}</h6>
-                    <p id="saleprice">{{ $product->price }}đ</p>
-                    <p id="price">999.999.999đ</p>
+                    <p id="saleprice" style="color: red; font-weight: 900;">{{ format_money($product->price) }}</p>
+                    <p id="price">999.999.999 VND</p>
                     <div id="rate">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>

@@ -11,6 +11,7 @@ use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PayController;
 use App\Http\Controllers\Admin\DashboardController;
 
 /*
@@ -42,9 +43,9 @@ Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update')
 
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 
-Route::get('/pay', function () {
-    return view('pay');
-})->name('pay');
+// Route::get('/pay', function () {
+//     return view('pay');
+// })->name('pay');
 
 Route::get('/gallery', function () {
     return view('gallery');

@@ -10,8 +10,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $productList = Product::all();
-
+        // $productList = Product::all();
+        $productList = Product::take(4)->get();
         return view('home', compact('productList'));
     }
 }

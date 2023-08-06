@@ -8,9 +8,19 @@
             </select>
         </div>
         <p> / </p>
-        <p>&nbsp;&nbsp;Lê Duy Toàn&nbsp;&nbsp;</p>
+        @if (auth()->check())
+        <p>&nbsp;&nbsp;{{ Auth::user()->name }}&nbsp;&nbsp;</p>
+        @endif
         <p> / </p>
-        <a href="{{ route('login') }}"> <i class="fa-solid fa-user-plus"></i> </a>
+        <a href="{{ route('login') }}"> <i class="fa-solid fa-user"></i> </a>
+        <p> / </p>
+        <form action="{{ route('logout') }}" method="post">
+            @csrf
+            <a id="logoutnut" :href="route('logout')" onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+        </form>
     </div>
     <div id="header" class="shadow-lg">
         <div class="row">
