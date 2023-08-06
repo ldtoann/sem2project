@@ -28,5 +28,5 @@ function random_string($length = 8)
 
 function format_money($number)
 {
-    return number_format($number, 2, ".", ",") . "đ";
+    return number_format($number, 0, ".", ",") . " VND";
 }

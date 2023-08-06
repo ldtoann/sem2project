@@ -8,8 +8,8 @@
         <ol class="breadcrumb">
             <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">HOME</a></li>
             <li id="linenext" class="breadcrumb-item"><a href="">PRODUCTs</a></li>
-            <li id="linenext" class="breadcrumb-item"><a href="">tên hãng chọn</a></li>
-            <li id="linenext" class="breadcrumb-item active" aria-current="page">tên sản phẩm chọn</li>
+            <li id="linenext" class="breadcrumb-item"><a href="">{{ $category->name }}</a></li>
+            <li id="linenext" class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
         </ol>
     </nav>
     <div id="itemdetailproduct" class="container shadow-lg">
@@ -49,11 +49,11 @@
                         <i class="fa fa-star"></i>
                     </div>
                     <div id="pricess">
-                        <p id="saleprice"><strong>Price</strong> : {{ $product->price }}đ</p>
-                        <p id="pricesss">999.999.999đ</p>
+                        <p id="saleprice"><strong>Price</strong> : <strong style="color:red;">{{ format_money($product->price) }}</strong></p>
+                        <p id="pricesss">999.999.999 VND</p>
                     </div>
                     <div id="size">
-                        <p id="saleprice"><strong>Choose Size </strong> : <strong class="selected-size" style="color: rgb(145, 7, 7);">asdasd</strong></p>
+                        <p id="saleprice"><strong>Choose Size </strong> : <strong class="selected-size" style="color: rgb(145, 7, 7);"></strong></p>
                         <input type="radio" name="size" value="36" id="size-36">
                         <label for="size-36">36</label>
                         <input type="radio" name="size" value="37" id="size-37">
@@ -76,9 +76,9 @@
                     <div id="quantity">
                         <p id="saleprice"><strong>Quantity</strong> :</p>
                         <div class="quantity">
-                            <div class="quantity-btn" data-action="decrease">-</div>
+                            <div class="quantity-btn" data-action="decrease" style="border-radius: 10px 0px 0px 10px;">-</div>
                             <input name="quantity" type="number" class="quantity-input" value="1" min="1">
-                            <div class="quantity-btn" data-action="increase">+</div>
+                            <div class="quantity-btn" data-action="increase" style="border-radius: 0px 10px 10px 0px;">+</div>
                         </div>
                     </div>
                     <p id="descc"><strong>Describe</strong> : {{ $product->desc }}</p>

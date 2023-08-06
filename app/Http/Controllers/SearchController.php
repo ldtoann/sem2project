@@ -11,6 +11,7 @@ class SearchController extends Controller
     {
         $key = sprintf('%s%s%s', '%', $request->key, '%');
         $productList = Product::where('name', 'like', $key)->get();
-        return view('search', compact('productList'));
+        $searchKey = $request->key;
+        return view('search', compact('productList', 'searchKey'));
     }
 }

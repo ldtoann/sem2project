@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -23,6 +24,7 @@ class ProductController extends Controller
         $id = array_pop($splits);
 
         $product = Product::findOrFail($id);
-        return view('product', compact('product'));
+        $category = Category::findOrFail($product->category_id);
+        return view('product', compact('product', 'category'));
     }
 }

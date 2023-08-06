@@ -56,8 +56,8 @@
                     <img src="{{ url('image/nike/itemnike1.1.jpg') }}">
                     <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change">
                     <h6>{{ $product->name }}</h6>
-                    <p id="saleprice">{{ $product->price }}đ</p>
-                    <p id="price">999.999.999đ</p>
+                    <p id="saleprice" style="color: red; font-weight: 900;">{{ format_money($product->price) }}</p>
+                    <p id="price">999.999.999 VND</p>
                     <div id="rate">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
