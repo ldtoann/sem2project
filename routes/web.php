@@ -9,10 +9,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\PayController;
 use App\Http\Controllers\Admin\DashboardController;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,36 +23,49 @@ use App\Http\Controllers\Admin\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Code Language
+Route::get('/greeting/{locale}', function (string $locale) {
+    if (!in_array($locale, ['en', 'es', 'vi'])) {
+        abort(400);
+    }
 
-Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    request()->session()->put('language', $locale);
 
-Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+    return redirect()->route('home.index');
+})->name('language');
 
-Route::get('/product/{slug}.html', [ProductController::class, 'show'])->name('product.show');
+Route::group(['middleware' => ['check.language']], function () {
 
-Route::get('/search', [SearchController::class, 'show'])->name('search.show');
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
+    Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
-Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+    Route::get('/product/{slug}.html', [ProductController::class, 'show'])->name('product.show');
 
-Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
+    Route::get('/search', [SearchController::class, 'show'])->name('search.show');
 
-Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+    Route::post('/cart', [CartController::class, 'store'])->name('cart.store');
 
-Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+    Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
-// Route::get('/pay', function () {
-//     return view('pay');
-// })->name('pay');
+    Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.delete');
 
-Route::get('/gallery', function () {
-    return view('gallery');
-})->name('gallery');
+    Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
 
-Route::get('/support', function () {
-    return view('support');
-})->name('support');
+    Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+
+    // Route::get('/pay', function () {
+    //     return view('pay');
+    // })->name('pay');
+
+    Route::get('/gallery', function () {
+        return view('gallery');
+    })->name('gallery');
+
+    Route::get('/support', function () {
+        return view('support');
+    })->name('support');
+});
 
 // Route::get('/login', function () {
 //     return view('login');
@@ -79,6 +91,12 @@ Route::middleware('admin')->prefix('admin')->group(function () {
         return "Hello World";
     });
 });
-Route::group(['middleware' => ['admin']], function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
+
+    Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+    Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
 });

@@ -14,6 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categoryList = Category::all();
+        return view('admin.categories.index', compact('categoryList'));
     }
 
     /**
@@ -21,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -29,7 +30,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Category::create(
+            $request->all()
+        );
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -45,7 +50,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -53,7 +59,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Category::find($id)->update($request->all());
+        return redirect()->route('admin.categories.index');
     }
 
     /**

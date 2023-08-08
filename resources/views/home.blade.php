@@ -1,8 +1,9 @@
 @extends('master')
 
-@section('title', 'HOME')
+@section('title', @trans('font.home.index.title'))
 
 @section('content')
+
 <main>
     <div id="main1">
         <div class="row">
@@ -17,30 +18,30 @@
     </div>
     <div id="main2" class="text-center">
         <div id="line"></div>
-        <p id="title">OUR COMMITMENT</p>
+        <p id="title">{{@trans('font.home.index.OURCOMMITMENT')}}</p>
         <div id="commitmentinfo">
             <div id="commitmentinfo_col">
                 <img src="{{ url('image/camkethotro1.png') }}">
-                <h5>FREESHIP</h5>
-                <p>IN HO CHI MINH CITY AND OUT OF TOWN WITH 2 PAIRS OR MORE.</p>
+                <h5>{{@trans('font.home.index.FREESHIP')}}</h5>
+                <p>{{@trans('font.home.index.City')}}</p>
             </div>
             <div id="commitmentinfo_col">
                 <img src="{{ url('image/camkethotro2.png') }}">
 
-                <h5>SHIPPING POLICY</h5>
-                <p>SUPPORT PAYMENT DELIVERY AND FOR INSPECTION OF GOODS.</p>
+                <h5>{{@trans('font.home.index.SHIPPINGPOLICY')}}</h5>
+                <p>{{@trans('font.home.index.SHIP')}}</p>
             </div>
             <div id="commitmentinfo_col">
                 <img src="{{ url('image/camkethotro3.png') }}">
 
-                <h5>QUALITY ASSURANCE</h5>
-                <p>COMMITMENT TO IMAGES AND QUALITY PRODUCTS COM LIKE.</p>
+                <h5>{{@trans('font.home.index.QUALITY')}}</h5>
+                <p>{{@trans('font.home.index.COMMEN')}}</p>
             </div>
         </div>
     </div>
     <div id="main4" class="text-center">
         <div id="line"></div>
-        <p id="title">NEW COLLECTION</p>
+        <p id="title">{{@trans('font.home.index.NEW')}}</p>
         <div id="advertisessss" class="text-center">
             <img src="{{ url('image/quangcao1.jpeg') }}">
             <img src="{{ url('image/quangcao2.webp') }}">
@@ -48,7 +49,7 @@
     </div>
     <div id="main3" class="text-center">
         <div id="line"></div>
-        <p id="title">POWERFUL PRODUCTS</p>
+        <p id="title">{{@trans('font.home.index.POW')}}</p>
         <div id="item">
             @foreach ($productList as $product)
             <a id="item_link" href="{{ route('product.show', $product->slug) }}">
@@ -69,7 +70,7 @@
             </a>
             @endforeach
         </div>
-        <a id="xemthem" href="_category.php?category_id=1">SEE THEM</a>
+        <a id="xemthem" href="_category.php?category_id=1">{{@trans('font.home.index.MORE')}}</a>
     </div>
     <div id="main5" class="text-center">
         <!-- <div id="line"></div>

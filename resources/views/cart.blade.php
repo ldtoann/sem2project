@@ -15,7 +15,7 @@
         <div class="col-8">
             <div id="maincart">
                 <div id="rowinfonamecart" class="row">
-                    <div id="infonamecart" class="col-2">PRODUCT</div>
+                    <div id="infonamecart" class="col-2">{{@trans('font.home.product')}}</</div>
                     <div id="infonamecart" class="col-3"></div>
                     <div id="infonamecart" class="col text-center">PRICE</div>
                     <div id="infonamecart" class="col text-center">QUANTITY</div>
