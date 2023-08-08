@@ -11,24 +11,33 @@ header {
 main {
     z-index: 0;
 }
-#language {
-    border: none;
-    background: white;
-    height: 17px;
-    margin-top: 3px;
-    margin-right: 10px;
-    color: black;
-    font-weight: 800;
-    border-radius: 5px;
-    font-size: 12px;
-}
-#language option {
-    border: none;
-    background-color: white;
-    color: black;
-}
-#usernamelogin {
+#buttonlanguage {
     color: white;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: -2px;
+    border: none;
+}
+#chooselanguage {
+    margin-top: 0px;
+    background-color: white;
+    padding: 5px 0px;
+}
+#chooselanguage li a p {
+    margin: 0px 10px;
+    font-size: 14px;
+}
+#chooselanguage li a {
+    color: black;
+    transition: 0.5s all;
+    font-weight: 800;
+    padding: 4px 0px;
+    width: 100%;
+    margin: 0px;
+}
+#chooselanguage li a:hover {
+    text-decoration: none;
+    background-color: darkgray;
 }
 #headerusers {
     background-image: linear-gradient(to right, black, black, rgb(145, 7, 7));
