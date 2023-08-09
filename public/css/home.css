@@ -33,14 +33,10 @@ main {
     font-weight: 800;
     padding: 4px 0px;
     width: 100%;
-    margin: 0px;
 }
 #chooselanguage li a:hover {
     text-decoration: none;
     background-color: darkgray;
-}
-#usernamelogin {
-    color: white;
 }
 #headerusers {
     background-image: linear-gradient(to right, black, black, rgb(145, 7, 7));

@@ -30,3 +30,11 @@ function format_money($number)
 {
     return number_format($number, 0, ".", ",") . " VND";
 }
+
+/**
+ * Auto increment number
+ */
+
+function increment(&$i = 0){
+    return ++$i;
+}

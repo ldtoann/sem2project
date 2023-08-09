@@ -8,10 +8,6 @@
                             Language
                         </button>
                         <ul id="chooselanguage" class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" href="#">
-                                    <p>English</p>
-                                </a></li>
-                            <li><a class="dropdown-item" href="#">
                                     <p>Vietnamese</p>
                                 </a></li>
                         </ul>
@@ -24,7 +20,7 @@
         <p>&nbsp;&nbsp;{{ Auth::user()->name }}&nbsp;&nbsp;</p>
         @endif
         <p> / </p>
-        <a href="{{ route('login') }}"> <i class="fa-solid fa-user"></i> </a>
+        <a href=" {{ route('login') }}"> <i class="fa-solid fa-user"></i> </a>
         <p> / </p>
         <form action="{{ route('logout') }}" method="post">
             @csrf

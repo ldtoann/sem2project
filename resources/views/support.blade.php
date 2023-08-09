@@ -1,81 +1,79 @@
 @extends('master')
 
-@section('title', 'Support')
+@section('title', @trans('font.support.index.SUPPORT.title'))
 
 @section('content')
 <main>
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li id="linenext" class="breadcrumb-item"><a href="_home1.php">HOME</a></li>
-            <li id="linenext" class="breadcrumb-item active" aria-current="page">SUPPORTs</li>
+            <li id="linenext" class="breadcrumb-item"><a href="_home1.php">{{@trans('font.support.index.home')}}</a></li>
+            <li id="linenext" class="breadcrumb-item active" aria-current="page">{{@trans('font.support.index.SUP')}}</li>
         </ol>
     </nav>
     <div class="accordion" id="accordionPanelsStayOpenExample" style="margin-bottom: 100px;">
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                    <strong>CHÍNH SÁCH BẢO HÀNH</strong>
+                    <strong>{{@trans('font.support.index.wara')}}</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                 <div class="accordion-body">
-                    <p><strong>1.</strong> Cửa hàng sẽ bảo hành miễn phí sản phẩm khi bị hở keo.</p>
-                    <p><strong>2.</strong> Thời gian bảo hành: trong vòng 3 tháng kể từ ngày mua hàng. Cửa hàng không nhận bảo hành những đôi giày quá cũ (không còn độ bám của keo chỉ, da trầy tróc và đế bị lão hoá…)</p>
-                    <p><strong>3.</strong> Sản phẩm sẽ không được nhận bảo hành khi: ra màu do giặt tẩy, da bị trầy xước, nóng, cháy hoặc do thú vật cắn, ố vàng, lem màu,… hoặc các trường hợp va quẹt hoạt động hằng ngày.</p>
-                    <p><strong>4.</strong> Thời gian sửa chữa: tuỳ theo mức độ của sản phẩm dao động từ 5-7 ngày.</p>
-                    <p><strong>5</strong> Cửa hàng chỉ nhận bảo hành từ 1-2 lần tuỳ theo trường hợp của sản phẩm.</p>
-                    <p><strong>*</strong> Khi bảo hành vui lòng đọc số điện thoại đã mua hàng để kiểm tra hoá đơn, nếu không có hoá đơn shop không nhận bảo hành sản phẩm.</p>
-                    <p><strong>Lưu ý:</strong> Shop nhận sản phẩm bảo hành sau 13h mỗi ngày (Mong quý khách thông cảm)</p>
-                    <p><strong>VUI LÒNG VỆ SINH SẢN PHẨM KHI MANG ĐẾN BẢO HÀNH.
-                            Xin cám ơn.</strong></p>
+                    <p><strong>1.</strong> {{@trans('font.support.index.name')}}</p>
+                    <p><strong>2.</strong> {{@trans('font.support.index.name1')}}</p>
+                    <p><strong>3.</strong> {{@trans('font.support.index.name2')}}</p>
+                    <p><strong>4.</strong> {{@trans('font.support.index.name3')}}</p>
+                    <p><strong>5</strong> The store only receives warranty from 1-2 times depending on the case of the product.</p>
+                    <p><strong>*</strong> When warranty, please read the phone number purchased to check the invoice, if there is no invoice, the shop does not accept product warranty.</p>
+                    <p><strong>Note:</strong> Shop receives warranty products after 13:00 every day (Please understand)</p>
+                    <p><strong>PLEASE CLEAN THE PRODUCTS WHEN BRING THE WARRANTY. Thank you.</strong></p>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                    <strong>CHÍNH SÁCH ĐỔI TRẢ HÀNG</strong>
+                    <strong>RETURN POLICY</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                 <div class="accordion-body">
-                    <p><strong>1.</strong> Trong vòng 3 ngày kể từ ngày mua sản phẩm, quý khách được phép đổi size - đổi màu cùng dòng (như Airforce trắng thì đổi sang dòng Airforce đen khác), không được đổi mẫu khác và chỉ được đổi 1 lần duy nhất.</p>
-                    <p><strong>2.</strong> Chỉ nhận đổi sản phẩm với tình trạng còn mới, đầy đủ box phụ kiện, túi SHOP và đọc đúng SĐT đã mua hàng. Không nhận đổi hàng khi hàng đã qua sử dụng, bị trầy xước, mòn đế, có mùi tẩy giặt…</p>
-                    <p><strong>Lưu ý:</strong> Cửa hàng có quyền từ chối đổi hàng nếu sản phẩm bị mòn đế, trầy xước.
-                        Hàng mua rồi xin miễn trả lại.</p>
+                    <p><strong>1.</strong> Within 3 days from the date of purchase of the product, you are allowed to change the size - change the color of the same line (such as the white Airforce, change to another black Airforce line), cannot change another model and can only change 1 time.</p>
+                    <p><strong>2.</strong>Only receive product exchange with new condition, full box of accessories, SHOP bag and correct reading of purchased phone number. Do not accept exchange when the goods are used, scratched, worn soles, smell of laundry detergent ...</p>
+                    <p><strong>Note:</strong> The store has the right to refuse to exchange if the product is worn out, scratched. Wake on LAN.</p>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    <strong>CHÍNH SÁCH VẬN CHUYỂN</strong>
+                    <strong>SHIPPING POLICY</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                 <div class="accordion-body">
-                    <p><strong>1. MIỄN PHÍ GIAO HÀNG KHU VỰC TPHCM</strong><br>Quận 1,3,4,5,7,8,10,12 Tân Phú,Tân Bình,Phú Nhuận,Gò Vấp,Bình Thạnh, Bình Tân (trừ Tân Tạo), Q.2 (Thảo Điền, An Phú, Bình An) miễn phí vận chuyển và giao nhận hàng trong ngày. <br>Thủ Đức, Hóc Môn ( bán kính 10km) miễn phí giao hàng và nhận hàng trong ngày. Xa hơn 10km nhận hàng từ 1-2 ngày. <br>Quận 9, Bình Chánh, Nhà Bè miễn phí giao hàng và nhận hàng từ 1-2 ngày.</p>
-                    <p><strong>2. HỖ TRỢ 50K MỖI ĐƠN HÀNG NGOÀI TPHCM & FREESHIP MUA TỪ 2 ĐÔI TRỞ LÊN.</strong><br>Giao hàng toàn quốc , thanh toán khi nhận hàng. <br>Thời gian tuỳ vào địa điểm từ 2-5 ngày làm việc.</p>
+                    <p><strong>1.FREE DELIVERY IN HCMC</strong><br> Districts 1,3,4,5,7,8,10,12 Tan Phu, Tan Binh, Phu Nhuan, Go Vap, Binh Thanh, Binh Tan (except Tan Tao), District 2 (Thao Dien, An Phu, Binh An) Free shipping and same day delivery.<br>Thu Duc, Hoc Mon (10km radius) free delivery and receive goods within the day. More than 10km to receive goods from 1-2 days. <br>District 9, Binh Chanh, Nha Be free delivery and receive goods from 1-2 days.</p>
+                    <p><strong>2. SUPPORT 50K EVERY ORDER OUTSIDE HCMC & FREESHIP BUY FROM 2 pairs or more.</strong><br>Nationwide delivery, payment on receipt. <br>Time depends on the location from 2-5 working days.</p>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                    <strong>PHƯƠNG THỨC THANH TOÁN</strong>
+                    <strong>payment methods</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
                 <div class="accordion-body">
-                    <p><strong>Bước 1:</strong><br>Truy cập website và lựa chọn sản phẩm cần mua để mua hàng</p>
-                    <p><strong>Bước 2:</strong><br>Click vào sản phẩm muốn mua, chọn size và bấm MUA NGAY, sản phẩm đã được đưa vào giỏ hàng.</p>
+                    <p><strong>Step 1:</strong><br>Visit the website and select the product you want to buy to purchase</p>
+                    <p><strong>Step 2:</strong><br>Click on the product you want to buy, select the size and click BUY NOW, the product has been added to the cart.</p>
                 </div>
             </div>
         </div>
     </div>
     <div id="main3" class="text-center" style="margin-bottom: 60px;">
         <div id="line"></div>
-        <p id="title">XEM GẦN ĐÂY</p>
+        <p id="title">LATEST VIEW</p>
         <div id="item">
             <a id="item_link" href="">
                 <div id="item_col">
