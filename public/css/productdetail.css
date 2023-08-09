@@ -35,7 +35,7 @@ main {
     height: 500px;
     object-fit: contain;
     transform: scale(0.9);
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 #nutslide {
     background-color: lightgrey;

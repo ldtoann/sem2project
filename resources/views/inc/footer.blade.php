@@ -19,11 +19,6 @@
                             <a id="info_footer" href="">Contact Us</a>
                         </div>
                         <div id="aboutfooter_end" class="col-3">
-                            <!-- <a id="title_footer" href="">ABOUT SMATE</a><br>
-                            <a id="info_footer" href="">News</a><br>
-                            <a id="info_footer" href="">Careers</a><br>
-                            <a id="info_footer" href="">Investors</a><br>
-                            <a id="info_footer" href="">Sustainability</a> -->
                         </div>
                         <div class="col-3"></div>
                     </div>
@@ -41,9 +36,6 @@
                         </div>
                         <div id="mxh" class="text-center">
                             <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                        <div id="mxh" class="text-center">
-                            <a href="#"><i class="fa fa-arrow-up"></i></a>
                         </div>
                     </div>
                     <div id="imgfooter">
