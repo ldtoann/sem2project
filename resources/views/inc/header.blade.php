@@ -1,12 +1,24 @@
 <header>
     <div id="headerusers">
-        <div class="language-select">
-            <select id="language" name="language">
-                <option value="en">English</option>
-                <option value="vi">Vietnamese</option>
-                <option value="es">Spanish</option>
-            </select>
-        </div>
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse" id="navbarNavLightDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button id="buttonlanguage" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Language
+                        </button>
+                        <ul id="chooselanguage" class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">
+                                    <p>English</p>
+                                </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                    <p>Vietnamese</p>
+                                </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <p> / </p>
         @if (auth()->check())
         <p>&nbsp;&nbsp;{{ Auth::user()->name }}&nbsp;&nbsp;</p>
