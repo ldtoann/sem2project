@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categoryList = Category::all();
-        return view('admin.categories.index', compact('categoryList'));
+        $orderList = Order::all();
+        return view('admin.orders.index', compact('orderList'));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.orders.create');
     }
 
     /**
@@ -30,14 +30,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = Category::create($request->only([
-            'name', 'desc'
+        $order = Order::create($request->only([
+            'name', 'desc','status','reciver','user_id'
         ]));
-        $message = "Success Created";
-        if ($category == null) {
-            $message = "Create  Failed";
+        $message = "Success Create";
+        if ($order == null) {
+            $message = "Create Failed";
         }
-        return redirect()->route('admin.categories.index')->with('message', $message);
+        return redirect()->route('admin.orders.index')->with('message', $message);
     }
 
     /**
@@ -53,8 +53,8 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $category = Category::findOrFail($id);
-        return view('admin.categories.edit', compact('category'));
+        $order = Order::findOrFail($id);
+        return view('admin.orders.edit', compact('order'));
     }
 
     /**
@@ -62,16 +62,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category = Category::findOrFail($id);
-        $bool = $category->update($request->only([
-            'name', 'desc'
+        $order = Order::findOrFail($id);
+        $bool = $order->update($request->only([
+            'name', 'desc','status','reciver','user_id'
         ]));
 
         $message =  "Success  Update";
         if (!$bool) {
             $message = "Update Failed";
         }
-        return redirect()->route('admin.categories.index')->with('message', $message);
+        return redirect()->route('admin.orders.index')->with('message', $message);
     }
 
     /**
@@ -80,9 +80,9 @@ class CategoryController extends Controller
     public function destroy(string $id)
     {
         $message =  "Delete Full Failed";
-        if (Category::destroy($id)) {
+        if (Order::destroy($id)) {
             $message = "Success Delete";
         }
-        return redirect()->route('admin.categories.index')->with('message', $message);
+        return redirect()->route('admin.orders.index')->with('message', $message);
     }
 }

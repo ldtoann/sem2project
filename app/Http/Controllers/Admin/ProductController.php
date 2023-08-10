@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -12,7 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return 'good';
+        $productList = Product::all();
+        return view('admin.products.index', compact('productList'));
     }
 
     /**
@@ -20,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
     /**
@@ -28,7 +30,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::create($request->only([
+            'name', 'desc', 'quantity','slug','price','category_id'
+        ]));
+        $message = "Success Created";
+        if ($product == null) {
+            $message = "Create  Failed";
+        }
+        return redirect()->route('admin.products.index')->with('message', $message);
     }
 
     /**
@@ -44,7 +53,8 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -52,7 +62,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $bool = $product->update($request->only([
+            'name', 'desc', 'quantity','slug','price','category_id'
+        ]));
+
+        $message =  "Success  Update";
+        if (!$bool) {
+            $message = "Update Failed";
+        }
+        return redirect()->route('admin.products.index')->with('message', $message);
     }
 
     /**
@@ -60,6 +79,10 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $message =  "Delete Full Failed";
+        if (Product::destroy($id)) {
+            $message = "Success Delete";
+        }
+        return redirect()->route('admin.products.index')->with('message', $message);
     }
 }
