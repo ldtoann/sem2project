@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-        <h1 class="h3 mb-2 text-gray-800" style="text-align: center;font-weight: 900;">Category List</h1>
+        <h1 class="h3 mb-2 text-gray-800" style="text-align: center;font-weight: 900;">Order List</h1>
         </div>
     </div>
     <div class="card shadow mb-4">
@@ -17,22 +17,28 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Desc</th>
+                            <th>Status</th>
+                            <th>Receiver</th>
+                            <th>User_ID</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php $i = 0 @endphp
-                        @foreach ($categoryList as $category)
+                        @foreach ($orderList as $order)
                         <tr>
                             <td>{{ increment($i) }}</td>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ $category->desc }}</td>
+                            <td>{{ $order->name }}</td>
+                            <td>{{ $order->desc }}</td>
+                            <td>{{ $order->status }}</td>
+                            <td>{{ $order->receiver }}</td>
+                            <td>{{ $order->user_id }}</td>
                             <td>
-                                <a type="submit" class="btn btn-warning" href="{{ route('admin.categories.edit', $category->id) }}">Edit</a>
+                                <a type="submit" class="btn btn-warning" href="{{ route('admin.orders.edit', $order->id) }}">Edit</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
+                                <form action="{{route('admin.orders.destroy', $order->id)}}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE')}}
                                     <button type="submit" class="btn btn-danger">Delete</button>

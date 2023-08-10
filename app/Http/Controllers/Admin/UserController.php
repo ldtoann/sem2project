@@ -31,12 +31,13 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->only([
-            'name','email','password'
+            'name', 'email', 'password','role'
         ]));
-        $message = "Success Full Created";
-        if($user == null){
-            $message = "Success Full Failed";
+        $message = "Success Create";
+        if ($user == null) {
+            $message = "Create Failed";
         }
+        return redirect()->route('admin.users.index')->with('message', $message);
     }
 
     /**
@@ -46,10 +47,10 @@ class UserController extends Controller
     {
         //
     }
-    public function edit($id)
+    public function edit(string $id)
     {
-        $user = User::findOrfail($id);
-        return view('admin.users.edit',compact('user'));
+        $user = User::findOrFail($id);
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -59,24 +60,24 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $bool = $user->update($request->only([
-            'name','email','password'
+            'name', 'email', 'password','role'
         ]));
 
         $message =  "Success  Update";
-        if(!$bool){
-         $message = "Update Failed";   
+        if (!$bool) {
+            $message = "Update Failed";
         }
-        return redirect()->route('admin.users.index')->with('message',$message);
-
+        return redirect()->route('admin.users.index')->with('message', $message);
     }
- 
-     
-    public function destroy($id)
+
+
+    public function destroy(string $id)
     {
-        $message =  "Success Delete";
-       if(User::destroy($id)){
-        $message = "Delete Full Failed";   
-       }
-       return redirect()->route('admin.users.index')->with('message',$message);
+
+        $message =  "Delete Full Failed";
+        if (User::destroy($id)) {
+            $message = "Success Delete";
+        }
+        return redirect()->route('admin.users.index')->with('message', $message);
     }
 }

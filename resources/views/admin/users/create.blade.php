@@ -1,68 +1,36 @@
 @extends('admin.layout')
 @section('content')
-<div class="row">
-<div class="container">
-
-<div class="card o-hidden border-0 shadow-lg my-5">
-    <div class="card-body p-0">
-        <!-- Nested Row within Card Body -->
-        <div class="row">
-            <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-            <div class="col-lg-7">
+<div class="main">
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
                 <div class="p-5">
                     <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                     </div>
-                    <form class="user" accordion="{{route('admin.users.store')}}" method="POST">
-                        @csrf
+                    <form class="user" style="text-align: center;" action="{{ route('admin.users.store') }}" method="POST">
+                        {{ csrf_field() }}
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                    placeholder="First Name">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                    placeholder="Last Name">
+                                <input name="name" value="" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                placeholder="Email Address">
+                            <input style="width: 50%;" name="email" value="" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="password" class="form-control form-control-user"
-                                    id="exampleInputPassword" placeholder="Password">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="password" class="form-control form-control-user"
-                                    id="exampleRepeatPassword" placeholder="Repeat Password">
-                            </div>
+                        <div class="form-group">
+                            <input style="width: 50%;" name="password" value="" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         </div>
-                        <a href="login.html" class="btn btn-primary btn-user btn-block">
-                            Register Account
-                        </a>
-                        <hr>
-                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                            <i class="fab fa-google fa-fw"></i> Register with Google
-                        </a>
-                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                            <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                        </a>
+                        <div class="form-group">
+                            <input style="width: 50%;" name="role" value="" type="role" class="form-control form-control-user" id="exampleInputRole" placeholder="role">
+                        </div>
+                        <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
+                            Submit
+                        </button>
                     </form>
-                    <hr>
-                    <div class="text-center">
-                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                    </div>
-                    <div class="text-center">
-                        <a class="small" href="login.html">Already have an account? Login!</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-</div>
 </div>
 @endsection

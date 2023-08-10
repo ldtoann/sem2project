@@ -10,6 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\UserControllerController;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\App;
 
@@ -99,4 +100,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'],
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+    Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
+    // Route::put('admin/users/2/edit', 'UserController@updateUser');
 });
+
