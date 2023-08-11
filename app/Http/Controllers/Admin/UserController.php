@@ -31,10 +31,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->only([
-            'name','email','password'
+            'name', 'email', 'password'
         ]));
         $message = "Success Full Created";
-        if($user == null){
+        if ($user == null) {
             $message = "Success Full Failed";
         }
     }
@@ -49,7 +49,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrfail($id);
-        return view('admin.users.edit',compact('user'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -59,24 +59,23 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $bool = $user->update($request->only([
-            'name','email','password'
+            'name', 'email', 'password'
         ]));
 
         $message =  "Success  Update";
-        if(!$bool){
-         $message = "Update Failed";   
+        if (!$bool) {
+            $message = "Update Failed";
         }
-        return redirect()->route('admin.users.index')->with('message',$message);
-
+        return redirect()->route('admin.users.index')->with('message', $message);
     }
- 
-     
+
+
     public function destroy($id)
     {
         $message =  "Success Delete";
-       if(User::destroy($id)){
-        $message = "Delete Full Failed";   
-       }
-       return redirect()->route('admin.users.index')->with('message',$message);
+        if (User::destroy($id)) {
+            $message = "Delete Full Failed";
+        }
+        return redirect()->route('admin.users.index')->with('message', $message);
     }
 }
