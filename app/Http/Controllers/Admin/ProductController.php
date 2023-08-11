@@ -35,6 +35,13 @@ class ProductController extends Controller
         $product = Product::create($request->only([
             'name', 'desc', 'quantity','slug','price','category_id'
         ]));
+
+        if ($images = $request->file('images')) {
+            foreach ($images as $image) {
+                $product->addMedia($image)->toMediaCollection('images');
+            }
+        }
+
         $message = "Success Created";
         if ($product == null) {
             $message = "Create  Failed";
