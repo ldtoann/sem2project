@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -59,9 +59,9 @@ class UserController extends Controller
     public function update(Request $request, string $id)
     {
         $user = User::findOrFail($id);
-        $bool = $user->update($request->only([
-            'name', 'email', 'password','role'
-        ]));
+        $bool = $user->update(
+            $request->only(['name', 'email', 'password','role'])
+        );
 
         $message =  "Success  Update";
         if (!$bool) {

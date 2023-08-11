@@ -24,13 +24,16 @@
                                     <input style="width: 50%;" name="desc" value="{{$order->desc}}" type="desc" class="form-control form-control-user" id="exampleInputEmail" placeholder="Desc">
                                 </div>
                                 <div class="form-group">
-                                    <input style="width: 50%;" name="status" value="{{$order->status}}" type="status" class="form-control form-control-user" id="exampleInputPassword" placeholder="Status">
+                                    <select name="status" class="form-control">
+                                        <option @if($order->status == 'pending') selected @endif value="pending">Pending</option>
+                                        <option @if($order->status == 'finished') selected @endif value="finished">Finished</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <input style="width: 50%;" name="receiver" value="{{$order->receiver}}" type="receiver" class="form-control form-control-user" id="exampleInputRole" placeholder="receiver">
                                 </div>
                                 <div class="form-group">
-                                    <input style="width: 50%;" name="user_id" value="{{$order->user_id}}" type="price" class="form-control form-control-user" id="exampleInputRole" placeholder="user_id">
+                                    <input style="width: 50%;" disabled name="user_id" value="{{$order->user->name}}" type="price" class="form-control form-control-user" id="exampleInputRole" placeholder="user_id">
                                 </div>
                                 <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
                                     Submit

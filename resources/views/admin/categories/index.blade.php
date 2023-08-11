@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-        <h1 class="h3 mb-2 text-gray-800" style="text-align: center;font-weight: 900;">Category List</h1>
+            <h1 class="h3 mb-2 text-gray-800" style="text-align: center;font-weight: 900;">Category List</h1>
         </div>
     </div>
     <div class="card shadow mb-4">
