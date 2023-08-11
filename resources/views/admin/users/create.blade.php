@@ -22,7 +22,10 @@
                             <input style="width: 50%;" name="password" value="" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <input style="width: 50%;" name="role" value="" type="role" class="form-control form-control-user" id="exampleInputRole" placeholder="role">
+                            <select name="role" style="width: 50%;"  class="form-control form-control-user">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
                         </div>
                         <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
                             Submit

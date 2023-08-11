@@ -19,7 +19,7 @@
                             <th>Desc</th>
                             <th>Status</th>
                             <th>Receiver</th>
-                            <th>User_ID</th>
+                            <th>User</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -27,13 +27,13 @@
                     <tbody>
                         @php $i = 0 @endphp
                         @foreach ($orderList as $order)
-                        <tr>
+                        <tr @if($order->status == 'pending') class="order-pending" @else class="order-finished" @endif>
                             <td>{{ increment($i) }}</td>
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->desc }}</td>
                             <td>{{ $order->status }}</td>
                             <td>{{ $order->receiver }}</td>
-                            <td>{{ $order->user_id }}</td>
+                            <td>{{ $order->user->name }}</td>
                             <td>
                                 <a type="submit" class="btn btn-warning" href="{{ route('admin.orders.edit', $order->id) }}">Edit</a>
                             </td>

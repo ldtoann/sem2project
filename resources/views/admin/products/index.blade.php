@@ -21,7 +21,7 @@
                             <th>Quantity</th>
                             <th>Slug</th>
                             <th>Price</th>
-                            <th>Category_ID</th>
+                            <th>Category</th>
                             <th>Edit</th>
                             <th>Delete</th>
 
@@ -36,8 +36,8 @@
                             <td>{{ $product->desc }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->slug }}</td>
-                            <td>{{ $product->price }}</td>
-                            <td>{{ $product->category_id }}</td>
+                            <td>{{ format_money($product->price) }}</td>
+                            <td>{{ $product->category->name }}</td>
 
 
                             <td>

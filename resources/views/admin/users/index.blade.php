@@ -7,9 +7,6 @@
         <div class="col-12">
             <h1 class="h3 mb-2 text-gray-800" style="text-align: center;font-weight: 900;">User List</h1>
         </div>
-        <!-- <div class="col-3">
-            <a href="{{ route('admin.users.create') }}" class="btn-primary" >Create New</a>
-        </div> -->
     </div>
     <!-- DataTales Example -->
     <div class="card shadow mb">

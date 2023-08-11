@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCategoryRequest;
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
@@ -28,11 +31,29 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
+        $messages = [
+            'name.required' => trans('validation.category.required'),
+            'name.min' => trans('validation.category.min'),
+            'name.email' => trans('validation.category.email'),
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:5|email',
+            'desc' => 'required',
+        ], $messages);
+ 
+        if ($validator->fails()) {
+            return redirect()->route('admin.categories.create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        
         $category = Category::create($request->only([
             'name', 'desc'
         ]));
+
         $message = "Success Created";
         if ($category == null) {
             $message = "Create  Failed";

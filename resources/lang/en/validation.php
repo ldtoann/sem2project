@@ -182,4 +182,7 @@ return [
 
     'attributes' => [],
 
+    'category.required' => 'name required',
+    'category.min' => 'name min 5',
+    'category.email' => 'email required',
 ];
