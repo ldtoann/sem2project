@@ -12,7 +12,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Product!</h1>
                             </div>
-                            <form style="text-align: center;" class="user" action="{{ route('admin.products.store') }}" method="POST">
+                            <form style="text-align: center;" class="user" action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -34,6 +34,12 @@
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="block">
+                                        <span class="sr-only">Choose File</span>
+                                        <input type="file" name="images[]" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" multiple />
+                                    </label>
                                 </div>
                                 <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
                                     Submit

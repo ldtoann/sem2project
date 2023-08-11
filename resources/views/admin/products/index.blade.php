@@ -16,6 +16,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Thumbnail</th>
                             <th>Name</th>
                             <th>Desc</th>
                             <th>Quantity</th>
@@ -32,6 +33,12 @@
                         @foreach ($productList as $product)
                         <tr>
                             <td>{{ increment($i) }}</td>
+                            <td>
+                                @php $thumbnail = $product->getMedia('images')->first()  @endphp
+                                @if($thumbnail)
+                                <img width="50" height="50" src="{{ $thumbnail->getUrl() }}" alt="">
+                                @endif
+                            </td>
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->desc }}</td>
                             <td>{{ $product->quantity }}</td>

@@ -20,9 +20,11 @@
                         <div class="carousel-item active">
                             <img class="d-block w-100" id="imageproductdetail" src="{{ url('image/nike/itemnike1.1.jpg') }}">
                         </div>
+                        @foreach($product->getMedia('images') as $image)
                         <div class="carousel-item">
-                            <img class="d-block w-100" id="imageproductdetail" src="{{ url('image/nike/itemnike1.jpg') }}">
+                            <img class="d-block w-100" id="imageproductdetail" src="{{ $image->getUrl() }}">
                         </div>
+                        @endforeach
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
                         <span id="nutslide" class="carousel-control-prev-icon" aria-hidden="true"></span>
