@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Dotenv\Validator;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -30,6 +31,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'name.required1' => trans('validation.user.required1'),
+            'name.email' => trans('validation.user.email'),
+            'name.password' => trans('validation.user.password')
+        ];
+
+        $validator = Validator($request->all(), [
+            'name' => 'required|min:5',
+            'email' => 'required|min:10',
+            'password' => 'required|min:5',
+
+        ], $messages);
+ 
+        if ($validator->fails()) {
+            return redirect()->route('admin.users.create')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
         $user = User::create($request->only([
             'name', 'email', 'password','role'
         ]));

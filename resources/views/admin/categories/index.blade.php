@@ -13,7 +13,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;font-weight: 900;">
                             <th>ID</th>
                             <th>Name</th>
                             <th>Desc</th>
@@ -24,18 +24,18 @@
                     <tbody>
                         @php $i = 0 @endphp
                         @foreach ($categoryList as $category)
-                        <tr>
+                        <tr style="text-align: center;font-weight: 900;">
                             <td>{{ increment($i) }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->desc }}</td>
                             <td>
-                                <a type="submit" class="btn btn-warning" href="{{ route('admin.categories.edit', $category->id) }}">Edit</a>
+                                <a type="submit" class="edit" href="{{ route('admin.categories.edit', $category->id) }}">Edit</a>
                             </td>
                             <td>
-                                <form action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
+                                <form style="font-weight: 900;" action="{{route('admin.categories.destroy', $category->id)}}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="delete">Delete</button>
                                 </form>
                             </td>
                         </tr>

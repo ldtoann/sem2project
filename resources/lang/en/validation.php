@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+
 return [
 
     /*
@@ -169,20 +171,11 @@ return [
         ],
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Custom Validation Attributes
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used to swap our attribute placeholder
-    | with something more reader friendly such as "E-Mail Address" instead
-    | of "email". This simply helps us make our message more expressive.
-    |
-    */
-
     'attributes' => [],
 
-    'category.required' => 'name required',
-    'category.min' => 'name min 5',
-    'category.email' => 'email required',
+    'category.required' => 'Please enter description above 10 characters',
+    'category.min' => 'Please enter customer name',
+    'category.desc' => 'Please enter description above 10 characters'
+    
+
 ];

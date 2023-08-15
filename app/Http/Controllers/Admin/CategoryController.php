@@ -36,12 +36,12 @@ class CategoryController extends Controller
         $messages = [
             'name.required' => trans('validation.category.required'),
             'name.min' => trans('validation.category.min'),
-            'name.email' => trans('validation.category.email'),
+            'name.desc' => trans('validation.category.desc')
         ];
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:5|email',
-            'desc' => 'required',
+            'name' => 'required|min:5',
+            'desc' => 'required|min:10',
         ], $messages);
  
         if ($validator->fails()) {

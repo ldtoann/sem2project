@@ -8,6 +8,10 @@
                             Language
                         </button>
                         <ul id="chooselanguage" class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="{{ route('language', 'en') }}">
+                                    <p>English</p>
+                                </a></li>
+                            <li><a class="dropdown-item" href="{{ route('language', 'vi') }}">
                                     <p>Vietnamese</p>
                                 </a></li>
                         </ul>

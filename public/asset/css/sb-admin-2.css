@@ -1833,7 +1833,7 @@ pre code {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #6e707e;
+  color: black;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #d1d3e2;
@@ -1981,6 +1981,7 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 1rem;
+  padding-left: 280px;
 }
 
 .form-text {
@@ -11284,9 +11285,62 @@ body.sidebar-toggled footer.sticky-footer {
 Custom
 */
 .order-pending{
-  background-color: yellow;
+  background-color: #F4A460	;
 }
 
 .order-finished{
-  background-color: green;
+ 
+  background-color: #32CD32;
+}
+/* button */
+.delete{
+  background-color: var(--red);
+  color: white;
+  width: 90px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: 900;
+}
+.edit {
+  width: 90px;
+  height: 40px;
+  background-color: #dda20a;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.edit:hover{
+transition: 1.5;
+color: red;
+text-decoration: none;
+}
+.edit a{
+font-weight: 900;
+}
+/* style */
+.form-user{
+  border-radius: 10rem;
+  padding-left: 280px;
+}
+input::file-selector-button {
+  background-image: linear-gradient(
+    to right,
+    #ff7a18,
+    #af002d,
+    #319197 100%,
+    #319197 200%
+  );
+  background-position-x: 0%;
+  background-size: 200%;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  padding: 1rem 1.25rem;
+  text-shadow: 0 1px 1px #333;
+  transition: all 0.25s;
+}
+input::file-selector-button:hover {
+  background-position-x: 90%;
+  transform: scale(1.1);
 }
