@@ -26,19 +26,19 @@
                     <tbody>
                         @php $i = 0 @endphp
                         @foreach ($userList as $user)
-                        <tr>
+                        <tr style="text-align: center;font-weight: 900;">
                             <td>{{ increment($i) }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role }}</td>
                             <td>
-                                <a type="submit" class="btn btn-warning" href="{{ route('admin.users.edit', $user->id) }}">Edit</a>
+                                <a  type="submit" class="edit" href="{{ route('admin.users.edit', $user->id) }}">Edit</a>
                             </td>
                             <td>
-                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
+                                <form style="text-align: center;font-weight: 900;" action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="delete">Delete</button>
                                 </form>    
                             </td>
                         </tr>

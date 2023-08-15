@@ -53,7 +53,6 @@
         <div id="collapseOrder" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.orders.index') }}">All</a>
-                <a class="collapse-item" href="{{ route('admin.orders.create') }}">Create</a>
             </div>
         </div>
     </li>

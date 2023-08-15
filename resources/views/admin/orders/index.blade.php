@@ -27,7 +27,7 @@
                     <tbody>
                         @php $i = 0 @endphp
                         @foreach ($orderList as $order)
-                        <tr @if($order->status == 'pending') class="order-pending" @else class="order-finished" @endif>
+                        <tr style="text-align: center;font-weight: 900;" @if($order->status == 'pending') class="order-pending" @else class="order-finished" @endif>
                             <td>{{ increment($i) }}</td>
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->desc }}</td>
@@ -35,13 +35,13 @@
                             <td>{{ $order->receiver }}</td>
                             <td>{{ $order->user->name }}</td>
                             <td>
-                                <a type="submit" class="btn btn-warning" href="{{ route('admin.orders.edit', $order->id) }}">Edit</a>
+                                <a type="submit" class="edit" href="{{ route('admin.orders.edit', $order->id) }}">Edit</a>
                             </td>
                             <td>
                                 <form action="{{route('admin.orders.destroy', $order->id)}}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="delete">Delete</button>
                                 </form>
                             </td>
                         </tr>

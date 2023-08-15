@@ -24,7 +24,7 @@
                                     <input style="width: 50%;" name="desc" value="{{$order->desc}}" type="desc" class="form-control form-control-user" id="exampleInputEmail" placeholder="Desc">
                                 </div>
                                 <div class="form-group">
-                                    <select name="status" class="form-control">
+                                    <select name="status" style="width: 50%;height:50px;border-radius: 10rem;">
                                         <option @if($order->status == 'pending') selected @endif value="pending">Pending</option>
                                         <option @if($order->status == 'finished') selected @endif value="finished">Finished</option>
                                     </select>

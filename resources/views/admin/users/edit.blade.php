@@ -6,31 +6,38 @@
             <div class="card-body p-0">
                 <div class="p-5">
                     <div class="text-center">
-                        <h1 class="h4 text-gray-900 mb-4">Edit an User!</h1>
+                        <h1 style="font-weight: 700;">Edit an User!</h1>
                     </div>
-                    <form class="user" action="{{ route('admin.users.update', $user->id) }}" method="POST">
+                    <form style="text-align: center;" class="user" action="{{ route('admin.users.update', $user->id) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
-                        <div class="form-group row">
-                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input name="name" value="{{ $user->name }}" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name">
+                        <div class="form-user">
+                            <div class="create5">
+                                <input style="width: 72%;" name="name" value="{{ $user->name }}" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <input style="width: 50%;" name="email" value="{{ $user->email }}" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                        <br>
+                        <div class="form-user">
+                            <input style="width: 72%;" name="email" value="{{ $user->email }}" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
                         </div>
-                        <div class="form-group">
-                            <input style="width: 50%;" name="password" value="{{ $user->password }}" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                        <br>
+                        <div class="form-user">
+                            <input style="width: 72%;" name="password" value="{{ $user->password }}" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                         </div>
-                        <div class="form-group">
-                            <select name="role" class="form-control">
+                        <br>
+                        <div class="form-user8" style="padding-left: 22px;" >
+                            <select name="role" style="width: 56%;height:50px;border-radius: 10rem;padding-left: 12px;">
                                 <option @if($user->role == 'user') selected @endif value="user">User</option>
                                 <option @if($user->role == 'admin') selected @endif value="admin">Admin</option>
                             </select>
                         </div>
-                        <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
+                        <br>
+                        <button style="width: 20%;" class="btn btn-primary btn-user">
                             Submit
                         </button>
+                        <a href="{{route ('admin.dashboard')}}" style="width: 20%;" class="btn btn-danger btn-user">
+                            Canel
+                        </a>    
                     </form>
                 </div>
             </div>

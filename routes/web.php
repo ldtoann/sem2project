@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserControllerController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Models\Category;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -101,6 +102,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'],
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
-    // Route::put('admin/users/2/edit', 'UserController@updateUser');
+    
 });
-

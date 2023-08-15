@@ -14,7 +14,7 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
+                        <tr style="text-align: center;font-weight: 900;">
                             <th>ID</th>
                             <th>Thumbnail</th>
                             <th>Name</th>
@@ -31,7 +31,7 @@
                     <tbody>
                         @php $i = 0 @endphp
                         @foreach ($productList as $product)
-                        <tr>
+                        <tr style="text-align: center;font-weight: 900;">
                             <td>{{ increment($i) }}</td>
                             <td>
                                 @php $thumbnail = $product->getMedia('images')->first() @endphp
@@ -48,13 +48,13 @@
 
 
                             <td>
-                                <a type="submit" class="btn btn-warning" href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
+                                <a type="submit" class="edit" href="{{ route('admin.products.edit', $product->id) }}">Edit</a>
                             </td>
                             <td>
                                 <form action="{{ route('admin.products.destroy',$product->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE')}}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="delete">Delete</button>
                                 </form>
                             </td>
                         </tr>
