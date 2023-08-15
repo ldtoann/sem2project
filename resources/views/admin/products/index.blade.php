@@ -34,7 +34,7 @@
                         <tr>
                             <td>{{ increment($i) }}</td>
                             <td>
-                                @php $thumbnail = $product->getMedia('images')->first()  @endphp
+                                @php $thumbnail = $product->getMedia('images')->first() @endphp
                                 @if($thumbnail)
                                 <img width="50" height="50" src="{{ $thumbnail->getUrl() }}" alt="">
                                 @endif
