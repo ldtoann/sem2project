@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Exception;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +22,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $categoryList = Category::all();
-        View::share('categoryList', $categoryList);
+        try {
+            $categoryList = Category::all();
+            View::share('categoryList', $categoryList);
+        } catch (Exception $e) {
+        }
     }
 }
