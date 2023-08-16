@@ -5,18 +5,18 @@
                 <div id="aboutfooter_col_left" class="col-9">
                     <div class="row">
                         <div id="aboutfooter_start" class="col-3">
-                            <a id="title_footer" href="">FIND A STORE</a><br>
-                            <a id="title_footer" href="">BECOME A MEMBER</a><br>
-                            <a id="title_footer" href="">SIGN UP FOR EMAIL</a><br>
-                            <a id="title_footer" href="">SEND US FEEDBACK</a>
+                            <a id="title_footer" href="">{{ @trans('font.footer.index.find') }}</a><br>
+                            <a id="title_footer" href="">{{ @trans('font.footer.index.member') }}</a><br>
+                            <a id="title_footer" href="">{{ @trans('font.footer.index.email') }}</a><br>
+                            <a id="title_footer" href="">{{ @trans('font.footer.index.feedback') }}</a>
                         </div>
                         <div id="aboutfooter_between" class="col-3">
-                            <a id="title_footer" href="">GET HELP</a><br>
-                            <a id="info_footer" href="">Order Status</a><br>
-                            <a id="info_footer" href="">Delivery</a><br>
-                            <a id="info_footer" href="">Returns</a><br>
-                            <a id="info_footer" href="">Payment Options</a><br>
-                            <a id="info_footer" href="">Contact Us</a>
+                            <a id="title_footer" href="">{{ @trans('font.footer.index.help') }}</a><br>
+                            <a id="info_footer" href="">{{ @trans('font.footer.index.status') }}</a><br>
+                            <a id="info_footer" href="">{{ @trans('font.footer.index.deli') }}</a><br>
+                            <a id="info_footer" href="">{{ @trans('font.footer.index.return') }}</a><br>
+                            <a id="info_footer" href="">{{ @trans('font.footer.index.pay') }}</a><br>
+                            <a id="info_footer" href="">{{ @trans('font.footer.index.contact') }}</a>
                         </div>
                         <div id="aboutfooter_end" class="col-3">
                         </div>
@@ -49,10 +49,10 @@
                     <a href="">CopyRight © 2023 SMATE, Inc. All Rights Reserved</a>
                 </div>
                 <div id="content_footer_right" class="col-6">
-                    <a href="">Guides</a>
-                    <a href="">Terms of Sale</a>
-                    <a href="">Terms of Use</a>
-                    <a href="">Nike Privacy Policy</a>
+                    <a href="">{{ @trans('font.footer.index.gui') }}</a>
+                    <a href="">{{ @trans('font.footer.index.sale') }}</a>
+                    <a href="">{{ @trans('font.footer.index.use') }}</a>
+                    <a href="">{{ @trans('font.footer.index.nike') }}</a>
                 </div>
             </div>
         </div>
