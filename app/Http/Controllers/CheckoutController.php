@@ -20,8 +20,8 @@ class CheckoutController extends Controller
         $user = Auth::user();
         $order = Order::create(
             array(
-                "name" => random_string(),
-                "desc" => "desc",
+                "name" => $user->name,
+                "desc" => "NEW ORDER TING TING",
                 "status" => "pending",
                 "total" => 0,
                 "receiver" => $user->name,
