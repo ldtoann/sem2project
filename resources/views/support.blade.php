@@ -23,57 +23,57 @@
                     <p><strong>2.</strong> {{@trans('font.support.index.name1')}}</p>
                     <p><strong>3.</strong> {{@trans('font.support.index.name2')}}</p>
                     <p><strong>4.</strong> {{@trans('font.support.index.name3')}}</p>
-                    <p><strong>5</strong> The store only receives warranty from 1-2 times depending on the case of the product.</p>
-                    <p><strong>*</strong> When warranty, please read the phone number purchased to check the invoice, if there is no invoice, the shop does not accept product warranty.</p>
-                    <p><strong>Note:</strong> Shop receives warranty products after 13:00 every day (Please understand)</p>
-                    <p><strong>PLEASE CLEAN THE PRODUCTS WHEN BRING THE WARRANTY. Thank you.</strong></p>
+                    <p><strong>5</strong> {{@trans('font.support.index.name4')}}</p>
+                    <p><strong>*</strong> {{@trans('font.support.index.name5')}}</p>
+                    <p><strong>Note:</strong>{{@trans('font.support.index.name6')}}</p>
+                    <p><strong>{{@trans('font.support.index.name7')}}</strong></p>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                    <strong>RETURN POLICY</strong>
+                    <strong>{{@trans('font.support.index.name8')}}</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                 <div class="accordion-body">
-                    <p><strong>1.</strong> Within 3 days from the date of purchase of the product, you are allowed to change the size - change the color of the same line (such as the white Airforce, change to another black Airforce line), cannot change another model and can only change 1 time.</p>
-                    <p><strong>2.</strong>Only receive product exchange with new condition, full box of accessories, SHOP bag and correct reading of purchased phone number. Do not accept exchange when the goods are used, scratched, worn soles, smell of laundry detergent ...</p>
-                    <p><strong>Note:</strong> The store has the right to refuse to exchange if the product is worn out, scratched. Wake on LAN.</p>
+                    <p><strong>1.</strong> {{@trans('font.support.index.name9')}}</p>
+                    <p><strong>2.</strong> {{@trans('font.support.index.name10')}}</p>
+                    <p><strong>Note:</strong> {{@trans('font.support.index.name11')}}</p>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                    <strong>SHIPPING POLICY</strong>
+                    <strong>{{@trans('font.support.index.name12')}}</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                 <div class="accordion-body">
-                    <p><strong>1.FREE DELIVERY IN HCMC</strong><br> Districts 1,3,4,5,7,8,10,12 Tan Phu, Tan Binh, Phu Nhuan, Go Vap, Binh Thanh, Binh Tan (except Tan Tao), District 2 (Thao Dien, An Phu, Binh An) Free shipping and same day delivery.<br>Thu Duc, Hoc Mon (10km radius) free delivery and receive goods within the day. More than 10km to receive goods from 1-2 days. <br>District 9, Binh Chanh, Nha Be free delivery and receive goods from 1-2 days.</p>
-                    <p><strong>2. SUPPORT 50K EVERY ORDER OUTSIDE HCMC & FREESHIP BUY FROM 2 pairs or more.</strong><br>Nationwide delivery, payment on receipt. <br>Time depends on the location from 2-5 working days.</p>
+                    <p><strong>1.{{@trans('font.support.index.name13')}}</strong><br> {{@trans('font.support.index.name14')}}</p>
+                    <p><strong>2. {{@trans('font.support.index.name15')}}</strong><br> {{@trans('font.support.index.name16')}}<br>{{@trans('font.support.index.name17')}}</p>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
             <h2 class="accordion-header">
                 <button style="z-index: 0;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                    <strong>payment methods</strong>
+                    <strong>{{@trans('font.support.index.name18')}}</strong>
                 </button>
             </h2>
             <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
                 <div class="accordion-body">
-                    <p><strong>Step 1:</strong><br>Visit the website and select the product you want to buy to purchase</p>
-                    <p><strong>Step 2:</strong><br>Click on the product you want to buy, select the size and click BUY NOW, the product has been added to the cart.</p>
+                    <p><strong>Step 1:</strong><br>{{@trans('font.support.index.name19')}}</p>
+                    <p><strong>Step 2:</strong><br>{{@trans('font.support.index.name20')}}</p>
                 </div>
             </div>
         </div>
     </div>
     <div id="main3" class="text-center" style="margin-bottom: 60px;">
         <div id="line"></div>
-        <p id="title">LATEST VIEW</p>
+        <p id="title">{{@trans('font.support.index.name21')}}</p>
         <div id="item">
             <a id="item_link" href="">
                 <div id="item_col">
