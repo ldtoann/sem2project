@@ -1,36 +1,72 @@
 @extends('admin.layout')
+@section('title', 'edit category')
 @section('content')
-<div class="row">
-    <div class="container">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit an Category!</h1>
-                            </div>
-                            <form style="text-align: center;" class="user" action="{{ route('admin.categories.update', $category->id) }}" method="POST">
-                                {{ csrf_field() }}
-                                {{ method_field('PUT') }}
-                                <div class="form-group row">
-                                    <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input style="width: 70%;" type="text" name="name" class="form-control form-control-user" value="{{ $category->name }}" id="" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <textarea name="desc" id="" class="form-control" cols="8" rows="7" placeholder="Description">{{ $category->desc }}</textarea>
-                                </div>
-                                <button style="width: 20%;text-align: center;" type="submit" class="btn btn-primary btn-user btn-block">
-                                    Submit
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">
+                    EDIT CATEGORY
+                </h3>
+                <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                <div class="kt-subheader__group" id="kt_subheader_search">
+                    <span class="kt-subheader__desc" id="kt_subheader_total">
+                        {{ $category->name }}
+                    </span>
                 </div>
             </div>
+            <div class="kt-subheader__toolbar">
+            </div>
         </div>
+    </div>
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="kt-portlet kt-portlet--tabs">
+            <div class="kt-portlet__body">
+                <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="kt_user_edit_tab_1" role="tabpanel">
+                            <div class="kt-form kt-form--label-right">
+                                <div class="kt-form__body">
+                                    <div class="kt-section kt-section--first">
+                                        <div class="kt-section__body">
+                                            <div class="row">
+                                                <label class="col-xl-3"></label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <h3 class="kt-section__title kt-section__title-sm">Customer Info:</h3>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="name" value="{{ $category->name }}" id="" placeholder="Name">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Desc</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="desc" value="{{ $category->desc }}" placeholder="desc" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <button type="submit" class="btn btn-label-danger btn-lg btn-upper">UPDATE</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

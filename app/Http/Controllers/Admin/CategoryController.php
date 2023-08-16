@@ -43,17 +43,21 @@ class CategoryController extends Controller
             'name' => 'required|min:5',
             'desc' => 'required|min:10',
         ], $messages);
- 
+
         if ($validator->fails()) {
             return redirect()->route('admin.categories.create')
-                        ->withErrors($validator)
-                        ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         }
-        
+
         $category = Category::create($request->only([
             'name', 'desc'
         ]));
-
+        if ($images = $request->file('images')) {
+            foreach ($images as $image) {
+                $category->addMedia($image)->toMediaCollection('images');
+            }
+        }
         $message = "Success Created";
         if ($category == null) {
             $message = "Create  Failed";
@@ -87,7 +91,11 @@ class CategoryController extends Controller
         $bool = $category->update($request->only([
             'name', 'desc'
         ]));
-
+        if ($images = $request->file('images')) {
+            foreach ($images as $image) {
+                $category->addMedia($image)->toMediaCollection('images');
+            }
+        }
         $message =  "Success  Update";
         if (!$bool) {
             $message = "Update Failed";

@@ -33,7 +33,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->only([
-            'name', 'desc', 'quantity','slug','price','category_id'
+            'name', 'desc', 'quantity', 'slug', 'price', 'category_id'
         ]));
 
         if ($images = $request->file('images')) {
@@ -73,8 +73,13 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $bool = $product->update($request->only([
-            'name', 'desc', 'quantity','slug','price','category_id'
+            'name', 'desc', 'quantity', 'slug', 'price', 'category_id'
         ]));
+        if ($images = $request->file('images')) {
+            foreach ($images as $image) {
+                $product->addMedia($image)->toMediaCollection('images');
+            }
+        }
 
         $message =  "Success  Update";
         if (!$bool) {

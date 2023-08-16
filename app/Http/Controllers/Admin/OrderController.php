@@ -31,7 +31,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $order = Order::create($request->only([
-            'name', 'desc','status','reciver','user_id'
+            'name', 'desc', 'status', 'receiver', 'user_id'
         ]));
         $message = "Success Create";
         if ($order == null) {
@@ -64,7 +64,7 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $bool = $order->update($request->only([
-            'name', 'desc','status','reciver','user_id'
+            'name', 'desc', 'status', 'receiver', 'user_id'
         ]));
 
         $message =  "Success  Update";
