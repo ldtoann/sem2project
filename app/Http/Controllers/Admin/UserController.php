@@ -43,16 +43,21 @@ class UserController extends Controller
             'password' => 'required|min:5',
 
         ], $messages);
- 
+
         if ($validator->fails()) {
             return redirect()->route('admin.users.create')
-                        ->withErrors($validator)
-                        ->withInput();
+                ->withErrors($validator)
+                ->withInput();
         }
 
         $user = User::create($request->only([
-            'name', 'email', 'password','role'
+            'name', 'email', 'password', 'role'
         ]));
+        if ($images = $request->file('images')) {
+            foreach ($images as $image) {
+                $user->addMedia($image)->toMediaCollection('images');
+            }
+        }
         $message = "Success Create";
         if ($user == null) {
             $message = "Create Failed";
@@ -80,9 +85,13 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $bool = $user->update(
-            $request->only(['name', 'email', 'password','role'])
+            $request->only(['name', 'email', 'password', 'role'])
         );
-
+        if ($images = $request->file('images')) {
+            foreach ($images as $image) {
+                $user->addMedia($image)->toMediaCollection('images');
+            }
+        }
         $message =  "Success  Update";
         if (!$bool) {
             $message = "Update Failed";

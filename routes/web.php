@@ -102,5 +102,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'],
     Route::resource('products', \App\Http\Controllers\Admin\ProductController::class);
     Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('orders', \App\Http\Controllers\Admin\OrderController::class);
-    
+    Route::resource('orderitems', \App\Http\Controllers\Admin\OrderItemController::class);
 });

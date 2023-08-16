@@ -1,53 +1,92 @@
 @extends('admin.layout')
+@section('title', 'edit order')
 @section('content')
-<div class="row">
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Edit an Order!</h1>
-                            </div>
-                            <form class="user" action="{{ route('admin.orders.update', $order->id) }}" method="POST">
-                                {{ csrf_field() }}
-                                {{ method_field('PUT') }}
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input name="name" type="name" value="{{$order->name}}" class="form-control form-control-user" id="exampleFirstName" placeholder="Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input style="width: 50%;" name="desc" value="{{$order->desc}}" type="desc" class="form-control form-control-user" id="exampleInputEmail" placeholder="Desc">
-                                </div>
-                                <div class="form-group">
-                                    <select name="status" style="width: 50%;height:50px;border-radius: 10rem;">
-                                        <option @if($order->status == 'pending') selected @endif value="pending">Pending</option>
-                                        <option @if($order->status == 'finished') selected @endif value="finished">Finished</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input style="width: 50%;" name="receiver" value="{{$order->receiver}}" type="receiver" class="form-control form-control-user" id="exampleInputRole" placeholder="receiver">
-                                </div>
-                                <div class="form-group">
-                                    <input style="width: 50%;" disabled name="user_id" value="{{$order->user->name}}" type="price" class="form-control form-control-user" id="exampleInputRole" placeholder="user_id">
-                                </div>
-                                <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
-                                    Submit
-                                </button>
-                                <button style="width: 20%;" class="btn btn-primary btn-user btn-block">
-                                    Canel
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+<div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">
+                    EDIT ORDER
+                </h3>
+                <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                <div class="kt-subheader__group" id="kt_subheader_search">
+                    <span class="kt-subheader__desc" id="kt_subheader_total">
+                        {{ $order->name }}
+                    </span>
                 </div>
             </div>
+            <div class="kt-subheader__toolbar">
+            </div>
         </div>
-
+    </div>
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+        <div class="kt-portlet kt-portlet--tabs">
+            <div class="kt-portlet__body">
+                <form action="{{ route('admin.orders.update', $order->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('PUT') }}
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="kt_user_edit_tab_1" role="tabpanel">
+                            <div class="kt-form kt-form--label-right">
+                                <div class="kt-form__body">
+                                    <div class="kt-section kt-section--first">
+                                        <div class="kt-section__body">
+                                            <div class="row">
+                                                <label class="col-xl-3"></label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <h3 class="kt-section__title kt-section__title-sm">Customer Info:</h3>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="name" value="{{ $order->name }}" id="" placeholder="Name" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">User_id</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="user_id" value="{{$order->user_id}}" id="" placeholder="Name" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Desc</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="desc" value="{{ $order->desc }}" placeholder="desc" aria-describedby="basic-addon1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Receiver</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="receiver" value="{{ $order->receiver }}" id="" placeholder="receiver ">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Status</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <select name="status" class="form-control">
+                                                        <option @if($order->status == 'pending') selected @endif value="pending">Pending</option>
+                                                        <option @if($order->status == 'finished') selected @endif value="finished">Finished</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label"></label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <button type="submit" class="btn btn-label-danger btn-lg btn-upper">UPDATE</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
