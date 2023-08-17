@@ -42,7 +42,10 @@
     <link href="{{ url('assets/css/demo1/skins/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('assets/css/demo1/skins/brand/dark.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ url('assets/css/demo1/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="shortcu('t icon" href="{{ url('assets/media/logos/favicon.ico') }}" />
+    <!-- <link rel="shortcu('t icon" href="{{ url('assets/media/logos/favicon.ico') }}" /> -->
+    <link rel="shortcut icon" id="logotagg" href="{{ url('image/logo_page.png') }}" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
@@ -90,24 +93,21 @@
                 <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper" style="background-color: black;">
                     <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500" style="background-color: black;">
                         <ul class="kt-menu__nav " style="background-color: black;">
-                            <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{ route('admin.dashboard') }}" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon id="Bound" points="0 0 24 0 24 24 0 24" />
-                                                <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" id="Shape" fill="#000000" fill-rule="nonzero" />
-                                                <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" id="Path" fill="#000000" opacity="0.3" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Dashboard</span></a></li>
+                            <li class="kt-menu__item  kt-menu__item--active" aria-haspopup="true"><a href="{{ route('admin.dashboard') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa-solid fa-house-circle-check" style="color: white;"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Dashboard</span></a></li>
                             <li class="kt-menu__section ">
                                 <h4 class="kt-menu__section-text">DATABASE</h4>
                                 <i class="kt-menu__section-icon flaticon-more-v2"></i>
                             </li>
-                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24" />
-                                                <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
-                                                <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" id="Combined-Shape" fill="#000000" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">USER</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa-solid fa-users" style="color:white"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">USER</span>
+                                    <i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">USER</span></span></li>
@@ -116,13 +116,11 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24" />
-                                                <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
-                                                <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" id="Combined-Shape" fill="#000000" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">CATEGORY</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa-solid fa-list-check" style="color:white"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">CATEGORY</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">CATEGORY</span></span></li>
@@ -131,13 +129,11 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24" />
-                                                <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
-                                                <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" id="Combined-Shape" fill="#000000" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">PRODUCT</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa-solid fa-shoe-prints" style="color:white"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">PRODUCT</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">PRODUCT</span></span></li>
@@ -146,13 +142,12 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24" />
-                                                <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
-                                                <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" id="Combined-Shape" fill="#000000" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">ORDER</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa-solid fa-cart-flatbed" style="color:white"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">ORDER</span>
+                                    <i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">ORDER</span></span></li>
@@ -160,13 +155,11 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect id="bound" x="0" y="0" width="24" height="24" />
-                                                <path d="M2.56066017,10.6819805 L4.68198052,8.56066017 C5.26776695,7.97487373 6.21751442,7.97487373 6.80330086,8.56066017 L8.9246212,10.6819805 C9.51040764,11.267767 9.51040764,12.2175144 8.9246212,12.8033009 L6.80330086,14.9246212 C6.21751442,15.5104076 5.26776695,15.5104076 4.68198052,14.9246212 L2.56066017,12.8033009 C1.97487373,12.2175144 1.97487373,11.267767 2.56066017,10.6819805 Z M14.5606602,10.6819805 L16.6819805,8.56066017 C17.267767,7.97487373 18.2175144,7.97487373 18.8033009,8.56066017 L20.9246212,10.6819805 C21.5104076,11.267767 21.5104076,12.2175144 20.9246212,12.8033009 L18.8033009,14.9246212 C18.2175144,15.5104076 17.267767,15.5104076 16.6819805,14.9246212 L14.5606602,12.8033009 C13.9748737,12.2175144 13.9748737,11.267767 14.5606602,10.6819805 Z" id="Combined-Shape" fill="#000000" opacity="0.3" />
-                                                <path d="M8.56066017,16.6819805 L10.6819805,14.5606602 C11.267767,13.9748737 12.2175144,13.9748737 12.8033009,14.5606602 L14.9246212,16.6819805 C15.5104076,17.267767 15.5104076,18.2175144 14.9246212,18.8033009 L12.8033009,20.9246212 C12.2175144,21.5104076 11.267767,21.5104076 10.6819805,20.9246212 L8.56066017,18.8033009 C7.97487373,18.2175144 7.97487373,17.267767 8.56066017,16.6819805 Z M8.56066017,4.68198052 L10.6819805,2.56066017 C11.267767,1.97487373 12.2175144,1.97487373 12.8033009,2.56066017 L14.9246212,4.68198052 C15.5104076,5.26776695 15.5104076,6.21751442 14.9246212,6.80330086 L12.8033009,8.9246212 C12.2175144,9.51040764 11.267767,9.51040764 10.6819805,8.9246212 L8.56066017,6.80330086 C7.97487373,6.21751442 7.97487373,5.26776695 8.56066017,4.68198052 Z" id="Combined-Shape" fill="#000000" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">ORDER ITEM</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                            <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa-solid fa-cart-arrow-down" style="color:white"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">ORDER ITEM</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">ORDER ITEM</span></span></li>
@@ -178,23 +171,41 @@
                 </div>
             </div>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+                <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="background-image: linear-gradient(to right, black, rgb(145, 7, 7),rgb(145, 7, 7));">
                     <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
                     <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
                     </div>
                     <div class="kt-header__topbar">
+                        <div class="kt-header__topbar-item kt-header__topbar-item--langs">
+                            <div class="kt-header__topbar-wrapper" data-toggle="dropdown">
+                                <span class="kt-header__topbar-icon">
+                                    <img class="" src=" {{ url('assets/media/flags/earch3.png') }}" width="30px" height="30px" style="border: 1px solid white; object-fit: cover;" />
+                                </span>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu dropdown-menu-top-unround" style="background-color: black; color: white;margin-top: -12px;">
+                                <ul class="kt-nav kt-margin-5">
+                                    <li class="kt-nav__item kt-nav__item--active" style="padding: 5px; border-radius: 10px;">
+                                        <a href="#" class="kt-nav__link" style="background-color: rgb(145, 7, 7); color: white; border-radius: 10px;">
+                                            <span class="kt-nav__link-icon"><img src="{{ url('assets/media/flags/Flag_of_Great_Britain_(English_version).png') }}" alt="" width="35px" height="25px" style="border: 1px solid white;" /></span>
+                                            <span class="kt-nav__link-text" style="color: white; font-weight: 900;">English</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item kt-nav__item--active" style="padding: 5px; border-radius: 10px;">
+                                        <a href=" #" class="kt-nav__link" style="background-color: rgb(145, 7, 7); color: white;border-radius: 10px;">
+                                            <span class="kt-nav__link-icon"><img src="{{ url('assets/media/flags/Flag_of_Vietnam.svg.png') }}" alt="" width="35px" height="25px" style="border: 1px solid white;" /></span>
+                                            <span class="kt-nav__link-text" style="color: white; font-weight: 900;">Vietnamese</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div class="kt-header__topbar-item kt-header__topbar-item--search dropdown" id="kt_quick_search_toggle">
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
                                 <span class="kt-header__topbar-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect id="bound" x="0" y="0" width="24" height="24" />
-                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" id="Path-2" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" id="Path" fill="#000000" fill-rule="nonzero" />
-                                        </g>
-                                    </svg> </span>
+                                    <i class="kt-nav__link-icon flaticon2-search-1" style="color: white; font-weight: 900;"></i>
+                                </span>
                             </div>
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-lg">
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu dropdown-menu-lg" style="margin-top: -12px;">
                                 <div class="kt-quick-search kt-quick-search--dropdown kt-quick-search--result-compact" id="kt_quick_search_dropdown">
                                     <form method="get" class="kt-quick-search__form">
                                         <div class="input-group">
@@ -209,138 +220,55 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="kt-header__topbar-item kt-header__topbar-item--langs">
-                            <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
-                                <span class="kt-header__topbar-icon">
-                                    <img class="" src=" {{ url('assets/media/flags/020-flag.svg') }}" alt="" />
-                                </span>
-                            </div>
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
-                                <ul class="kt-nav kt-margin-t-10 kt-margin-b-10">
-                                    <li class="kt-nav__item kt-nav__item--active">
-                                        <a href="#" class="kt-nav__link">
-                                            <span class="kt-nav__link-icon"><img src="./assets/media/flags/020-flag.svg" alt="" /></span>
-                                            <span class="kt-nav__link-text">English</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <span class="kt-nav__link-icon"><img src="./assets/media/flags/016-spain.svg" alt="" /></span>
-                                            <span class="kt-nav__link-text">Spanish</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <span class="kt-nav__link-icon"><img src="./assets/media/flags/017-germany.svg" alt="" /></span>
-                                            <span class="kt-nav__link-text">German</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
                         <div class="kt-header__topbar-item kt-header__topbar-item--user">
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                                 <div class="kt-header__topbar-user">
-                                    <span class="kt-header__topbar-username kt-hidden-mobile">
+                                    <span class="kt-header__topbar-username kt-hidden-mobile" style="color: white;font-weight: 900;font-size: 15px;">
                                         @if (auth()->check())
-                                        &nbsp;&nbsp;{{ Auth::user()->name }}&nbsp;&nbsp;
+                                        HI. &nbsp;&nbsp;{{ Auth::user()->name }}&nbsp;&nbsp;
                                         @endif
                                     </span>
                                     @php
-
-                                    $loggedInUserId = Auth::id(); // Lấy ID của người dùng đã đăng nhập
+                                    $loggedInUserId = Auth::id();
                                     $thumbnail = App\Models\User::find($loggedInUserId)->getMedia('images')->first();
                                     @endphp
-
                                     @if($thumbnail)
-                                    <img class="kt-widget__img kt-hidden-" src="{{ $thumbnail->getUrl() }}" alt="image" width="35px" height="90px" style="object-fit: cover;">
+                                    <img class="kt-widget__img kt-hidden-" src="{{ $thumbnail->getUrl() }}" alt="image" width="35px" height="90px" style="object-fit: cover;border: 1.5px solid white;">
                                     @endif
                                 </div>
                             </div>
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
-                                <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(./assets/media/misc/bg-1.jpg)">
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-top-unround dropdown-menu-xl" style="margin-top: -10px; padding: 5px;">
+                                <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: linear-gradient(to right, orange, rgb(145, 7, 7), black);">
                                     <div class="kt-user-card__avatar">
-                                        <img class="kt-hidden" alt="Pic" src="./assets/media/users/300_25.jpg" />
-                                        <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">S</span>
+                                        @php
+                                        $loggedInUserId = Auth::id();
+                                        $thumbnail = App\Models\User::find($loggedInUserId)->getMedia('images')->first();
+                                        @endphp
+                                        @if($thumbnail)
+                                        <img class="kt-widget__img" src="{{ $thumbnail->getUrl() }}" alt="Pig" width="90px" height="90px" style="object-fit: cover;border: 2px solid white;">
+                                        @endif
                                     </div>
-                                    <div class="kt-user-card__name">
-                                        Sean Stone
+                                    <div class="kt-user-card__name" style="color: white; font-weight: 900; font-size: 17px;">
+                                        @if (auth()->check())
+                                        &nbsp;&nbsp;{{ Auth::user()->name }}&nbsp;&nbsp;
+                                        @endif
                                     </div>
                                     <div class="kt-user-card__badge">
-                                        <span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
                                     </div>
                                 </div>
-                                <div class="kt-notification">
-                                    <a href="demo1/custom/apps/user/profile-1/personal-information.html" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-calendar-3 kt-font-success"></i>
-                                        </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                My Profile
-                                            </div>
-                                            <div class="kt-notification__item-time">
-                                                Account settings and more
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="demo1/custom/apps/user/profile-3.html" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-mail kt-font-warning"></i>
-                                        </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                My Messages
-                                            </div>
-                                            <div class="kt-notification__item-time">
-                                                Inbox and tasks
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="demo1/custom/apps/user/profile-2.html" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-rocket-1 kt-font-danger"></i>
-                                        </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                My Activities
-                                            </div>
-                                            <div class="kt-notification__item-time">
-                                                Logs and notifications
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="demo1/custom/apps/user/profile-3.html" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-hourglass kt-font-brand"></i>
-                                        </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                My Tasks
-                                            </div>
-                                            <div class="kt-notification__item-time">
-                                                latest tasks and projects
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="demo1/custom/apps/user/profile-1/overview.html" class="kt-notification__item">
-                                        <div class="kt-notification__item-icon">
-                                            <i class="flaticon2-cardiogram kt-font-warning"></i>
-                                        </div>
-                                        <div class="kt-notification__item-details">
-                                            <div class="kt-notification__item-title kt-font-bold">
-                                                Billing
-                                            </div>
-                                            <div class="kt-notification__item-time">
-                                                billing & statements <span class="kt-badge kt-badge--danger kt-badge--inline kt-badge--pill kt-badge--rounded">2 pending</span>
-                                            </div>
-                                        </div>
-                                    </a>
+                                <div class="kt-notification" style="background-color: black;">
                                     <div class="kt-notification__custom kt-space-between">
-                                        <a href="demo1/custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+                                        <a href="{{ route('home.index') }}" target="_blank" class="btn btn-sm btn-bold" style="color: white; font-size: 15px; background-color: rgb(145, 7, 7);">HOME PAGE</a>
+                                        <!-- //target="_blank" link nhung chuyen sang tag moi -->
 
-                                        <a href="demo1/custom/user/login-v2.html" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            <!-- <a id="logoutnut" :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                                <i class="fa-solid fa-right-from-bracket"></i>
+                                            </a>5 -->
+                                            <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="btn btn-label-brand btn-sm btn-bold" style="color: white; font-size: 15px; background-color: rgb(145, 7, 7);">LOGOUT</a>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>

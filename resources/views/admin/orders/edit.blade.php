@@ -75,7 +75,7 @@
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label"></label>
                                                 <div class="col-lg-9 col-xl-6">
-                                                    <button type="submit" class="btn btn-label-danger btn-lg btn-upper">UPDATE</button>
+                                                    <button type="submit" class="btn btn-lg btn-upper" style="background-color: rgb(145,7,7); color:white; margin-left: 453px; padding: 10px 30px;">UPDATE</button>
                                                 </div>
                                             </div>
                                         </div>
