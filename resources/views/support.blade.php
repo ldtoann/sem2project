@@ -71,27 +71,5 @@
             </div>
         </div>
     </div>
-    <div id="main3" class="text-center" style="margin-bottom: 60px;">
-        <div id="line"></div>
-        <p id="title">{{@trans('font.support.index.name21')}}</p>
-        <div id="item">
-            <a id="item_link" href="">
-                <div id="item_col">
-                    <img src="{{ url('image/itemproduct1.jpg') }}">
-                    <img src="{{ url('image/itemproduct2.jpg') }}" alt="" id="img-change">
-                    <h6>le duy toan</h6>
-                    <p id="saleprice">ádasdasd</p>
-                    <p id="price">999.999.999đ</p>
-                    <div id="rate">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
 </main>
 @endsection

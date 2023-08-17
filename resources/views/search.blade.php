@@ -14,10 +14,18 @@
     <div id="main3" class="text-center">
         <div id="item">
             @foreach ($productList as $product)
-            <a id="item_link" href="{{ route('product.show', $product->id) }}">
+            <a id="item_link" href="{{ route('product.show', $product->slug) }}">
                 <div id="item_col">
-                    <img src="{{ url('image/nike/itemnike1.1.jpg') }}">
-                    <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change">
+                    <!-- <img src="{{ url('image/nike/itemnike1.1.jpg') }}"> -->
+                    @php $thumbnail = $product->getMedia('images')->first() @endphp
+                    @if($thumbnail)
+                    <img src="{{ $thumbnail->getUrl() }}" alt="image">
+                    @endif
+                    <!-- <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change"> -->
+                    @php $thumbnail = $product->getMedia('images')->last() @endphp
+                    @if($thumbnail)
+                    <img id="img-change" src="{{ $thumbnail->getUrl() }}" alt="image">
+                    @endif
                     <h6>{{ $product->name }}</h6>
                     <p id="saleprice" style="color: red; font-weight: 900;">{{ format_money($product->price) }}</p>
                     <p id="price">999.999.999 VND</p>
