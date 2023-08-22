@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title> @yield('title')</title>
+    <title>{{ @trans('font.admin.dashboard') }}</title>
     <meta charset="utf-8" />
     <meta name="description" content="Updates and statistics">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,7 +47,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
@@ -97,22 +96,22 @@
                                     <span class="kt-menu__link-icon">
                                         <i class="fa-solid fa-house-circle-check" style="color: white;"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">Dashboard</span></a></li>
+                                    <span class="kt-menu__link-text">{{ @trans('font.admin.dashboard') }}</span></a></li>
                             <li class="kt-menu__section ">
-                                <h4 class="kt-menu__section-text">DATABASE</h4>
+                                <h4 class="kt-menu__section-text">{{@trans('font.admin.database')}}</h4>
                                 <i class="kt-menu__section-icon flaticon-more-v2"></i>
                             </li>
                             <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover"><a href="javascript:;" class="kt-menu__link kt-menu__toggle">
                                     <span class="kt-menu__link-icon">
                                         <i class="fa-solid fa-users" style="color:white"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">USER</span>
+                                    <span class="kt-menu__link-text">{{@trans('font.admin.user')}}</span>
                                     <i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
-                                        <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">USER</span></span></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.users.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">ALL INDEX</span></a></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.users.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">CREATE</span></a></li>
+                                        <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text"></span></span></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.users.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.all')}}</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.users.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.create')}}</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -120,12 +119,12 @@
                                     <span class="kt-menu__link-icon">
                                         <i class="fa-solid fa-list-check" style="color:white"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">CATEGORY</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                    <span class="kt-menu__link-text">{{@trans('font.admin.category')}}</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">CATEGORY</span></span></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.categories.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">ALL INDEX</span></a></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.categories.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">CREATE</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.categories.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.all')}}</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.categories.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.create')}}</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -133,12 +132,12 @@
                                     <span class="kt-menu__link-icon">
                                         <i class="fa-solid fa-shoe-prints" style="color:white"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">PRODUCT</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                    <span class="kt-menu__link-text">{{@trans('font.admin.product')}}</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">PRODUCT</span></span></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.products.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">ALL INDEX</span></a></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.products.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">CREATE</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.products.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.all')}}</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.products.create') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.create')}}</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -146,12 +145,12 @@
                                     <span class="kt-menu__link-icon">
                                         <i class="fa-solid fa-cart-flatbed" style="color:white"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">ORDER</span>
+                                    <span class="kt-menu__link-text">{{@trans('font.admin.order')}}</span>
                                     <i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">ORDER</span></span></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.orders.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">ALL INDEX</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.orders.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.all')}}</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -159,11 +158,11 @@
                                     <span class="kt-menu__link-icon">
                                         <i class="fa-solid fa-cart-arrow-down" style="color:white"></i>
                                     </span>
-                                    <span class="kt-menu__link-text">ORDER ITEM</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                                    <span class="kt-menu__link-text">{{@trans('font.admin.orderitem')}}</span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
                                 <div class="kt-menu__submenu "><span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">ORDER ITEM</span></span></li>
-                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.orderitems.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">ALL INDEX</span></a></li>
+                                        <li class="kt-menu__item " aria-haspopup="true"><a href="{{ route('admin.orderitems.index') }}" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{@trans('font.admin.all')}}</span></a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -185,13 +184,13 @@
                             <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu dropdown-menu-top-unround" style="background-color: black; color: white;margin-top: -12px;">
                                 <ul class="kt-nav kt-margin-5">
                                     <li class="kt-nav__item kt-nav__item--active" style="padding: 5px; border-radius: 10px;">
-                                        <a href="#" class="kt-nav__link" style="background-color: rgb(145, 7, 7); color: white; border-radius: 10px;">
+                                        <a href="{{ route('language', 'en') }}" class="kt-nav__link" style="background-color: rgb(145, 7, 7); color: white; border-radius: 10px;">
                                             <span class="kt-nav__link-icon"><img src="{{ url('assets/media/flags/Flag_of_Great_Britain_(English_version).png') }}" alt="" width="35px" height="25px" style="border: 1px solid white;" /></span>
                                             <span class="kt-nav__link-text" style="color: white; font-weight: 900;">English</span>
                                         </a>
                                     </li>
                                     <li class="kt-nav__item kt-nav__item--active" style="padding: 5px; border-radius: 10px;">
-                                        <a href=" #" class="kt-nav__link" style="background-color: rgb(145, 7, 7); color: white;border-radius: 10px;">
+                                        <a href="{{ route('language', 'vi') }}" class="kt-nav__link" style="background-color: rgb(145, 7, 7); color: white;border-radius: 10px;">
                                             <span class="kt-nav__link-icon"><img src="{{ url('assets/media/flags/Flag_of_Vietnam.svg.png') }}" alt="" width="35px" height="25px" style="border: 1px solid white;" /></span>
                                             <span class="kt-nav__link-text" style="color: white; font-weight: 900;">Vietnamese</span>
                                         </a>

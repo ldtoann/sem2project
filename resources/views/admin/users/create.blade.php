@@ -53,27 +53,36 @@
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
                                                 <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="name" id="" placeholder="Name">
                                                     @if($errors->has('name'))
                                                     @foreach($errors->get('name') as $message)
-                                                    <li style="color: red;">Please enter customer name!</li> <br>
+                                                    <li style="color: red;">Please enter customer name at least 8 letters!</li>
                                                     @endforeach
                                                     @endif
-                                                    <input class="form-control" type="text" name="name" id="" placeholder="Name">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Email Address</label>
                                                 <div class="col-lg-9 col-xl-6">
                                                     <div class="input-group">
-                                                        <div class="input-group-prepend"><span class="input-group-text"><i class="la la-at"></i></span></div>
                                                         <input type="text" class="form-control" name="email" placeholder="Email" aria-describedby="basic-addon1">
                                                     </div>
+                                                    @if($errors->has('email'))
+                                                    @foreach($errors->get('email') as $message)
+                                                    <li style="color: red;">Please enter customer Email!</li>
+                                                    @endforeach
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">PassWord</label>
                                                 <div class="col-lg-9 col-xl-6">
-                                                    <input class="form-control" type="text" name="password" placeholder="Password">
+                                                    <input class="form-control" type="password" name="password" placeholder="Password">
+                                                    @if($errors->has('password'))
+                                                    @foreach($errors->get('password') as $message)
+                                                    <li style="color: red;">Please enter customer Password</li>
+                                                    @endforeach
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">

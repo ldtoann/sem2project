@@ -50,10 +50,16 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Name Product</label>
                                                 <div class="col-lg-9 col-xl-6">
                                                     <input class="form-control" type="text" name="name" id="" placeholder="Name">
+                                                    @if($errors->has('name'))
+                                                    @foreach($errors->get('name') as $message)
+                                                    <li style="color: red;">Please enter customer name with at least 8 letters!</li>
+                                                    @endforeach
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -62,18 +68,33 @@
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="desc" placeholder="desc" aria-describedby="basic-addon1">
                                                     </div>
+                                                    @if($errors->has('desc'))
+                                                        @foreach($errors->get('desc') as $message)
+                                                        <li style="color: red;">Please enter customer Desc!</li>
+                                                        @endforeach
+                                                        @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Price</label>
                                                 <div class="col-lg-9 col-xl-6">
                                                     <input class="form-control" type="text" name="price" placeholder="price">
+                                                    @if($errors->has('price'))
+                                                        @foreach($errors->get('price') as $message)
+                                                        <li style="color: red;">Please enter the correct product Price!</li>
+                                                        @endforeach
+                                                        @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Quantity</label>
                                                 <div class="col-lg-9 col-xl-6">
                                                     <input class="form-control" type="text" name="quantity" placeholder="quantity">
+                                                    @if($errors->has('quantity'))
+                                                        @foreach($errors->get('quantity') as $message)
+                                                        <li style="color: red;">Please enter customer Quantity!</li>
+                                                        @endforeach
+                                                        @endif
                                                 </div>
                                             </div>
                                             <div class="form-group row">

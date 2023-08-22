@@ -20,7 +20,7 @@ class CheckAdmin
             if ($user->role == "admin") {
                 return $next($request);
             } else {
-                return redirect()->route('home.index');
+                return redirect()->back();
             }
         } else {
             return redirect()->route('login');
