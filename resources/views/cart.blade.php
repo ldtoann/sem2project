@@ -1,27 +1,27 @@
 @extends('master')
 
-@section('title', 'Cart')
+@section('title', @trans('font.CART.index.title'))
 
 @section('content')
 <main>
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">HOME</a></li>
-            <li id="linenext" class="breadcrumb-item active" aria-current="page">CARTs</li>
+            <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">{{@trans('font.home.index.title')}}</a></li>
+            <li id="linenext" class="breadcrumb-item active" aria-current="page">{{@trans('font.pay.index.title')}}</li>
         </ol>
     </nav>
-    <p id="titlecart"><i class="fa-solid fa-cart-shopping"></i> CART LIST</p>
+    <p id="titlecart"><i class="fa-solid fa-cart-shopping"></i> {{ @trans('font.category14.index.title' )}}</p>
     <div class="row">
         <div class="col-8">
             <!-- <form action="" method="post"> -->
             <div id="maincart">
                 <div id="rowinfonamecart" class="row">
-                    <div id="infonamecart" class="col-2">PRODUCT</div>
+                    <div id="infonamecart" class="col-2">{{ @trans('font.home.index.product') }}</div>
                     <div id="infonamecart" class="col-4"></div>
-                    <div id="infonamecart" class="col text-center">PRICE</div>
-                    <div id="infonamecart" class="col text-center">QUANTITY</div>
-                    <div id="infonamecart" class="col text-center">TOTAL</div>
-                    <div id="infonamecart" class="col-1 text-end">DELETE</div>
+                    <div id="infonamecart" class="col text-center">{{ @trans('font.category2.index.title' )}}</div>
+                    <div id="infonamecart" class="col text-center">{{ @trans('font.category8.index.title' )}}</div>
+                    <div id="infonamecart" class="col text-center">{{ @trans('font.category11.index.title' )}}</div>
+                    <div id="infonamecart" class="col-1 text-end">{{ @trans('font.category12.index.title' )}}</div>
                 </div>
                 <hr>
                 @foreach ($cart as $order)
@@ -53,10 +53,10 @@
                 @endforeach
                 <div id="totalcarts" class="row">
                     <div id="total" class="col">
-                        <p> -- <strong>TOTAL CART</strong> : {{ format_money(cart_total($cart, 10)) }}</p>
+                        <p> <strong>{{ @trans('font.category13.index.title' )}}</strong> : {{ format_money(cart_total($cart, 10)) }}</p>
                     </div>
                     <div id="totalpay" class="col text-end">
-                        <a href="{{ route('checkout')}}">Pay</a>
+                        <a href="{{ route('checkout')}}">{{ @trans('font.category15.index.title' )}}</a>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 @extends('master')
 
-@section('title', 'PRODUCT ITEM')
+@section('title', @trans('font.productitem.index'))
 
 @section('content')
 <main>
     <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">HOME</a></li>
-            <li id="linenext" class="breadcrumb-item"><a href="">PRODUCTs</a></li>
+            <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">{{@trans('font.home.index.title')}}</a></li>
+            <li id="linenext" class="breadcrumb-item"><a href="">{{@trans('font.header.index.products')}}</a></li>
             <li id="linenext" class="breadcrumb-item"><a href="">{{ $category->name }}</a></li>
             <li id="linenext" class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
         </ol>
@@ -36,7 +36,7 @@
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
                     <span id="nutslide" class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden">{{ @trans('font.category6.index.title' )}}</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
                     <span id="nutslide" class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -59,11 +59,11 @@
                     <i class="fa fa-star"></i>
                 </div>
                 <div id="pricess">
-                    <p id="saleprice"><strong>Price</strong> : <strong style="color:red;">{{ format_money($product->price) }}</strong></p>
+                    <p id="saleprice"><strong>{{ @trans('font.category2.index.title' )}}</strong> : <strong style="color:red;">{{ format_money($product->price) }}</strong></p>
                     <p id="pricesss">999.999.999 VND</p>
                 </div>
                 <div id="size">
-                    <p id="saleprice"><strong>Choose Size </strong> : <strong class="selected-size" style="color: rgb(145, 7, 7);"></strong></p>
+                    <p id="saleprice"><strong>{{ @trans('font.category7.index.title' )}} </strong> : <strong class="selected-size" style="color: rgb(145, 7, 7);"></strong></p>
                     <input type="radio" name="size" value="36" id="size-36">
                     <label for="size-36">36</label>
                     <input type="radio" name="size" value="37" id="size-37">
@@ -84,15 +84,15 @@
                     <label for="size-44">44</label>
                 </div>
                 <div id="quantity">
-                    <p id="saleprice"><strong>Quantity</strong> :</p>
+                    <p id="saleprice"><strong>{{ @trans('font.category8.index.title' )}}</strong> :</p>
                     <div class="quantity">
                         <div class="quantity-btn" data-action="decrease" style="border-radius: 10px 0px 0px 10px;">-</div>
                         <input name="quantity" type="number" class="quantity-input" value="1" min="1">
                         <div class="quantity-btn" data-action="increase" style="border-radius: 0px 10px 10px 0px;">+</div>
                     </div>
                 </div>
-                <p id="descc"><strong>Describe</strong> : {{ $product->desc }}</p>
-                <button type="submit" class="btn" id="liveToastBtn">ADD TO CART</button>
+                <p id="descc"><strong>{{ @trans('font.category9.index.title' )}}</strong> : {{ $product->desc }}</p>
+                <button type="submit" class="btn" id="liveToastBtn">{{ @trans('font.category10.index.title' )}}</button>
             </form>
         </div>
     </div>
