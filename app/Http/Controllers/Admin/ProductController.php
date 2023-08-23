@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+// use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -32,8 +34,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'name.required' => trans('validation.category.required'),
+            'name.min' => trans('validation.category.min'),
+            'name.desc' => trans('validation.category.desc')
+        ];
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|min:8',
+            'desc' => 'required|min:10',
+            'quantity' => 'required|min:1',
+            'price' => 'required|min:5',
+        ], $messages);
+
+        if ($validator->fails()) {
+            return redirect()->route('admin.products.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        
         $product = Product::create($request->only([
-            'name', 'desc', 'quantity', 'slug', 'price', 'category_id'
+            'name', 'desc', 'quantity', 'price', 'category_id'
         ]));
 
         if ($images = $request->file('images')) {

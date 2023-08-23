@@ -27,13 +27,13 @@ use Illuminate\Support\Facades\App;
 */
 // Code Language
 Route::get('/greeting/{locale}', function (string $locale) {
-    if (!in_array($locale, ['en', 'es', 'vi'])) {
+    if (!in_array($locale, ['en', 'vi'])) {
         abort(400);
     }
 
     request()->session()->put('language', $locale);
 
-    return redirect()->route('home.index');
+    return redirect()->back();
 })->name('language');
 
 Route::group(['middleware' => ['check.language']], function () {

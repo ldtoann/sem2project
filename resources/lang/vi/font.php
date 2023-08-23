@@ -61,6 +61,24 @@ return [
     'support.index.name19' => ' Truy cập website và chọn sản phẩm muốn mua để mua hàng',
     'support.index.name20' => 'Bấm vào sản phẩm muốn mua, chọn size và bấm MUA NGAY, sản phẩm đã được thêm vào giỏ hàng.',
     'support.index.name21' => ' Xem Mới Nhất',
+    'admin.dashboard' => ' Bảng Điều Khiển',
+    'admin.user' => ' Người Dùng',
+    'admin.database' => ' Cơ Sở Dữ Liệu',
+    'admin.all' => ' Tất Cả',
+    'admin.create' => 'Tạo Mới',
+    'admin.category' => 'Thể Loại',
+    'admin.product' => 'Sản Phẩm',
+    'admin.order' => 'Đặt Hàng',
+    'admin.orderitem' => 'Thứ Tự Đặt Hàng',
+
+
+
+
+
+
+
+
+
 
 
 

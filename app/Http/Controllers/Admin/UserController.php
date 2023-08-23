@@ -40,7 +40,7 @@ class UserController extends Controller
         $validator = Validator($request->all(), [
             'name' => 'required|min:5',
             'email' => 'required|min:10',
-            'password' => 'required|min:5',
+            'password' => 'required|min:8',
 
         ], $messages);
 

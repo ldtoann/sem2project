@@ -59,6 +59,27 @@ return [
     'support.index.name19' => ' Visit the website and select the product you want to buy to purchase',
     'support.index.name20' => ' Click on the product you want to buy, select the size and click BUY NOW, the product has been added to the cart.',
     'support.index.name21' => ' LATEST VIEW',
+    'admin.dashboard' => ' Dashboard',
+    'admin.user' => ' USER',
+    'admin.database' => ' DATABASE',
+    'admin.all' => ' All INDEX',
+    'admin.create' => 'CREATE',
+    'admin.category' => 'CATEGORY',
+    'admin.product' => 'PRODUCT',
+    'admin.order' => 'ORDER',
+    'admin.orderitem' => 'ORDER ITEM',
+
+
+
+
+    
+
+
+
+
+
+
+
 
     
 
