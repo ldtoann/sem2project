@@ -9,6 +9,8 @@ return [
     'category5.index.title' => 'DECREASE',
     'category6.index.title' => 'Previous',
     'category8.index.title' => 'QUANTITY ',
+    'category7.index.title' => 'CHOOSE SIZE ',
+
     'category9.index.title' => 'Describe ',
     'category10.index.title' => 'ADD TO CART ',
     'category11.index.title' => 'TOTAL ',

@@ -24,9 +24,9 @@ return [
     'pay.index.title' => 'GIỎ HÀNG',
     'pay1.index.title' => 'TRI TRẢ',
     'GALLERY.index.title' => 'TRƯNG BÀY',
-    'category.index.title'=> 'Danh Mục Sản Phẩm',
+    'category.index.title' => 'Danh Mục Sản Phẩm',
     'home.index.OURCOMMITMENT' => 'CAM KẾT CỦA CHÚNG TÔI',
-    'home.index.FREESHIP' => 'Miễn Phí Giao Hàng',     
+    'home.index.FREESHIP' => 'Miễn Phí Giao Hàng',
     'home.index.City' => 'TẠI TP.HCM VÀ NGOẠI THÀNH VỚI 2 CẶP TRỞ LÊN.',
     'home.index.SHIPPINGPOLICY' => 'CHÍNH SÁCH VẬN CHUYỂN',
     'home.index.SHIP' => 'HỖ TRỢ GIAO HÀNG THANH TOÁN VÀ CHO KIỂM TRA HÀNG.',
@@ -53,20 +53,20 @@ return [
     'header.index.contact' => 'LIÊN HỆ',
     'header.index.support1' => 'HỖ TRỢ',
     'header.index.smatebook' => 'THƯ VIỆN',
-    'footer.index.find' => 'Tìm Một Cửa Hàng',
-    'footer.index.member' => 'Trở Thành Một Thành Viên',
-    'footer.index.email' => 'Đăng Ký Email',
-    'footer.index.feedback' => 'Gửi Phản Hồi Cho Chúng Tôi',
-    'footer.index.help' => 'Giúp Đỡ',
-    'footer.index.status' => 'Trạng Thái Đặt Hàng',
-    'footer.index.deli' => 'Vận Chuyển',
-    'footer.index.return' => 'Trả Lại',
-    'footer.index.pay' => 'Cách Thức Thanh Toán',
-    'footer.index.contact' => 'Liên Hệ Với Chúng Tôi',
-    'footer.index.gui' => 'Hướng Dẫn',
-    'footer.index.sale' => 'Điều Khoản Bán Hàng',
-    'footer.index.use' => 'Điều Khoản Sử Dụng',
-    'footer.index.nike' => ' Chính sách về quyền riêng tư của Nike',
+    'footer.index.find' => 'TÌM MỘT CỬA HÀNG',
+    'footer.index.member' => 'TRỞ THÀNH MỘT THÀNH VIÊN',
+    'footer.index.email' => 'ĐĂNG  KÝ EMAIL',
+    'footer.index.feedback' => 'GỬI PHẢI HỒI CHO CHÚNG TÔI',
+    'footer.index.help' => 'GÍUP ĐỠ',
+    'footer.index.status' => 'TRẠNG THÁI ĐẶT HÀNG',
+    'footer.index.deli' => 'VẬN CHUYỂN',
+    'footer.index.return' => 'TRẢ  LẠI',
+    'footer.index.pay' => 'CÁCH THỨC THANH TOÁN',
+    'footer.index.contact' => 'LIÊN HỆ VỚI CHÚNG TÔI',
+    'footer.index.gui' => 'HƯỚNG DẪN',
+    'footer.index.sale' => 'ĐIỀU KHOẢN BÁN HÀNG',
+    'footer.index.use' => 'ĐIỀU  KHOẢN SỬ DỤNG',
+    'footer.index.nike' => ' CHÍNH SÁCH CỦA NIKE',
     'support.index.name8' => ' CHÍNH SÁCH ĐỔI TRẢ',
     'support.index.name9' => ' Trong vòng 3 ngày kể từ ngày mua sản phẩm, quý khách được phép đổi size - đổi màu cùng dòng (như Airforce trắng đổi sang dòng Airforce đen khác), không được đổi mẫu khác và chỉ được đổi 1 lần.',
     'support.index.name10' => ' Chỉ nhận đổi sản phẩm với tình trạng còn mới, đầy đủ hộp phụ kiện, túi SHOP và đọc đúng số điện thoại đã mua. Không nhận đổi hàng khi hàng đã qua sử dụng, trầy xước, mòn đế, có mùi bột giặt...',
@@ -79,7 +79,7 @@ return [
     'support.index.name15' => ' HỖ TRỢ 50K MỖI ĐƠN HÀNG NGOẠI THÀNH TP.HCM & FREESHIP MUA TỪ 2 CẶP TRỞ LÊN.',
     'support.index.name16' => ' Giao hàng toàn quốc, thanh toán khi nhận hàng.',
     'support.index.name17' => '  Thời gian tùy theo địa điểm từ 2-5 ngày làm việc.',
-    'support.index.name18' => ' Phương Thức Thanh Toán',
+    'support.index.name18' => ' PHƯƠNG THỨC THANH TOÁN',
     'support.index.name19' => ' Truy cập website và chọn sản phẩm muốn mua để mua hàng',
     'support.index.name20' => 'Bấm vào sản phẩm muốn mua, chọn size và bấm MUA NGAY, sản phẩm đã được thêm vào giỏ hàng.',
     'support.index.name21' => ' Xem Mới Nhất',
@@ -117,7 +117,6 @@ return [
 
 
 
-   
 
 
 
@@ -126,7 +125,6 @@ return [
 
 
 
-    
 
 
 
@@ -135,5 +133,7 @@ return [
 
 
 
-     
+
+
+
 ];
