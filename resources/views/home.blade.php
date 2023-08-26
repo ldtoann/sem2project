@@ -39,12 +39,35 @@
             </div>
         </div>
     </div>
-    <div id="main4" class="text-center">
+    <div id="main4" class="text-center" style="height: 760px;">
         <div id="line"></div>
         <p id="title">{{@trans('font.home.index.NEW')}}</p>
-        <div id="advertisessss" class="text-center">
-            <img src="{{ url('image/quangcao1.jpeg') }}">
-            <img src="{{ url('image/quangcao2.webp') }}">
+        <div id="advertisessss" class="text-center" style="margin: 30px 0px;">
+            <!-- <img src="{{ url('image/quangcao2.webp') }}"> -->
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false" style="height: 700px;margin: 20px 0px 35px 0px;">
+                <div class="carousel-inner" style="height: 700px;">
+                    <div class="carousel-item active" style="height: 700px;border-radius: 20px;">
+                        <img id="poster" src="{{ url('image/posternike4.jpg') }}">
+                    </div>
+                    <div class="carousel-item" style="height: 700px;border-radius: 20px;">
+                        <img id="poster" src="{{ url('image/posternike2.jpg') }}">
+                    </div>
+                    <div class="carousel-item" style="height: 700px;border-radius: 20px;">
+                        <img id="poster" src="{{ url('image/posternike3.jpg') }}">
+                    </div>
+                    <div class="carousel-item" style="height: 700px;border-radius: 20px;">
+                        <img id="poster" src="{{ url('image/posternike1.jpg') }}">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev" style="height: 700px;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next" style="height: 700px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
     <div id="main3" class="text-center">
@@ -54,12 +77,10 @@
             @foreach ($productList as $product)
             <a id="item_link" href="{{ route('product.show', $product->slug) }}">
                 <div id="item_col">
-                    <!-- <img src="{{ url('image/nike/itemnike1.1.jpg') }}"> -->
                     @php $thumbnail = $product->getMedia('images')->first() @endphp
                     @if($thumbnail)
                     <img src="{{ $thumbnail->getUrl() }}" alt="image">
                     @endif
-                    <!-- <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change"> -->
                     @php $thumbnail = $product->getMedia('images')->last() @endphp
                     @if($thumbnail)
                     <img id="img-change" src="{{ $thumbnail->getUrl() }}" alt="image">
@@ -78,11 +99,9 @@
             </a>
             @endforeach
         </div>
-        <a id="xemthem" href="_category.php?category_id=1">{{@trans('font.home.index.MORE')}}</a>
+        <a id="xemthem" href="{{ route('allProducts') }}">{{@trans('font.home.index.MORE')}}</a>
     </div>
     <div id="main5" class="text-center">
-        <!-- <div id="line"></div>
-            <p id="title">THE ESSENTIALS</p> -->
         <div id="essential" class="text-center">
             <img class="shadow-lg" src="{{ url('image/essentials1.webp') }}">
             <img class="shadow-lg" src="{{ url('image/essentials2.webp') }}">

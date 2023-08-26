@@ -10,7 +10,7 @@
                             <a id="title_footer" href="">{{ @trans('font.footer.index.email') }}</a><br>
                             <a id="title_footer" href="">{{ @trans('font.footer.index.feedback') }}</a>
                         </div>
-                        <div id="aboutfooter_between" class="col-3">
+                        <div id="aboutfooter_between" class="col-2">
                             <a id="title_footer" href="">{{ @trans('font.footer.index.help') }}</a><br>
                             <a id="info_footer" href="">{{ @trans('font.footer.index.status') }}</a><br>
                             <a id="info_footer" href="">{{ @trans('font.footer.index.deli') }}</a><br>
@@ -18,9 +18,10 @@
                             <a id="info_footer" href="">{{ @trans('font.footer.index.pay') }}</a><br>
                             <a id="info_footer" href="">{{ @trans('font.footer.index.contact') }}</a>
                         </div>
-                        <div id="aboutfooter_end" class="col-3">
+                        <div id="aboutfooter_end" class="col-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7652.648537092414!2d107.57930777736833!3d16.459110249176753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3141a149e5fbd6b5%3A0x7abcc9ee8c4f5c5f!2zMDYgTMOqIEzhu6NpLCBzdHJlZXQsIFRow6BuaCBwaOG7kSBIdeG6vywgVGjhu6thIFRoacOqbiBIdeG6vyA1MzAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1668766222765!5m2!1svi!2s" width="100%" height="100%" style="border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-                        <div class="col-3"></div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
                 <div id="aboutfooter_col_right" class="col-3">

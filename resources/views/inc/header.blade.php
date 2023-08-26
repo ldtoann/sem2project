@@ -42,6 +42,7 @@
             <div id="col_between" class="col-6">
                 <a id="menu1" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {{@trans('font.header.index.products')}} <i class="fa fa-arrow-down"></i></a>
                 <ul class="dropdown-menu">
+                    <li><a id="menu2" class="dropdown-item" href="{{ route('allProducts') }}">ALL PRODUCT</a></li>
                     @foreach ($categoryList as $category)
                     <li><a id="menu2" class="dropdown-item" href="{{ route('category.show', $category->id)}}">{{ $category->name}}</a></li>
                     @endforeach

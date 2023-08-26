@@ -12,41 +12,42 @@
             <li id="linenext" class="breadcrumb-item active" aria-current="page">{{ $product->name }}</li>
         </ol>
     </nav>
-    <div id="itemdetailproduct" class="container shadow-lg">
-        <div class="row">
-            <div class="col-8">
-                <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <!-- <img class="d-block w-100" id="imageproductdetail" src="{{ url('image/nike/itemnike1.1.jpg') }}"> -->
-                            @php $thumbnail = $product->getMedia('images')->last() @endphp
-                            @if($thumbnail)
-                            <img class="d-block w-100" id="imageproductdetail" src="{{ $thumbnail->getUrl() }}" alt="image">
-                            @endif
-                        </div>
-                        @php
-                        $mediaCollection = $product->getMedia('images');
-                        $mediaCount = $mediaCollection->count();
-                        @endphp
+    <form action="{{ route('cart.store')}}" method="post">
+        @csrf
+        <div id="itemdetailproduct" class="container shadow-lg">
+            <div class="row">
+                <div class="col-8">
+                    <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <!-- <img class="d-block w-100" id="imageproductdetail" src="{{ url('image/nike/itemnike1.1.jpg') }}"> -->
+                                @php $thumbnail = $product->getMedia('images')->last() @endphp
+                                @if($thumbnail)
+                                <img class="d-block w-100" id="imageproductdetail" src="{{ $thumbnail->getUrl() }}" alt="image">
+                                @endif
+                            </div>
+                            @php
+                            $mediaCollection = $product->getMedia('images');
+                            $mediaCount = $mediaCollection->count();
+                            @endphp
 
-                        @for($i = 0; $i < $mediaCount - 1; $i++) @php $image=$mediaCollection[$i]; @endphp <div class="carousel-item">
-                            <img class="d-block w-100" id="imageproductdetail" src="{{ $image->getUrl() }}">
+                            @for($i = 0; $i < $mediaCount - 1; $i++) @php $image=$mediaCollection[$i]; @endphp <div class="carousel-item">
+                                <img class="d-block w-100" id="imageproductdetail" src="{{ $image->getUrl() }}">
+                        </div>
+                        @endfor
                     </div>
-                    @endfor
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                        <span id="nutslide" class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">{{ @trans('font.category6.index.title' )}}</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                        <span id="nutslide" class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-                    <span id="nutslide" class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">{{ @trans('font.category6.index.title' )}}</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-                    <span id="nutslide" class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </div>
-        <div class="col-4">
-            <form action="{{ route('cart.store')}}" method="post">
-                @csrf
+            <div class="col-4">
+                <!-- <form action="" method="post"> -->
                 <input type="hidden" name="productId" value="{{ $product->id }}">
                 <div id="name">
                     <p>{{ $product->name }}</p>
@@ -93,9 +94,28 @@
                 </div>
                 <p id="descc"><strong>{{ @trans('font.category9.index.title' )}}</strong> : {{ $product->desc }}</p>
                 <button type="submit" class="btn" id="liveToastBtn">{{ @trans('font.category10.index.title' )}}</button>
-            </form>
+                <div class="row" style="margin: 20px 0px 0px 3px;">
+                    <div id="imagemota" class="col-2">
+                        <img src="{{ url('image/xehang.svg') }}">
+                    </div>
+                    <div id="titlemota" class="col-10">
+                        <p style="margin: 0px;font-size: 15px;font-weight: 800;">MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</p>
+                        <p style="font-size: 13px;">(Từ 2 sản phẩm trên mỗi đơn hàng)</p>
+                    </div>
+                </div>
+                <div class="row" style="margin: 0px 0px 0px 3px;">
+                    <div id="imagemota" class="col-2">
+                        <img src="{{ url('image/trahang.svg') }}">
+                    </div>
+                    <div id="titlemota" class="col-10">
+                        <p style="margin: 0px;font-size: 15px;font-weight: 800;">ĐỔI TRẢ DỄ DÀNG</p>
+                        <p style="font-size: 13px;">(Từ 3 đến 7 ngày sau khi nhận hàng)</p>
+                    </div>
+                </div>
+                <!-- </form> -->
+            </div>
         </div>
-    </div>
+    </form>
     <script>
         const radioButtons = document.querySelectorAll('input[type="radio"]');
         const selectedSizeElement = document.querySelector('.selected-size');

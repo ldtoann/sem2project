@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserControllerController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\AllcategoryController;
 use App\Models\Category;
 use Illuminate\Support\Facades\App;
 
@@ -41,6 +42,8 @@ Route::group(['middleware' => ['check.language']], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
     Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+
+    Route::get('/allproductcategory', [AllcategoryController::class, 'allProducts'])->name('allProducts');
 
     Route::get('/product/{slug}.html', [ProductController::class, 'show'])->name('product.show');
 
