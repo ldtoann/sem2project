@@ -32,6 +32,8 @@ class CartController extends Controller
                 break;
             }
         }
+        $productMedia = $product->getMedia('images');
+        $thumbnail = $productMedia->last();
 
         if (!$productExists) {
             $order = [
@@ -39,7 +41,8 @@ class CartController extends Controller
                 'name' => $product->name,
                 'quantity' => $quantity,
                 'price' => $product->price,
-                'size' => $request->size
+                'size' => $request->size,
+                'thumbnail' => $thumbnail ? $thumbnail->getUrl() : '',
             ];
             $cart[] = $order;
         }

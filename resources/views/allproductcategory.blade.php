@@ -8,10 +8,10 @@
         <ol class="breadcrumb">
             <li id="linenext" class="breadcrumb-item"><a href="{{ route('home.index') }}">{{@trans('font.home.index.title')}}</a></li>
             <li id="linenext" class="breadcrumb-item"><a href="{{ route('allProducts') }}">{{@trans('font.header.index.products')}}</a></li>
-            <li id="linenext" class="breadcrumb-item active" aria-current="page">{{ $category->name }}</li>
+            <li id="linenext" class="breadcrumb-item active" aria-current="page">ALL PRODUCT</li>
         </ol>
     </nav>
-    <p id="titleee"> {{@trans('font.category.index.title')}} {{ $category->name }}</p>
+    <p id="titleee"> {{@trans('font.category.index.title')}} ALL PRODUCT</p>
     <form id="selectformm" action="" method="get">
         <input type="hidden" name="category_id" value="">
         <select id="selectcategory" class="shadow-lg" name="category" onchange="handleChange(this)">
@@ -44,15 +44,13 @@
     </form>
     <div id="main3" class="text-center">
         <div id="item">
-            @foreach ($category->products as $product)
+            @foreach ($products as $product)
             <a id="item_link" href="{{ route('product.show', $product->slug) }}">
                 <div id="item_col">
-                    <!-- <img src="{{ url('image/nike/itemnike1.1.jpg') }}"> -->
                     @php $thumbnail = $product->getMedia('images')->first() @endphp
                     @if($thumbnail)
                     <img src="{{ $thumbnail->getUrl() }}" alt="image">
                     @endif
-                    <!-- <img src="{{ url('image/nike/itemnike1.jpg') }}" alt="" id="img-change"> -->
                     @php $thumbnail = $product->getMedia('images')->last() @endphp
                     @if($thumbnail)
                     <img id="img-change" src="{{ $thumbnail->getUrl() }}" alt="image">

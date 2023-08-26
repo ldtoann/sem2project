@@ -8,7 +8,7 @@ return [
     'category4.index.title' => 'ASCENDING',
     'category5.index.title' => 'DECREASE',
     'category6.index.title' => 'Previous',
-    'category8.index.title' => 'QUANTITY ',
+    'category8.index.title' => 'QTY ',
     'category7.index.title' => 'CHOOSE SIZE ',
 
     'category9.index.title' => 'Describe ',
@@ -25,7 +25,7 @@ return [
     'home.index.title' => 'HOME',
     'pay.index.title' => 'CARTs',
     'pay1.index.title' => 'PAY',
-    'category.index.title'=> 'Product Directory',
+    'category.index.title' => 'Product Directory',
     'GALLERY.index.title' => 'GALLERY',
     'home.index.OURCOMMITMENT' => 'OUR COMMITMENT',
     'home.index.FREESHIP' => 'FREESHIP',
@@ -68,7 +68,7 @@ return [
     'footer.index.gui' => 'Guides',
     'footer.index.sale' => 'Terms of Sale ',
     'footer.index.use' => 'Terms of Use ',
-    'footer.index.nike' => 'Nike Privacy Policy',
+    'footer.index.nike' => 'Smate Privacy Policy',
     'support.index.name8' => ' RETURN POLICY',
     'support.index.name9' => ' Within 3 days from the date of purchase of the product, you are allowed to change the size - change the color of the same line (such as the white Airforce, change to another black Airforce line), cannot change another model and can only change 1 time.',
     'support.index.name10' => ' Only receive product exchange with new condition, full box of accessories, SHOP bag and correct reading of purchased phone number. Do not accept exchange when the goods are used, scratched, worn soles, smell of laundry detergent ...',
@@ -96,33 +96,6 @@ return [
 
 
 
-    
-
-
-
-
-
-
-
-
-    
-
-   
-   
-
-
-
-
-   
-
-
-
-
-
-
-
-
-    
 
 
 
@@ -137,7 +110,34 @@ return [
 
 
 
-  
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];

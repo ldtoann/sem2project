@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
-// use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -52,7 +51,7 @@ class ProductController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        
+
         $product = Product::create($request->only([
             'name', 'desc', 'quantity', 'price', 'category_id'
         ]));

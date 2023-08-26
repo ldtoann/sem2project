@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         // $productList = Product::all();
-        $productList = Product::take(4)->get();
+        $productList = Product::take(8)->get();
         return view('home', compact('productList'));
     }
 }

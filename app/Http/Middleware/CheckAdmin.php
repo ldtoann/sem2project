@@ -14,18 +14,19 @@ class CheckAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response{
+    public function handle(Request $request, Closure $next): Response
+    {
         if (Auth::user()) {
             $user = Auth::user();
             if ($user->role == "admin") {
                 return $next($request);
             } else {
-                return redirect()->back();
+                return redirect()->route('home.index');
             }
         } else {
             return redirect()->route('login');
         }
-        
+
         return redirect()->route('403');
     }
 }

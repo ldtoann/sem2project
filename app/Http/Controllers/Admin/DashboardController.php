@@ -13,6 +13,7 @@ class DashboardController extends Controller
         // Kiểm tra vai trò của người dùng để đảm bảo họ có quyền truy cập vào trang dashboard
         if (auth()->user()->role !== 'admin') {
             abort(403, 'Bạn không có quyền truy cập vào trang này.');
+            return view('home.index');
         }
 
         // Xử lý các tác vụ liên quan đến trang dashboard và trả về view dashboard.blade.php
