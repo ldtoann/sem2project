@@ -12,7 +12,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\UserControllerController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\AllcategoryController;
 use App\Models\Category;
 use Illuminate\Support\Facades\App;
 
@@ -41,9 +40,7 @@ Route::group(['middleware' => ['check.language']], function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-    Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
-
-    Route::get('/allproductcategory', [AllcategoryController::class, 'allProducts'])->name('allProducts');
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
 
     Route::get('/product/{slug}.html', [ProductController::class, 'show'])->name('product.show');
 
@@ -59,10 +56,6 @@ Route::group(['middleware' => ['check.language']], function () {
 
     Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 
-    // Route::get('/pay', function () {
-    //     return view('pay');
-    // })->name('pay');
-
     Route::get('/gallery', function () {
         return view('gallery');
     })->name('gallery');
@@ -72,16 +65,6 @@ Route::group(['middleware' => ['check.language']], function () {
     })->name('support');
 });
 
-// Route::get('/login', function () {
-//     return view('login');
-// })->name('login');
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -90,7 +73,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('dashboard', function () {
         return "Hello World";
@@ -98,7 +80,7 @@ Route::middleware('admin')->prefix('admin')->group(function () {
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'check.language'], 'as' => 'admin.'], function () {
 
     Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);

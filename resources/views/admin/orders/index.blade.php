@@ -53,8 +53,7 @@
                             <th style="width: 5%;" class="kt-datatable__cell"><span>NO.</span></th>
                             <th style="width: 15%;" class="kt-datatable__cell"><span>USER ORDER</span></th>
                             <th style="width: 20%;" class="kt-datatable__cell"><span>DESC</span></th>
-                            <!-- <th style="width: 0%;" class="kt-datatable__cell"><span></span></th> -->
-                            <th style="width: 8%;" class="kt-datatable__cell"><span>USRE_ID</span></th>
+                            <th style="width: 8%;" class="kt-datatable__cell"><span></span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>STATUS</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>CREATE</span></th>
@@ -68,10 +67,10 @@
                     <thead class="kt-datatable__head">
                         <tr class="kt-datatable__row">
                             <th style="width: 5%;" class="kt-datatable__cell"><span>{{ increment($i) }}</span></th>
-                            <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->name }}</span></th>
+                            <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->name }} (id:{{ $order->user_id }})</span></th>
                             <th style="width: 20%;" class="kt-datatable__cell"><span>{{ $order->desc }}</span></th>
                             <th style="width: 1%;" class="kt-datatable__cell"><span></span></th>
-                            <th style="width: 7%;" class="kt-datatable__cell"><span>{{ $order->user_id }}</span></th>
+                            <th style="width: 7%;" class="kt-datatable__cell"><span></span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span @if($order->status == 'pending') style="color:orange; font-weight: 900;" @else style="color:green;font-weight: 900;" @endif>{{ $order->status }}</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->receiver }}</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->created_at }}</span></th>

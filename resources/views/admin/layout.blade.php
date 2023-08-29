@@ -47,6 +47,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
@@ -178,7 +179,7 @@
                         <div class="kt-header__topbar-item kt-header__topbar-item--langs">
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown">
                                 <span class="kt-header__topbar-icon">
-                                    <img class="" src=" {{ url('assets/media/flags/earch3.png') }}" width="30px" height="30px" style="border: 1px solid white; object-fit: cover;" />
+                                    <img class="" src=" {{ url('assets/media/flags/Flag_of_Great_Britain_(English_version).png') }}" width="50px" height="30px" style="border: 1px solid white; object-fit: cover;" />
                                 </span>
                             </div>
                             <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu dropdown-menu-top-unround" style="background-color: black; color: white;margin-top: -12px;">
