@@ -34,7 +34,7 @@
                                             <div class="row">
                                                 <label class="col-xl-3"></label>
                                                 <div class="col-lg-9 col-xl-6">
-                                                    <h3 class="kt-section__title kt-section__title-sm">Customer Info:</h3>
+                                                    <h3 class="kt-section__title kt-section__title-sm">Customer Order </h3>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -50,17 +50,37 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-xl-3 col-lg-3 col-form-label">Desc</label>
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Receiver</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="receiver" value="{{ $order->receiver }}" id="" placeholder="receiver " readonly>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Phonenumber</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="phonenumber" value="{{ $order->phonenumber }}" id="" placeholder="receiver " readonly>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Address</label>
                                                 <div class="col-lg-9 col-xl-6">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="desc" value="{{ $order->desc }}" placeholder="desc" aria-describedby="basic-addon1">
+                                                        <input type="text" class="form-control" name="address" value="{{ $order->address }}" placeholder="address" aria-describedby="basic-addon1" readonly>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-xl-3 col-lg-3 col-form-label">Receiver</label>
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Desc</label>
                                                 <div class="col-lg-9 col-xl-6">
-                                                    <input class="form-control" type="text" name="receiver" value="{{ $order->receiver }}" id="" placeholder="receiver ">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="desc" value="{{ $order->desc }}" placeholder="desc" aria-describedby="basic-addon1" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-lg-3 col-form-label">Price Order</label>
+                                                <div class="col-lg-9 col-xl-6">
+                                                    <input class="form-control" type="text" name="price" value="{{ format_money( $order->price ) }}" id="" placeholder="price " readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row">

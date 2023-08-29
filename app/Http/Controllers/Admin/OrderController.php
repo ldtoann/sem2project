@@ -13,8 +13,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orderList = Order::all();
-        return view('admin.orders.index', compact('orderList'));
+        $ordersQuery = Order::query();
+        $orders = $ordersQuery->paginate(config('pagination.admin_page'));
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**
@@ -31,7 +32,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $order = Order::create($request->only([
-            'name', 'desc', 'status', 'receiver', 'user_id'
+            'name', 'desc', 'status', 'receiver', 'user_id', 'price', 'address', 'phonenumber'
         ]));
         $message = "Success Create";
         if ($order == null) {
@@ -64,7 +65,7 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $bool = $order->update($request->only([
-            'name', 'desc', 'status', 'receiver', 'user_id'
+            'name', 'desc', 'status', 'receiver', 'user_id', 'price', 'address', 'phonenumber'
         ]));
 
         $message =  "Success  Update";

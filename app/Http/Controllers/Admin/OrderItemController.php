@@ -10,8 +10,9 @@ class OrderItemController extends Controller
 {
     public function index()
     {
-        $orderitemList = OrderItem::all();
-        return view('admin.orderitems.index', compact('orderitemList'));
+        $OrderItemsQuery = OrderItem::query();
+        $orderitems = $OrderItemsQuery->paginate(config('pagination.admin_page'));
+        return view('admin.orderitems.index', compact('orderitems'));
     }
     public function edit(string $id)
     {

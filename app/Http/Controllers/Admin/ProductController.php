@@ -15,8 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $productList = Product::all();
-        return view('admin.products.index', compact('productList'));
+        $productsQuery = Product::query();
+        $products = $productsQuery->paginate(config('pagination.admin_page'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**

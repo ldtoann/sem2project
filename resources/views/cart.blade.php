@@ -87,7 +87,7 @@
                 <h4 id="paytitle">THÔNG TIN KHÁCH HÀNG</h4>
                 <div class="row">
                     <div id="infopay" class="">
-                        <label for="kh_ten">Họ tên</label>
+                        <label for="kh_ten">Họ tên khách hàng (login)</label>
                         @auth
                         <input type="text" class="form-control" name="kh_ten" id="kh_ten" value="{{ Auth::user()->name }}" readonly="">
                         @else
@@ -95,7 +95,7 @@
                         @endauth
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_email">Email</label>
+                        <label for="kh_email">Email khách hàng (login)</label>
                         @auth
                         <input type="text" class="form-control" name="kh_email" id="kh_email" value="{{ Auth::user()->email }}" readonly="">
                         @else
@@ -103,20 +103,16 @@
                         @endauth
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_diachi">Địa chỉ</label>
-                        <input type="text" class="form-control" name="kh_diachi" id="kh_diachi" value="">
-                    </div>
-                    <div id="infopay" class="">
                         <label for="kh_diachi">Họ tên người nhận</label>
                         <input type="text" class="form-control" name="receiver" id="kh_diachi" value="">
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_dienthoai">Điện thoại</label>
-                        <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" value="">
+                        <label for="kh_diachi">Địa chỉ</label>
+                        <input type="text" class="form-control" name="address" id="kh_diachi" value="">
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_ngaysinh">Ngày sinh</label>
-                        <input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh" value="">
+                        <label for="kh_dienthoai">Điện thoại</label>
+                        <input type="text" class="form-control" name="phonenumber" id="kh_dienthoai" value="">
                     </div>
                     <div id="infopay" class="">
                         <label for="kh_cmnd">Desception</label>
@@ -165,7 +161,7 @@
                             <tr>
                                 <th style="width: 2%;"></th>
                                 <th style="width: 65%;color: red; font-weight: 800;"><span>TOTAL &nbsp;:&nbsp; {{ format_money(cart_total($cart,50000)) }}</span></th>
-                                <!-- <th style="width: 30%;" class="text-end"><span><a href="{{ route('checkout')}}" style="background-color: rgb(145, 7, 7); color: white;text-decoration: none; padding: 10px 30px;border-radius: 10px;">{{ @trans('font.category15.index.title' )}}</a></span></th> -->
+                                <input type="hidden" name="price" value="{{ cart_total($cart, 50000) }}">
                                 <th style="width: 30%;" class="text-end"><button type="submit" style="background-color: rgb(145, 7, 7); color: white; padding: 5px 30px; border: none; border-radius: 10px;font-weight: 800;">{{ @trans('font.category15.index.title' )}}</button></th>
                                 <th style="width: 3%;"></th>
                             </tr>

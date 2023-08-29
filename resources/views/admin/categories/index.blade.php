@@ -46,6 +46,7 @@
     </div>
     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
         <div class="kt-portlet__body kt-portlet__body--fit">
+            {{ $categorys->links() }}
             <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--error kt-datatable--loaded" id="kt_apps_user_list_datatable" style="">
                 <table class="kt-datatable__table" style="display: block;">
                     <thead class="kt-datatable__head">
@@ -61,11 +62,12 @@
                             <th style="width: 9%;" class="kt-datatable__cell"><span>DELETE</span></th>
                         </tr>
                     </thead>
-                    @php $i = 0 @endphp
-                    @foreach ($categoryList as $category)
+                    @php $i = 0; @endphp
+                    @php $index = ($categorys->currentPage() - 1) * $categorys->perPage() + $i; @endphp
+                    @foreach ($categorys as $category)
                     <thead class="kt-datatable__head">
                         <tr class="kt-datatable__row">
-                            <th style="width: 10%;" class="kt-datatable__cell"><span>{{ increment($i) }}</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $index + increment($i) }}</span></th>
                             <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $category->name }}</span></th>
                             <th style="width: 33%;" class="kt-datatable__cell"><span>{{ $category->desc }}</span></th>
                             <th style="width: 2%;" class="kt-datatable__cell"><span></span></th>
@@ -85,67 +87,7 @@
                     @endforeach
                 </table>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="kt-portlet">
-                    <div class="kt-portlet__body">
-                        <div class="kt-pagination kt-pagination--brand">
-                            <ul class="kt-pagination__links">
-                                <li class="kt-pagination__link--first">
-                                    <a href="#"><i class="fa fa-angle-double-left kt-font-brand"></i></a>
-                                </li>
-                                <li class="kt-pagination__link--next">
-                                    <a href="#"><i class="fa fa-angle-left kt-font-brand"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#">...</a>
-                                </li>
-                                <li>
-                                    <a href="#">29</a>
-                                </li>
-                                <li>
-                                    <a href="#">30</a>
-                                </li>
-                                <li class="kt-pagination__link--active">
-                                    <a href="#">31</a>
-                                </li>
-                                <li>
-                                    <a href="#">32</a>
-                                </li>
-                                <li>
-                                    <a href="#">33</a>
-                                </li>
-                                <li>
-                                    <a href="#">34</a>
-                                </li>
-                                <li>
-                                    <a href="#">...</a>
-                                </li>
-
-                                <li class="kt-pagination__link--prev">
-                                    <a href="#"><i class="fa fa-angle-right kt-font-brand"></i></a>
-                                </li>
-                                <li class="kt-pagination__link--last">
-                                    <a href="#"><i class="fa fa-angle-double-right kt-font-brand"></i></a>
-                                </li>
-                            </ul>
-                            <div class="kt-pagination__toolbar">
-                                <select class="form-control kt-font-brand" style="width: 60px">
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>
-                                <span class="pagination__desc">
-                                    Displaying 10 of 230 records
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{ $categorys->links() }}
         </div>
     </div>
 </div>
