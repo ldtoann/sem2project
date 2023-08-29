@@ -27,65 +27,8 @@
     <!-- begin:: Content -->
     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
         <!--Begin::Dashboard 1-->
-        <!--Begin::Row-->
         <div class="row">
-            <div class="col-xl-7 col-lg-7 order-lg-2 order-xl-1">
-                <!--begin:: Widgets/Daily Sales-->
-                <div class="kt-portlet kt-portlet--height-fluid">
-                    <div class="kt-widget14">
-                        <div class="kt-widget14__header kt-margin-b-30">
-                            <h3 class="kt-widget14__title">
-                                PRODUCTS
-                            </h3>
-                            <span class="kt-widget14__desc">
-                                Number of products in each category
-                            </span>
-                        </div>
-                        <div class="kt-widget14__chart" style="height:120px;">
-                            <canvas id="kt_chart_daily_sales"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <!--end:: Widgets/Daily Sales-->
-            </div>
-            <div class="col-xl-5 col-lg-5 order-lg-2 order-xl-1">
-                <!--begin:: Widgets/Profit Share-->
-                <div class="kt-portlet kt-portlet--height-fluid">
-                    <div class="kt-widget14">
-                        <div class="kt-widget14__header">
-                            <h3 class="kt-widget14__title">
-                                USERS
-                            </h3>
-                            <span class="kt-widget14__desc">
-                                Number of user and admin in data
-                            </span>
-                        </div>
-                        <div class="kt-widget14__content">
-                            <div class="kt-widget14__chart">
-                                <div class="kt-widget14__stat">S</div>
-                                <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
-                            </div>
-                            <div class="kt-widget14__legends">
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-success"></span>
-                                    <span class="kt-widget14__stats">number admin</span>
-                                </div>
-                                <hr>
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                    <span class="kt-widget14__stats">number user</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end:: Widgets/Profit Share-->
-            </div>
-        </div>
-        <!--End::Row-->
-        <!--Begin::Row-->
-        <div class="row">
-            <div class="col-lg-6 col-xl-4 order-lg-1 order-xl-1">
+            <div class="col-lg-14 col-xl-12 order-lg-1 order-xl-1">
                 <!--begin:: Widgets/Activity-->
                 <div class="kt-portlet kt-portlet--fit kt-portlet--head-lg kt-portlet--head-overlay kt-portlet--skin-solid kt-portlet--height-fluid">
                     <div class="kt-portlet__head kt-portlet__head--noborder kt-portlet__space-x">
@@ -159,10 +102,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            Delivered
+                                            CATEGORYS
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            15 New Paskages
+                                            8 category product.
                                         </span>
                                     </div>
 
@@ -176,10 +119,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            Ordered
+                                            PRODUCTS
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            72 New Items
+                                            72 product items.
                                         </span>
                                     </div>
                                 </div>
@@ -194,10 +137,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            Reported
+                                            ORDERS
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            72 Support Cases
+                                            8 order pending, 6 order finished.
                                         </span>
                                     </div>
 
@@ -211,10 +154,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            Arrived
+                                            USERS
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            34 Upgraded Boxes
+                                            3 admin, 2 user
                                         </span>
                                     </div>
                                 </div>
@@ -224,7 +167,66 @@
                 </div>
                 <!--end:: Widgets/Activity-->
             </div>
-            <div class="col-lg-8 order-lg-1 order-xl-1">
+        </div>
+        <!--Begin::Row-->
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 order-lg-2 order-xl-1">
+                <!--begin:: Widgets/Daily Sales-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header kt-margin-b-30">
+                            <h3 class="kt-widget14__title">
+                                PRODUCTS
+                            </h3>
+                            <span class="kt-widget14__desc">
+                                Number of products in each category
+                            </span>
+                        </div>
+                        <div class="kt-widget14__chart" style="height:120px;">
+                            <canvas id="kt_chart_daily_sales"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--end:: Widgets/Daily Sales-->
+            </div>
+            <div class="col-xl-5 col-lg-5 order-lg-2 order-xl-1">
+                <!--begin:: Widgets/Profit Share-->
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header">
+                            <h3 class="kt-widget14__title">
+                                USERS
+                            </h3>
+                            <span class="kt-widget14__desc">
+                                Number of user and admin in data
+                            </span>
+                        </div>
+                        <div class="kt-widget14__content">
+                            <div class="kt-widget14__chart">
+                                <div class="kt-widget14__stat">S</div>
+                                <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
+                            </div>
+                            <div class="kt-widget14__legends">
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-success"></span>
+                                    <span class="kt-widget14__stats">number admin</span>
+                                </div>
+                                <hr>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                    <span class="kt-widget14__stats">number user</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end:: Widgets/Profit Share-->
+            </div>
+        </div>
+        <!--End::Row-->
+        <!--Begin::Row-->
+        <div class="row">
+            <div class="col-lg-14 col-xl-12 order-lg-1 order-xl-1">
                 <div class="kt-portlet kt-portlet--height-fluid kt-portlet--mobile ">
                     <div class="kt-portlet__head kt-portlet__head--lg kt-portlet__head--noborder kt-portlet__head--break-sm">
                         <div class="kt-widget14__header  kt-margin-b-15 kt-margin-t-30">
@@ -299,13 +301,16 @@
                                 <thead class="kt-datatable__head">
                                     <tr class="kt-datatable__row">
                                         <th style="width: 5%;" class="kt-datatable__cell"><span>NO.</span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>USER ORDER</span></th>
-                                        <th style="width: 2.5%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 30%;" class="kt-datatable__cell"><span>DESC</span></th>
-                                        <th style="width: 2.5%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>STATUS</span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>CREATE</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>ACCOUNT</span></th>
+                                        <th style="width: 7%;" class="kt-datatable__cell"><span>ORDER_ID</span></th>
+                                        <th style="width: 27%;" class="kt-datatable__cell"><span>ADDRESS</span></th>
+                                        <!-- <th style="width: 4%;" class="kt-datatable__cell"><span></span></th> -->
+                                        <th style="width: 2%;" class="kt-datatable__cell"><span></span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>STATUS</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
+                                        <th style="width: 8%;" class="kt-datatable__cell"><span>PHONE</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>TOTAL</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>CREATE</span></th>
                                     </tr>
                                 </thead>
                                 @php $i = 0 @endphp
@@ -314,15 +319,18 @@
                                 <thead class="kt-datatable__head">
                                     <tr class="kt-datatable__row">
                                         <th style="width: 5%;" class="kt-datatable__cell"><span>{{ increment($i) }}</span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->name }}</span></th>
-                                        <th style="width: 2.5%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 31.5%;" class="kt-datatable__cell"><span>{{ $order->desc }}</span></th>
-                                        <th style="width: 1%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell">
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->name }}</span></th>
+                                        <th style="width: 7%;" class="kt-datatable__cell text-center"><span>{{ $order->id }}</span></th>
+                                        <th style="width: 27%;" class="kt-datatable__cell"><span>{{ $order->address }}</span></th>
+                                        <!-- <th style="width: 0%;" class="kt-datatable__cell"><span></span></th> -->
+                                        <th style="width: 2%;" class="kt-datatable__cell"><span></span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell">
                                             <span style="color: orange; font-weight: 900;">{{ $order->status }}</span>
                                         </th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->receiver }}</span></th>
-                                        <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->created_at }}</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->receiver }}</span></th>
+                                        <th style="width: 8%;" class="kt-datatable__cell"><span>{{ $order->phonenumber }}</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span style="color: red;font-weight: 800;">{{ format_money($order->price) }}</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->created_at }}</span></th>
                                     </tr>
                                 </thead>
                                 @endif
@@ -334,6 +342,7 @@
             </div>
         </div>
         <!--End::Row-->
+
         <!--End::Dashboard 1-->
     </div>
     <!-- end:: Content -->
