@@ -15,16 +15,18 @@ class CheckoutController extends Controller
         $this->middleware('auth');
     }
 
-    public function checkout()
+    public function checkout(Request $request)
     {
         $user = Auth::user();
+        $desc = $request->desc;
+        $receiver = $request->receiver;
         $order = Order::create(
             array(
                 "name" => $user->name,
-                "desc" => "NEW ORDER TING TING",
+                "desc" => $desc,
                 "status" => "pending",
                 "total" => 0,
-                "receiver" => $user->name,
+                "receiver" => $receiver,
                 "user_id" => $user->id
             )
         );

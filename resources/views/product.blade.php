@@ -20,7 +20,6 @@
                     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <!-- <img class="d-block w-100" id="imageproductdetail" src="{{ url('image/nike/itemnike1.1.jpg') }}"> -->
                                 @php $thumbnail = $product->getMedia('images')->last() @endphp
                                 @if($thumbnail)
                                 <img class="d-block w-100" id="imageproductdetail" src="{{ $thumbnail->getUrl() }}" alt="image">
@@ -30,7 +29,6 @@
                             $mediaCollection = $product->getMedia('images');
                             $mediaCount = $mediaCollection->count();
                             @endphp
-
                             @for($i = 0; $i < $mediaCount - 1; $i++) @php $image=$mediaCollection[$i]; @endphp <div class="carousel-item">
                                 <img class="d-block w-100" id="imageproductdetail" src="{{ $image->getUrl() }}">
                         </div>
@@ -47,7 +45,6 @@
                 </div>
             </div>
             <div class="col-4">
-                <!-- <form action="" method="post"> -->
                 <input type="hidden" name="productId" value="{{ $product->id }}">
                 <div id="name">
                     <p>{{ $product->name }}</p>
@@ -112,7 +109,6 @@
                         <p style="font-size: 13px;">(Từ 3 đến 7 ngày sau khi nhận hàng)</p>
                     </div>
                 </div>
-                <!-- </form> -->
             </div>
         </div>
     </form>

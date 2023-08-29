@@ -81,7 +81,7 @@
     </div>
     <hr>
     <p id="titlecartss"><i class="fa-solid fa-credit-card"></i> THANH TOÁN</p>
-    <form id="infomationpay" action="" method="">
+    <form id="infomationpay" action="{{ route('checkout')}}" method="get">
         <div class="row">
             <div class="col">
                 <h4 id="paytitle">THÔNG TIN KHÁCH HÀNG</h4>
@@ -95,14 +95,6 @@
                         @endauth
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_diachi">Địa chỉ</label>
-                        <input type="text" class="form-control" name="kh_diachi" id="kh_diachi" value="">
-                    </div>
-                    <div id="infopay" class="">
-                        <label for="kh_dienthoai">Điện thoại</label>
-                        <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" value="">
-                    </div>
-                    <div id="infopay" class="">
                         <label for="kh_email">Email</label>
                         @auth
                         <input type="text" class="form-control" name="kh_email" id="kh_email" value="{{ Auth::user()->email }}" readonly="">
@@ -111,12 +103,24 @@
                         @endauth
                     </div>
                     <div id="infopay" class="">
+                        <label for="kh_diachi">Địa chỉ</label>
+                        <input type="text" class="form-control" name="kh_diachi" id="kh_diachi" value="">
+                    </div>
+                    <div id="infopay" class="">
+                        <label for="kh_diachi">Họ tên người nhận</label>
+                        <input type="text" class="form-control" name="receiver" id="kh_diachi" value="">
+                    </div>
+                    <div id="infopay" class="">
+                        <label for="kh_dienthoai">Điện thoại</label>
+                        <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" value="">
+                    </div>
+                    <div id="infopay" class="">
                         <label for="kh_ngaysinh">Ngày sinh</label>
                         <input type="text" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh" value="">
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_cmnd">CMND</label>
-                        <input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd" value="">
+                        <label for="kh_cmnd">Desception</label>
+                        <input type="text" class="form-control" name="desc" id="kh_desc" value="">
                     </div>
                 </div>
                 <img id="anhnenkh" src="https://resources.smatestore.com/slider/0/9No2M7tL4nVw9ORcdU.jpg" alt="">
@@ -125,13 +129,13 @@
                 <h4 id="paytitless">GIỎ HÀNG</h4>
                 <div id="paylist" class="row" style="padding: 0px 15px;">
                     @foreach ($cart as $order)
-                    <table style="margin-bottom: 10px;font-size: 15px; background-color: whitesmoke;">
+                    <table style="margin-bottom: 10px;font-size: 15px;">
                         <thead>
                             <tr>
                                 <th style="width: 20%;"><img src="{{ $order['thumbnail'] }}" alt="" width="100%"></th>
                                 <th style="width: 5%;"></th>
                                 <th style="width: 45%;">{{ $order['name'] }}</th>
-                                <th style="width: 30%;" class="text-end">{{ format_money(order_item_total($order['quantity'], $order['price'])) }}</th>
+                                <th style="width: 30%; color: red;" class="text-end">{{ format_money(order_item_total($order['quantity'], $order['price'])) }}</th>
                             </tr>
                         </thead>
                     </table>
@@ -161,18 +165,13 @@
                             <tr>
                                 <th style="width: 2%;"></th>
                                 <th style="width: 65%;color: red; font-weight: 800;"><span>TOTAL &nbsp;:&nbsp; {{ format_money(cart_total($cart,50000)) }}</span></th>
-                                <th style="width: 30%;" class="text-end"><span><a href="{{ route('checkout')}}" style="background-color: rgb(145, 7, 7); color: white;text-decoration: none; padding: 10px 30px;border-radius: 10px;">{{ @trans('font.category15.index.title' )}}</a></span></th>
+                                <!-- <th style="width: 30%;" class="text-end"><span><a href="{{ route('checkout')}}" style="background-color: rgb(145, 7, 7); color: white;text-decoration: none; padding: 10px 30px;border-radius: 10px;">{{ @trans('font.category15.index.title' )}}</a></span></th> -->
+                                <th style="width: 30%;" class="text-end"><button type="submit" style="background-color: rgb(145, 7, 7); color: white; padding: 5px 30px; border: none; border-radius: 10px;font-weight: 800;">{{ @trans('font.category15.index.title' )}}</button></th>
                                 <th style="width: 3%;"></th>
                             </tr>
                         </thead>
                     </table>
                 </div>
-
-                <!-- <div class="input-group">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-secondary">Xác nhận</button>
-                    </div>
-                </div> -->
             </div>
         </div>
     </form>

@@ -99,7 +99,7 @@
             </a>
             @endforeach
         </div>
-        <a id="xemthem" href="{{ route('allProducts') }}">{{@trans('font.home.index.MORE')}}</a>
+        <a id="xemthem" href="{{ route('products') }}">{{@trans('font.home.index.MORE')}}</a>
     </div>
     <div id="main5" class="text-center">
         <div id="essential" class="text-center">
