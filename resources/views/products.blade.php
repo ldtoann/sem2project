@@ -75,7 +75,9 @@
             </a>
             @endforeach
         </div>
-        {{ $products->withQueryString()->links() }}
+        <div id="page" style="margin-top: 20px;">
+            {{ $products->withQueryString()->links() }}
+        </div>
     </div>
 
     <div id="main5" class="text-center">

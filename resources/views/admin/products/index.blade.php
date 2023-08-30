@@ -64,8 +64,10 @@
                             <th style="width: 5%;" class="kt-datatable__cell"><span>DELETE</span></th>
                         </tr>
                     </thead>
-                    @php $i = 0; @endphp
-                    @php $index = ($products->currentPage() - 1) * $products->perPage() + $i; @endphp
+                    @php
+                    $i = 0;
+                    $index = ($products->currentPage() - 1) * $products->perPage() + $i;
+                    @endphp
                     @foreach ($products as $product)
                     <thead class="kt-datatable__head">
                         <tr class="kt-datatable__row">
