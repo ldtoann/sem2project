@@ -23,12 +23,12 @@ class DashboardController extends Controller
         // $datauser = [];
         // $labeluser = ['admin', 'user'];
 
-        $userrole = DB::table('users')
-            ->selectRaw('role, COUNT(*) as count')
-            ->groupBy('role')
-            ->pluck('count', 'role');
-        $labeluser = $userrole->keys();
-        $datauser = $userrole->values();
+        $orderstatus = DB::table('orders')
+            ->selectRaw('status, COUNT(*) as count')
+            ->groupBy('status')
+            ->pluck('count', 'status');
+        $labelorder = $orderstatus->keys();
+        $dataorder = $orderstatus->values();
 
         $categories = Product::selectRaw('category_id, COUNT(*) as count')
             ->groupBy('category_id')
@@ -48,6 +48,11 @@ class DashboardController extends Controller
         }
         $orderList = Order::all();
 
-        return view('admin.dashboard', compact('data', 'labels', 'data2', 'labeluser', 'datauser', 'orderList'));
+        $categoryCount = Category::count();
+        $productCount = Product::count();
+        $orderCount = Order::count();
+        $totalPrice = Order::sum('price');
+
+        return view('admin.dashboard', compact('data', 'labels', 'data2', 'orderList', 'labelorder', 'dataorder', 'categoryCount', 'productCount', 'orderCount', 'totalPrice'));
     }
 }

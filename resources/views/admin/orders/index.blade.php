@@ -52,15 +52,17 @@
                     <thead class="kt-datatable__head">
                         <tr class="kt-datatable__row">
                             <th style="width: 5%;" class="kt-datatable__cell"><span>NO.</span></th>
-                            <th style="width: 15%;" class="kt-datatable__cell"><span>ACCOUNT</span></th>
-                            <th style="width: 20%;" class="kt-datatable__cell"><span>DESC</span></th>
-                            <th style="width: 8%;" class="kt-datatable__cell"><span></span></th>
-                            <th style="width: 10%;" class="kt-datatable__cell"><span>STATUS</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>ACCOUNT</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>PHONE</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
+                            <th style="width: 15%;" class="kt-datatable__cell"><span>DESC</span></th>
+                            <!-- <th style="width: 8%;" class="kt-datatable__cell"><span></span></th> -->
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>STATUS</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>TOTAL</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>CREATE</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>UPDATE</span></th>
-                            <th style="width: 6%;" class="kt-datatable__cell"><span>EDIT</span></th>
-                            <th style="width: 6%;" class="kt-datatable__cell"><span>DELETE</span></th>
+                            <th style="width: 5%;" class="kt-datatable__cell"><span>EDIT</span></th>
+                            <th style="width: 5%;" class="kt-datatable__cell"><span>DELETE</span></th>
                         </tr>
                     </thead>
                     @php $i = 0; @endphp
@@ -69,16 +71,17 @@
                     <thead class="kt-datatable__head">
                         <tr class="kt-datatable__row">
                             <th style="width: 5%;" class="kt-datatable__cell"><span>{{ $index + increment($i) }}</span></th>
-                            <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->name }} (order_id:{{ $order->id }})</span></th>
-                            <th style="width: 20%;" class="kt-datatable__cell"><span>{{ $order->desc }}</span></th>
-                            <th style="width: 1%;" class="kt-datatable__cell"><span></span></th>
-                            <th style="width: 7%;" class="kt-datatable__cell"><span></span></th>
-                            <th style="width: 10%;" class="kt-datatable__cell"><span @if($order->status == 'pending') style="color:orange; font-weight: 900;" @else style="color:green;font-weight: 900;" @endif>{{ $order->status }}</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->name }} (order_id:{{ $order->id }})</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->phonenumber }}</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->receiver }}</span></th>
+                            <th style="width: 15%;" class="kt-datatable__cell"><span>{{ $order->desc }}</span></th>
+                            <!-- <th style="width: 8%;" class="kt-datatable__cell"><span></span></th> -->
+                            <th style="width: 10%;" class="kt-datatable__cell"><span @if($order->status == 'pending') style="color:orange; font-weight: 900;" @else style="color:green;font-weight: 900;" @endif>{{ $order->status }}</span></th>
+                            <th style="width: 10%;" class="kt-datatable__cell"><span style="color: red;">{{ format_money($order->price) }}</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->created_at }}</span></th>
                             <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->updated_at }}</span></th>
-                            <th style="width: 6%;" class="kt-datatable__cell"><span><a type="submit" href="{{ route('admin.orders.edit', $order->id) }}">EDIT</a></span></th>
-                            <th style="width: 6%;" class="kt-datatable__cell">
+                            <th style="width: 5%;" class="kt-datatable__cell"><span><a type="submit" href="{{ route('admin.orders.edit', $order->id) }}">EDIT</a></span></th>
+                            <th style="width: 5%;" class="kt-datatable__cell">
                                 <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}

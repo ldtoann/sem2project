@@ -210,7 +210,7 @@ var KTDashboard = (function () {
             data: {
                 datasets: [
                     {
-                        data: datauser,
+                        data: dataorder,
                         backgroundColor: [
                             KTApp.getStateColor("success"),
                             KTApp.getStateColor("warning"),
@@ -221,7 +221,7 @@ var KTDashboard = (function () {
                     //     backgroundColor: KTApp.getStateColor("#f3f3fb"),
                     // },
                 ],
-                labels: labeluser,
+                labels: labelorder,
             },
             options: {
                 cutoutPercentage: 65,
@@ -307,7 +307,7 @@ var KTDashboard = (function () {
                         pointHoverBackgroundColor:
                             KTApp.getStateColor("danger"),
                         pointHoverBorderColor: Chart.helpers
-                            .color(KTApp.getStateColor("danger"))
+                            .color(KTApp.getStateColor("brand"))
                             .alpha(0.2)
                             .rgbString(),
                         data: [
@@ -1008,11 +1008,11 @@ var KTDashboard = (function () {
         var gradient = ctx.createLinearGradient(0, 0, 0, 240);
         gradient.addColorStop(
             0,
-            Chart.helpers.color("#e14c86").alpha(1).rgbString()
+            Chart.helpers.color("#e14c99").alpha(1).rgbString()
         );
         gradient.addColorStop(
             1,
-            Chart.helpers.color("#e14c86").alpha(0.3).rgbString()
+            Chart.helpers.color("#e14c99").alpha(0.3).rgbString()
         );
 
         var config = {
@@ -1034,27 +1034,27 @@ var KTDashboard = (function () {
                     {
                         label: "Sales Stats",
                         backgroundColor: Chart.helpers
-                            .color("#e14c86")
+                            .color("#e14c99")
                             .alpha(1)
                             .rgbString(), //gradient
-                        borderColor: "#e13a58",
+                        borderColor: "#e14c99",
 
                         pointBackgroundColor: Chart.helpers
-                            .color("#000000")
+                            .color("#e14c99")
                             .alpha(0)
                             .rgbString(),
                         pointBorderColor: Chart.helpers
-                            .color("#000000")
+                            .color("#e14c99")
                             .alpha(0)
                             .rgbString(),
-                        pointHoverBackgroundColor: KTApp.getStateColor("light"),
+                        pointHoverBackgroundColor: KTApp.getStateColor("dark"),
                         pointHoverBorderColor: Chart.helpers
                             .color("#ffffff")
                             .alpha(0.1)
                             .rgbString(),
 
                         //fill: 'start',
-                        data: [10, 14, 12, 16, 9, 11, 13, 9, 13, 15],
+                        data: [0],
                     },
                 ],
             },

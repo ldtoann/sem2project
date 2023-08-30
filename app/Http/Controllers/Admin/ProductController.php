@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class ProductController extends Controller
 {
@@ -15,8 +16,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $productsQuery = Product::query();
-        $products = $productsQuery->paginate(config('pagination.admin_page'));
+        // $productsQuery = Product::query();
+        // $products = $productsQuery->paginate(config('pagination.admin_page'));
+        // return view('admin.products.index', compact('products'));
+        $products = Product::orderBy('id', 'desc')->paginate(config('pagination.admin_page'));
         return view('admin.products.index', compact('products'));
     }
 
@@ -41,10 +44,10 @@ class ProductController extends Controller
         ];
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:8',
-            'desc' => 'required|min:10',
+            'name' => 'required|min:1',
+            'desc' => 'required|min:1',
             'quantity' => 'required|min:1',
-            'price' => 'required|min:5',
+            'price' => 'required|min:1',
         ], $messages);
 
         if ($validator->fails()) {

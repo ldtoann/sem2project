@@ -26,73 +26,29 @@
     <!-- end:: Content Head -->
     <!-- begin:: Content -->
     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+
         <!--Begin::Dashboard 1-->
         <div class="row">
-            <div class="col-lg-14 col-xl-12 order-lg-1 order-xl-1">
+            <div class="col-lg-12 col-xl-12 order-lg-1 order-xl-1">
                 <!--begin:: Widgets/Activity-->
                 <div class="kt-portlet kt-portlet--fit kt-portlet--head-lg kt-portlet--head-overlay kt-portlet--skin-solid kt-portlet--height-fluid">
                     <div class="kt-portlet__head kt-portlet__head--noborder kt-portlet__space-x">
                         <div class="kt-portlet__head-label">
-                            <h3 class="kt-portlet__head-title">
-                                Activity
-                            </h3>
-                        </div>
-                        <div class="kt-portlet__head-toolbar">
-                            <a href="#" class="btn btn-label-light btn-sm btn-bold dropdown-toggle" data-toggle="dropdown">
-                                Export
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right">
-                                <ul class="kt-nav">
-                                    <li class="kt-nav__section kt-nav__section--first">
-                                        <span class="kt-nav__section-text">Finance</span>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <i class="kt-nav__link-icon flaticon2-graph-1"></i>
-                                            <span class="kt-nav__link-text">Statistics</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <i class="kt-nav__link-icon flaticon2-calendar-4"></i>
-                                            <span class="kt-nav__link-text">Events</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <i class="kt-nav__link-icon flaticon2-layers-1"></i>
-                                            <span class="kt-nav__link-text">Reports</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__section">
-                                        <span class="kt-nav__section-text">Customers</span>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <i class="kt-nav__link-icon flaticon2-calendar-4"></i>
-                                            <span class="kt-nav__link-text">Notifications</span>
-                                        </a>
-                                    </li>
-                                    <li class="kt-nav__item">
-                                        <a href="#" class="kt-nav__link">
-                                            <i class="kt-nav__link-icon flaticon2-file-1"></i>
-                                            <span class="kt-nav__link-text">Files</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <h1 class="kt-portlet__head-title">
+                                SMATE STORE
+                            </h1>
                         </div>
                     </div>
                     <div class="kt-portlet__body kt-portlet__body--fit">
-                        <div class="kt-widget17">
-                            <div class="kt-widget17__visual kt-widget17__visual--chart kt-portlet-fit--top kt-portlet-fit--sides" style="background-color: #fd397a">
-                                <div class="kt-widget17__chart" style="height:320px;">
+                        <div class="kt-widget17" style="background-color: lightgray;">
+                            <div class="kt-widget17__visual kt-widget17__visual--chart kt-portlet-fit--top kt-portlet-fit--sides" style="background-color: rgb(145, 7, 7)">
+                                <div class="kt-widget17__chart" style="height:120px;">
                                     <canvas id="kt_chart_activities"></canvas>
                                 </div>
                             </div>
-                            <div class="kt-widget17__stats">
+                            <div class="kt-widget17__stats" style="height:320px;">
                                 <div class="kt-widget17__items">
-                                    <div class="kt-widget17__item">
+                                    <div class="kt-widget17__item" style="border-radius: 20px 0px 0px 0px ;">
                                         <span class="kt-widget17__icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--brand">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -102,14 +58,14 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            CATEGORYS
+                                            TOTAL PRICE ALL ORDER
                                         </span>
-                                        <span class="kt-widget17__desc">
-                                            8 category product.
+                                        <span class="kt-widget17__desc" style="color: red;font-size: 20px; font-weight: 800;">
+                                            {{ format_money($totalPrice) }}
                                         </span>
                                     </div>
 
-                                    <div class="kt-widget17__item">
+                                    <div class="kt-widget17__item" style="border-radius: 0px 20px 0px 0px ;">
                                         <span class="kt-widget17__icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -119,15 +75,15 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            PRODUCTS
+                                            PRODUCTS ({{ $productCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            72 product items.
+                                            {{ $productCount }} product items.
                                         </span>
                                     </div>
                                 </div>
                                 <div class="kt-widget17__items">
-                                    <div class="kt-widget17__item">
+                                    <div class="kt-widget17__item" style="border-radius: 0px 0px 0px 20px ;">
                                         <span class="kt-widget17__icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--warning">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -137,14 +93,13 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            ORDERS
+                                            ORDERS ( {{ $orderCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            8 order pending, 6 order finished.
+                                            {{ $orderCount }} order pending and order finished.
                                         </span>
                                     </div>
-
-                                    <div class="kt-widget17__item">
+                                    <div class="kt-widget17__item" style="border-radius: 0px 0px 20px 0px ;">
                                         <span class="kt-widget17__icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--danger">
                                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -154,10 +109,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            USERS
+                                            CATEGORYS ({{ $categoryCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            3 admin, 2 user
+                                            {{ $categoryCount }} category product in database.
                                         </span>
                                     </div>
                                 </div>
@@ -167,9 +122,122 @@
                 </div>
                 <!--end:: Widgets/Activity-->
             </div>
+            <!-- <div class="col-lg-6 col-xl-6 order-lg-1 order-xl-1">
+                <div class="kt-portlet kt-portlet--fit kt-portlet--head-noborder kt-portlet--height-fluid-half">
+                    <div class="kt-portlet__head kt-portlet__space-x">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Inbound Bandwidth
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__body kt-portlet__body--fluid">
+                        <div class="kt-widget20">
+                            <div class="kt-widget20__content kt-portlet__space-x">
+                                <span class="kt-widget20__number kt-font-brand">670+</span>
+                                <span class="kt-widget20__desc">Successful transactions</span>
+                            </div>
+                            <div class="kt-widget20__chart" style="height:130px;">
+                                <canvas id="kt_chart_bandwidth1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="kt-space-20"></div>
+                <div class="kt-portlet kt-portlet--fit kt-portlet--head-noborder kt-portlet--height-fluid-half">
+                    <div class="kt-portlet__head kt-portlet__space-x">
+                        <div class="kt-portlet__head-label">
+                            <h3 class="kt-portlet__head-title">
+                                Outbound Bandwidth
+                            </h3>
+                        </div>
+                        <div class="kt-portlet__head-toolbar">
+                            <a href="#" class="btn btn-label-warning btn-sm  btn-bold dropdown-toggle" data-toggle="dropdown">
+                                Download
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right">
+                                <ul class="kt-nav">
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-line-chart"></i>
+                                            <span class="kt-nav__link-text">Reports</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-send"></i>
+                                            <span class="kt-nav__link-text">Messages</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-pie-chart-1"></i>
+                                            <span class="kt-nav__link-text">Charts</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-avatar"></i>
+                                            <span class="kt-nav__link-text">Members</span>
+                                        </a>
+                                    </li>
+                                    <li class="kt-nav__item">
+                                        <a href="#" class="kt-nav__link">
+                                            <i class="kt-nav__link-icon flaticon2-settings"></i>
+                                            <span class="kt-nav__link-text">Settings</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kt-portlet__body kt-portlet__body--fluid">
+                        <div class="kt-widget20">
+                            <div class="kt-widget20__content kt-portlet__space-x">
+                                <span class="kt-widget20__number kt-font-danger">1340+</span>
+                                <span class="kt-widget20__desc">Completed orders</span>
+                            </div>
+                            <div class="kt-widget20__chart" style="height:130px;">
+                                <canvas id="kt_chart_bandwidth2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </div>
         <!--Begin::Row-->
         <div class="row">
+            <div class="col-xl-5 col-lg-5 order-lg-2 order-xl-1">
+                <div class="kt-portlet kt-portlet--height-fluid">
+                    <div class="kt-widget14">
+                        <div class="kt-widget14__header">
+                            <h3 class="kt-widget14__title">
+                                ORDERS
+                            </h3>
+                            <span class="kt-widget14__desc">
+                                Number of order pending and finished in data
+                            </span>
+                        </div>
+                        <div class="kt-widget14__content">
+                            <div class="kt-widget14__chart">
+                                <div class="kt-widget14__stat">S</div>
+                                <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
+                            </div>
+                            <div class="kt-widget14__legends">
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-success"></span>
+                                    <span class="kt-widget14__stats">number order finished</span>
+                                </div>
+                                <hr>
+                                <div class="kt-widget14__legend">
+                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
+                                    <span class="kt-widget14__stats">number order pending</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xl-7 col-lg-7 order-lg-2 order-xl-1">
                 <!--begin:: Widgets/Daily Sales-->
                 <div class="kt-portlet kt-portlet--height-fluid">
@@ -189,39 +257,6 @@
                 </div>
                 <!--end:: Widgets/Daily Sales-->
             </div>
-            <div class="col-xl-5 col-lg-5 order-lg-2 order-xl-1">
-                <!--begin:: Widgets/Profit Share-->
-                <div class="kt-portlet kt-portlet--height-fluid">
-                    <div class="kt-widget14">
-                        <div class="kt-widget14__header">
-                            <h3 class="kt-widget14__title">
-                                USERS
-                            </h3>
-                            <span class="kt-widget14__desc">
-                                Number of user and admin in data
-                            </span>
-                        </div>
-                        <div class="kt-widget14__content">
-                            <div class="kt-widget14__chart">
-                                <div class="kt-widget14__stat">S</div>
-                                <canvas id="kt_chart_profit_share" style="height: 140px; width: 140px;"></canvas>
-                            </div>
-                            <div class="kt-widget14__legends">
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-success"></span>
-                                    <span class="kt-widget14__stats">number admin</span>
-                                </div>
-                                <hr>
-                                <div class="kt-widget14__legend">
-                                    <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                    <span class="kt-widget14__stats">number user</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--end:: Widgets/Profit Share-->
-            </div>
         </div>
         <!--End::Row-->
         <!--Begin::Row-->
@@ -237,63 +272,6 @@
                                 List of orders that have not been successfully delivered
                             </span>
                         </div>
-
-                        <!-- <div class="kt-portlet__head-toolbar">
-                            <div class="dropdown dropdown-inline">
-                                <button type="button" class="btn btn-clean btn-sm btn-icon btn-icon-md" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="flaticon-more-1"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-md dropdown-menu-fit">
-                                    <ul class="kt-nav">
-                                        <li class="kt-nav__head">
-                                            Export Options
-                                            <span data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">
-                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--brand kt-svg-icon--md1">
-                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <rect id="bound" x="0" y="0" width="24" height="24" />
-                                                        <circle id="Oval-5" fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
-                                                        <rect id="Rectangle-9" fill="#000000" x="11" y="10" width="2" height="7" rx="1" />
-                                                        <rect id="Rectangle-9-Copy" fill="#000000" x="11" y="7" width="2" height="2" rx="1" />
-                                                    </g>
-                                                </svg> </span>
-                                        </li>
-                                        <li class="kt-nav__separator"></li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-drop"></i>
-                                                <span class="kt-nav__link-text">Activity</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-calendar-8"></i>
-                                                <span class="kt-nav__link-text">FAQ</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-telegram-logo"></i>
-                                                <span class="kt-nav__link-text">Settings</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__item">
-                                            <a href="#" class="kt-nav__link">
-                                                <i class="kt-nav__link-icon flaticon2-new-email"></i>
-                                                <span class="kt-nav__link-text">Support</span>
-                                                <span class="kt-nav__link-badge">
-                                                    <span class="kt-badge kt-badge--success kt-badge--rounded">5</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-nav__separator"></li>
-                                        <li class="kt-nav__foot">
-                                            <a class="btn btn-label-danger btn-bold btn-sm" href="#">Upgrade plan</a>
-                                            <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="kt-portlet__body kt-portlet__body--fit">
                         <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--error kt-datatable--loaded" id="kt_apps_user_list_datatable" style="">
@@ -302,15 +280,15 @@
                                     <tr class="kt-datatable__row">
                                         <th style="width: 5%;" class="kt-datatable__cell"><span>NO.</span></th>
                                         <th style="width: 10%;" class="kt-datatable__cell"><span>ACCOUNT</span></th>
-                                        <th style="width: 7%;" class="kt-datatable__cell"><span>ORDER_ID</span></th>
-                                        <th style="width: 27%;" class="kt-datatable__cell"><span>ADDRESS</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
+                                        <th style="width: 17%;" class="kt-datatable__cell"><span>DESC</span></th>
+                                        <th style="width: 25%;" class="kt-datatable__cell"><span>ADDRESS</span></th>
                                         <!-- <th style="width: 4%;" class="kt-datatable__cell"><span></span></th> -->
                                         <th style="width: 2%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>STATUS</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
-                                        <th style="width: 8%;" class="kt-datatable__cell"><span>PHONE</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>TOTAL</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>CREATE</span></th>
+                                        <th style="width: 9%;" class="kt-datatable__cell"><span>PHONE</span></th>
+                                        <th style="width: 8%;" class="kt-datatable__cell"><span>STATUS</span></th>
+                                        <th style="width: 13%;" class="kt-datatable__cell"><span>TOTAL</span></th>
+                                        <!-- <th style="width: 10%;" class="kt-datatable__cell"><span>CREATE</span></th> -->
                                     </tr>
                                 </thead>
                                 @php $i = 0 @endphp
@@ -320,17 +298,17 @@
                                     <tr class="kt-datatable__row">
                                         <th style="width: 5%;" class="kt-datatable__cell"><span>{{ increment($i) }}</span></th>
                                         <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->name }}</span></th>
-                                        <th style="width: 7%;" class="kt-datatable__cell text-center"><span>{{ $order->id }}</span></th>
-                                        <th style="width: 27%;" class="kt-datatable__cell"><span>{{ $order->address }}</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->receiver }}</span></th>
+                                        <th style="width: 17%;" class="kt-datatable__cell"><span>{{ $order->desc }}</span></th>
+                                        <th style="width: 25%;" class="kt-datatable__cell"><span>{{ $order->address }}</span></th>
                                         <!-- <th style="width: 0%;" class="kt-datatable__cell"><span></span></th> -->
                                         <th style="width: 2%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell">
+                                        <th style="width: 9%;" class="kt-datatable__cell"><span>{{ $order->phonenumber }}</span></th>
+                                        <th style="width: 8%;" class="kt-datatable__cell">
                                             <span style="color: orange; font-weight: 900;">{{ $order->status }}</span>
                                         </th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->receiver }}</span></th>
-                                        <th style="width: 8%;" class="kt-datatable__cell"><span>{{ $order->phonenumber }}</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span style="color: red;font-weight: 800;">{{ format_money($order->price) }}</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->created_at }}</span></th>
+                                        <th style="width: 13%;" class="kt-datatable__cell"><span style="color: red;font-weight: 800;">{{ format_money($order->price) }}</span></th>
+                                        <!-- <th style="width: 10%;" class="kt-datatable__cell"><span>{{ $order->created_at }}</span></th> -->
                                     </tr>
                                 </thead>
                                 @endif
@@ -354,9 +332,9 @@
     @endphp;
     var labels = @php echo json_encode($labels);
     @endphp;
-    var datauser = @php echo json_encode($datauser);
+    var dataorder = @php echo json_encode($dataorder);
     @endphp;
-    var labeluser = @php echo json_encode($labeluser);
+    var labelorder = @php echo json_encode($labelorder);
     @endphp;
 </script>
 @endsection
