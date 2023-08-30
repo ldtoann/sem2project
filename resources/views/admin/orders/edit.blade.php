@@ -80,7 +80,7 @@
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Price Order</label>
                                                 <div class="col-lg-9 col-xl-6">
-                                                    <input class="form-control" type="text" name="price" value="{{ format_money( $order->price ) }}" id="" placeholder="price " readonly>
+                                                    <input class="form-control" name="price" value="{{ $order->price }}" id="" placeholder="price " readonly>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
