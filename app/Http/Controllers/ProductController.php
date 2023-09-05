@@ -50,9 +50,23 @@ class ProductController extends Controller
     {
         $splits = explode('-', $slug);
         $id = array_pop($splits);
-
         $product = Product::findOrFail($id);
         $category = Category::findOrFail($product->category_id);
-        return view('product', compact('product', 'category'));
+
+        // Lấy danh sách sản phẩm đã xem từ Session (nếu có)
+        $recentlyViewed = session('recentlyViewed', []);
+
+        // Giới hạn danh sách đã xem chỉ cần 4 sản phẩm
+        if (count($recentlyViewed) >= 4) {
+            array_shift($recentlyViewed);
+        }
+
+        // Thêm sản phẩm hiện tại vào danh sách đã xem
+        $recentlyViewed[$product->id] = $product;
+
+        // Lưu danh sách đã xem vào Session
+        session(['recentlyViewed' => $recentlyViewed]);
+
+        return view('product', compact('product', 'category', 'recentlyViewed'));
     }
 }
