@@ -145,6 +145,38 @@
         });
     </script>
     </div>
+    <div id="xemganday" style="padding: 5px 0px 50px 0px;">
+        <div id="main3" class="text-center">
+            <div id="line"></div>
+            <p id="title">XEM GAN DAY</p>
+            <div id="item">
+                @foreach($recentlyViewed as $product)
+                <a id="item_link" href="{{ route('product.show', $product->slug) }}">
+                    <div id="item_col">
+                        @php $thumbnail = $product->getMedia('images')->first() @endphp
+                        @if($thumbnail)
+                        <img src="{{ $thumbnail->getUrl() }}" alt="image">
+                        @endif
+                        @php $thumbnail = $product->getMedia('images')->last() @endphp
+                        @if($thumbnail)
+                        <img id="img-change" src="{{ $thumbnail->getUrl() }}" alt="image">
+                        @endif
+                        <h6>{{ $product->name }}</h6>
+                        <p id="saleprice" style="color: red; font-weight: 900;">{{ format_money($product->price) }}</p>
+                        <p id="price">999.999.999 VND</p>
+                        <div id="rate">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+            </div>
+        </div>
+    </div>
 </main>
 
 @endsection

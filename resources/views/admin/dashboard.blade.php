@@ -40,13 +40,13 @@
                         </div>
                     </div>
                     <div class="kt-portlet__body kt-portlet__body--fit">
-                        <div class="kt-widget17" style="background-color: lightgray;">
+                        <div class="kt-widget17" style="background-color: lightgray; border-radius: 5px;">
                             <div class="kt-widget17__visual kt-widget17__visual--chart kt-portlet-fit--top kt-portlet-fit--sides" style="background-color: rgb(145, 7, 7)">
                                 <div class="kt-widget17__chart" style="height:120px;">
                                     <canvas id="kt_chart_activities"></canvas>
                                 </div>
                             </div>
-                            <div class="kt-widget17__stats" style="height:320px;">
+                            <div class="kt-widget17__stats" style="height:350px;">
                                 <div class="kt-widget17__items">
                                     <div class="kt-widget17__item" style="border-radius: 20px 0px 0px 0px ;">
                                         <span class="kt-widget17__icon">
@@ -58,7 +58,7 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            TOTAL PRICE ALL ORDER
+                                            REVENUE
                                         </span>
                                         <span class="kt-widget17__desc" style="color: red;font-size: 20px; font-weight: 800;">
                                             {{ format_money($totalPrice) }}
@@ -78,7 +78,7 @@
                                             PRODUCTS ({{ $productCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            {{ $productCount }} product items.
+                                            <a href="{{ route('admin.products.index') }}">{{ $productCount }} product items.</a>
                                         </span>
                                     </div>
                                 </div>
@@ -93,10 +93,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            ORDERS ( {{ $orderCount }}).
+                                            ORDERS ({{ $orderCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            {{ $orderCount }} order pending and order finished.
+                                            <a href="{{ route('admin.orders.index') }}">{{ $orderCount }} order pending and order finished.</a>
                                         </span>
                                     </div>
                                     <div class="kt-widget17__item" style="border-radius: 0px 0px 20px 0px ;">
@@ -112,7 +112,7 @@
                                             CATEGORYS ({{ $categoryCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            {{ $categoryCount }} category product in database.
+                                            <a href="{{ route('admin.categories.index') }}">{{ $categoryCount }} category product in database.</a>
                                         </span>
                                     </div>
                                 </div>

@@ -99,7 +99,9 @@
             </a>
             @endforeach
         </div>
-        <a id="xemthem" href="{{ route('products') }}">{{@trans('font.home.index.MORE')}}</a>
+        <div id="xemthemhome" class="shadow-lg" style=" margin: 60px 610px 80px 610px; border-radius: 10px; padding: 10px;">
+            <a id="xemthem" href="{{ route('products') }}" style=" color: white; font-size: 18px; font-weight: 800;text-decoration: none;">{{@trans('font.home.index.MORE')}} <i class="fa-solid fa-arrow-right"></i> </a>
+        </div>
     </div>
     <div id="main5" class="text-center">
         <div id="essential" class="text-center">

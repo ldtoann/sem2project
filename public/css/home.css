@@ -7,6 +7,7 @@ header {
     position: fixed;
     /* margin-bottom: 150px; */
     z-index: 99;
+    width: 100%;
 }
 main {
     z-index: 0;
@@ -43,7 +44,8 @@ main {
 #headerusers {
     background-image: linear-gradient(to right, black, black, rgb(145, 7, 7));
     display: flex;
-    width: 1520px;
+    /* width: 1520px; */
+    width: 100%;
     height: 22px;
     margin-top: -120px;
     color: white;
@@ -86,8 +88,8 @@ main {
     background-color: black;
     padding: 0px 50px;
     position: fixed;
-    /* width: 100%; */
-    width: 1520px;
+    width: 100%;
+    /* width: 1520px; */
     height: 62px;
     /* margin-top: -10px; */
 }
@@ -395,6 +397,15 @@ main {
 #essential img:hover {
     transform: scale(1.06);
     z-index: 4;
+}
+#xemthemhome {
+    background-color: black;
+    border: 2px solid black;
+    transition: 0.5s all;
+}
+#xemthemhome:hover {
+    background-color: rgb(175, 12, 12);
+    border: 2px solid rgb(175, 12, 12);
 }
 /* ----------FOOTER---------- */
 #footer {
