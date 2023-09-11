@@ -41,7 +41,7 @@
             height: 50px;
             text-align: center;
             line-height: 45px;
-            background: red;
+            background: #b21919;
             color: #fff;
             cursor: pointer;
             border-radius: 50%;
@@ -64,7 +64,6 @@
 <body>
     @include('inc.header')
     @yield('content')
-
     <script type="text/javascript" src="https://web.cmbliss.com/webtools/hotline/js/hotline.js"></script>
     <script type="text/javascript">
         $("body").hotline({

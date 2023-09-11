@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', @trans('font.CART.index.title'))
+@section('title', @trans('font.cart.index.title'))
 
 @section('content')
 <main>
@@ -10,21 +10,21 @@
             <li id="linenext" class="breadcrumb-item active" aria-current="page">{{@trans('font.pay.index.title')}}</li>
         </ol>
     </nav>
-    <p id="titlecart"><i class="fa-solid fa-cart-shopping"></i> {{ @trans('font.category14.index.title' )}}</p>
+    <p id="titlecart"><i class="fa-solid fa-cart-shopping"></i> {{ @trans('font.cart.index.cartlist' )}}</p>
     <div class="row">
         <div class="col-8">
             <table style="margin-left: 0px; width: 100%;">
                 <thead>
                     <tr>
                         <th style="width: 2%;"><span></span></th>
-                        <th style="width: 10%;"><span>{{ @trans('font.home.index.product') }}</span></th>
+                        <th style="width: 10%;"><span>{{ @trans('font.cart.index.product') }}</span></th>
                         <th style="width: 3%;"><span></span></th>
                         <th style="width: 25%;"><span></span></th>
                         <th style="width: 5%;"><span></span></th>
-                        <th style="width: 15%;padding-left: 25px;"><span>{{ @trans('font.category2.index.title' )}}</span></th>
-                        <th style="width: 15%;padding-left: 18px;"><span>{{ @trans('font.category8.index.title' )}}</span></th>
-                        <th style="width: 15%;padding-left: 23px;"><span>{{ @trans('font.category11.index.title' )}}</span></th>
-                        <th style="width: 10%;"><span>{{ @trans('font.category12.index.title' )}}</span></th>
+                        <th style="width: 15%;padding-left: 25px;"><span>{{ @trans('font.cart.index.price' )}}</span></th>
+                        <th style="width: 15%;padding-left: 18px;"><span>{{ @trans('font.cart.index.qty' )}}</span></th>
+                        <th style="width: 15%;padding-left: 23px;"><span>{{ @trans('font.cart.index.total' )}}</span></th>
+                        <th style="width: 10%;"><span>{{ @trans('font.cart.index.remove' )}}</span></th>
                     </tr>
                 </thead>
             </table>
@@ -66,7 +66,7 @@
             @endforeach
             <div id="totalcarts" class="row">
                 <div id="total" class="col">
-                    <p> <strong>{{ @trans('font.category13.index.title' )}}</strong> : {{ format_money(cart_total($cart,0)) }}</p>
+                    <p> <strong>{{ @trans('font.cart.index.totalnoship' )}}</strong> : {{ format_money(cart_total($cart,0)) }}</p>
                 </div>
                 <div id="totalpay" class="col text-end">
 
@@ -80,14 +80,14 @@
         </div>
     </div>
     <hr>
-    <p id="titlecartss"><i class="fa-solid fa-credit-card"></i> THANH TOÁN</p>
+    <p id="titlecartss"><i class="fa-solid fa-credit-card"></i>{{ @trans('font.cart.index.paylist' )}}</p>
     <form id="infomationpay" action="{{ route('checkout')}}" method="get">
         <div class="row">
             <div class="col">
-                <h4 id="paytitle">THÔNG TIN KHÁCH HÀNG</h4>
+                <h4 id="paytitle">{{ @trans('font.cart.index.infouserpay' )}}</h4>
                 <div class="row">
                     <div id="infopay" class="">
-                        <label for="kh_ten">Họ tên khách hàng (login)</label>
+                        <label for="kh_ten">{{ @trans('font.cart.index.name' )}}</label>
                         @auth
                         <input type="text" class="form-control" name="kh_ten" id="kh_ten" value="{{ Auth::user()->name }}" readonly="">
                         @else
@@ -95,7 +95,7 @@
                         @endauth
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_email">Email khách hàng (login)</label>
+                        <label for="kh_email">{{ @trans('font.cart.index.email' )}}</label>
                         @auth
                         <input type="text" class="form-control" name="kh_email" id="kh_email" value="{{ Auth::user()->email }}" readonly="">
                         @else
@@ -103,26 +103,26 @@
                         @endauth
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_diachi">Họ tên người nhận</label>
+                        <label for="kh_diachi">{{ @trans('font.cart.index.receiver' )}}</label>
                         <input type="text" class="form-control" name="receiver" id="kh_diachi" value="">
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_diachi">Địa chỉ</label>
+                        <label for="kh_diachi">{{ @trans('font.cart.index.address' )}}</label>
                         <input type="text" class="form-control" name="address" id="kh_diachi" value="">
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_dienthoai">Điện thoại</label>
+                        <label for="kh_dienthoai">{{ @trans('font.cart.index.phone' )}}</label>
                         <input type="text" class="form-control" name="phonenumber" id="kh_dienthoai" value="">
                     </div>
                     <div id="infopay" class="">
-                        <label for="kh_cmnd">Desception</label>
+                        <label for="kh_cmnd">{{ @trans('font.cart.index.note' )}}</label>
                         <input type="text" class="form-control" name="desc" id="kh_desc" value="">
                     </div>
                 </div>
                 <img id="anhnenkh" src="https://resources.smatestore.com/slider/0/9No2M7tL4nVw9ORcdU.jpg" alt="">
             </div>
             <div id="payenddd" class="col-5 shadow-lg" style="margin-left: 50px;">
-                <h4 id="paytitless">GIỎ HÀNG</h4>
+                <h4 id="paytitless"><i class="fa-solid fa-file-invoice"></i>&nbsp;&nbsp;{{ @trans('font.cart.index.bill' )}}</h4>
                 <div id="paylist" class="row" style="padding: 0px 15px;">
                     @foreach ($cart as $order)
                     <table style="margin-bottom: 10px;font-size: 15px;">
@@ -144,7 +144,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 2%;"></th>
-                                <th style="width: 98%;font-weight: 400; font-size: 17px;"><span><i class="fa-solid fa-cart-shopping" style="color: rgb(145, 7, 7);"></i>&nbsp;&nbsp; Giá sản phẩm : {{ format_money(cart_total($cart,0)) }}</span></th>
+                                <th style="width: 98%;font-weight: 400; font-size: 17px;"><span><i class="fa-solid fa-cart-shopping" style="color: rgb(145, 7, 7);"></i>&nbsp;&nbsp; {{ @trans('font.cart.index.pricebill' )}} : {{ format_money(cart_total($cart,0)) }}</span></th>
                             </tr>
                         </thead>
                     </table>
@@ -152,7 +152,7 @@
                         <thead>
                             <tr>
                                 <th style="width: 2%;"></th>
-                                <th style="width: 98%;font-weight: 400; font-size: 17px;"><span><i class="fa-solid fa-truck-fast" style="color: rgb(145, 7, 7);"></i>&nbsp;&nbsp; Phí ship : 50,000 VND</span></th>
+                                <th style="width: 98%;font-weight: 400; font-size: 17px;"><span><i class="fa-solid fa-truck-fast" style="color: rgb(145, 7, 7);"></i>&nbsp;&nbsp; {{ @trans('font.cart.index.delivery' )}} : 50,000 VND</span></th>
                             </tr>
                         </thead>
                     </table>
@@ -160,9 +160,9 @@
                         <thead>
                             <tr>
                                 <th style="width: 2%;"></th>
-                                <th style="width: 65%;color: red; font-weight: 800;"><span>TOTAL &nbsp;:&nbsp; {{ format_money(cart_total($cart,50000)) }}</span></th>
+                                <th style="width: 65%;color: red; font-weight: 800;"><span>{{ @trans('font.cart.index.totalship' )}} &nbsp;:&nbsp; {{ format_money(cart_total($cart,50000)) }}</span></th>
                                 <input type="hidden" name="price" value="{{ cart_total($cart, 50000) }}">
-                                <th style="width: 30%;" class="text-end"><button type="submit" style="background-color: rgb(145, 7, 7); color: white; padding: 5px 30px; border: none; border-radius: 10px;font-weight: 800;">{{ @trans('font.category15.index.title' )}}</button></th>
+                                <th style="width: 30%;" class="text-end"><button type="submit" style="background-color: rgb(145, 7, 7); color: white; padding: 5px 30px; border: none; border-radius: 10px;font-weight: 800;">{{ @trans('font.cart.index.paycheckout' )}}</button></th>
                                 <th style="width: 3%;"></th>
                             </tr>
                         </thead>

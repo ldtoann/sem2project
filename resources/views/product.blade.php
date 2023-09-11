@@ -96,8 +96,8 @@
                         <img src="{{ url('image/xehang.svg') }}">
                     </div>
                     <div id="titlemota" class="col-10">
-                        <p style="margin: 0px;font-size: 15px;font-weight: 800;">MIỄN PHÍ GIAO HÀNG TOÀN QUỐC</p>
-                        <p style="font-size: 13px;">(Từ 2 sản phẩm trên mỗi đơn hàng)</p>
+                        <p style="margin: 0px;font-size: 15px;font-weight: 800;">{{ @trans('font.category16.index.title' )}}</p>
+                        <p style="font-size: 13px;">{{ @trans('font.category17.index.title' )}}</p>
                     </div>
                 </div>
                 <div class="row" style="margin: 0px 0px 0px 3px;">
@@ -105,8 +105,8 @@
                         <img src="{{ url('image/trahang.svg') }}">
                     </div>
                     <div id="titlemota" class="col-10">
-                        <p style="margin: 0px;font-size: 15px;font-weight: 800;">ĐỔI TRẢ DỄ DÀNG</p>
-                        <p style="font-size: 13px;">(Từ 3 đến 7 ngày sau khi nhận hàng)</p>
+                        <p style="margin: 0px;font-size: 15px;font-weight: 800;">{{ @trans('font.category18.index.title' )}}</p>
+                        <p style="font-size: 13px;">{{ @trans('font.category19.index.title' )}}</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
     <div id="xemganday" style="padding: 5px 0px 50px 0px;">
         <div id="main3" class="text-center">
             <div id="line"></div>
-            <p id="title">XEM GAN DAY</p>
+            <p id="title">{{ @trans('font.category20.index.title' )}}</p>
             <div id="item">
                 @foreach($recentlyViewed as $product)
                 <a id="item_link" href="{{ route('product.show', $product->slug) }}">
