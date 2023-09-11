@@ -58,7 +58,7 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            REVENUE
+                                            {{ @trans('font.admin.dashboard.revenue') }}
                                         </span>
                                         <span class="kt-widget17__desc" style="color: red;font-size: 20px; font-weight: 800;">
                                             {{ format_money($totalPrice) }}
@@ -75,10 +75,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            PRODUCTS ({{ $productCount }}).
+                                            {{ @trans('font.admin.dashboard.productitem') }} ({{ $productCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            <a href="{{ route('admin.products.index') }}">{{ $productCount }} product items.</a>
+                                            <a href="{{ route('admin.products.index') }}">{{ $productCount }} {{ @trans('font.admin.dashboard.productitem2') }}</a>
                                         </span>
                                     </div>
                                 </div>
@@ -93,10 +93,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            ORDERS ({{ $orderCount }}).
+                                            {{ @trans('font.admin.dashboard.order') }} ({{ $orderCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            <a href="{{ route('admin.orders.index') }}">{{ $orderCount }} order pending and order finished.</a>
+                                            <a href="{{ route('admin.orders.index') }}">{{ $orderCount }} {{ @trans('font.admin.dashboard.order2') }}</a>
                                         </span>
                                     </div>
                                     <div class="kt-widget17__item" style="border-radius: 0px 0px 20px 0px ;">
@@ -109,10 +109,10 @@
                                                 </g>
                                             </svg> </span>
                                         <span class="kt-widget17__subtitle">
-                                            CATEGORYS ({{ $categoryCount }}).
+                                            {{ @trans('font.admin.dashboard.category') }} ({{ $categoryCount }}).
                                         </span>
                                         <span class="kt-widget17__desc">
-                                            <a href="{{ route('admin.categories.index') }}">{{ $categoryCount }} category product in database.</a>
+                                            <a href="{{ route('admin.categories.index') }}">{{ $categoryCount }} {{ @trans('font.admin.dashboard.category2') }}</a>
                                         </span>
                                     </div>
                                 </div>
@@ -212,10 +212,10 @@
                     <div class="kt-widget14">
                         <div class="kt-widget14__header">
                             <h3 class="kt-widget14__title">
-                                ORDERS
+                                {{ @trans('font.admin.dashboard.orderchart') }}
                             </h3>
                             <span class="kt-widget14__desc">
-                                Number of order pending and finished in data
+                                {{ @trans('font.admin.dashboard.orderchart2') }}
                             </span>
                         </div>
                         <div class="kt-widget14__content">
@@ -226,12 +226,12 @@
                             <div class="kt-widget14__legends">
                                 <div class="kt-widget14__legend">
                                     <span class="kt-widget14__bullet kt-bg-success"></span>
-                                    <span class="kt-widget14__stats">number order finished</span>
+                                    <span class="kt-widget14__stats">{{ @trans('font.admin.dashboard.orderchart3') }}</span>
                                 </div>
                                 <hr>
                                 <div class="kt-widget14__legend">
                                     <span class="kt-widget14__bullet kt-bg-warning"></span>
-                                    <span class="kt-widget14__stats">number order pending</span>
+                                    <span class="kt-widget14__stats">{{ @trans('font.admin.dashboard.orderchart4') }}</span>
                                 </div>
                             </div>
                         </div>
@@ -244,10 +244,10 @@
                     <div class="kt-widget14">
                         <div class="kt-widget14__header kt-margin-b-30">
                             <h3 class="kt-widget14__title">
-                                PRODUCTS
+                                {{ @trans('font.admin.dashboard.productchart') }}
                             </h3>
                             <span class="kt-widget14__desc">
-                                Number of products in each category
+                                {{ @trans('font.admin.dashboard.productchart2') }}
                             </span>
                         </div>
                         <div class="kt-widget14__chart" style="height:120px;">
@@ -266,10 +266,10 @@
                     <div class="kt-portlet__head kt-portlet__head--lg kt-portlet__head--noborder kt-portlet__head--break-sm">
                         <div class="kt-widget14__header  kt-margin-b-15 kt-margin-t-30">
                             <h3 class="kt-widget14__title">
-                                STATUS OF ORDERS
+                                {{ @trans('font.admin.dashboard.statusorder') }}
                             </h3>
                             <span class="kt-widget14__desc">
-                                List of orders that have not been successfully delivered
+                                {{ @trans('font.admin.dashboard.statusorder2') }}
                             </span>
                         </div>
                     </div>
@@ -279,15 +279,15 @@
                                 <thead class="kt-datatable__head">
                                     <tr class="kt-datatable__row">
                                         <th style="width: 5%;" class="kt-datatable__cell"><span>NO.</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>ACCOUNT</span></th>
-                                        <th style="width: 10%;" class="kt-datatable__cell"><span>RECEIVER</span></th>
-                                        <th style="width: 17%;" class="kt-datatable__cell"><span>DESC</span></th>
-                                        <th style="width: 25%;" class="kt-datatable__cell"><span>ADDRESS</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder4') }}</span></th>
+                                        <th style="width: 10%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder5') }}</span></th>
+                                        <th style="width: 17%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder6') }}</span></th>
+                                        <th style="width: 25%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder7') }}</span></th>
                                         <!-- <th style="width: 4%;" class="kt-datatable__cell"><span></span></th> -->
                                         <th style="width: 2%;" class="kt-datatable__cell"><span></span></th>
-                                        <th style="width: 9%;" class="kt-datatable__cell"><span>PHONE</span></th>
-                                        <th style="width: 8%;" class="kt-datatable__cell"><span>STATUS</span></th>
-                                        <th style="width: 13%;" class="kt-datatable__cell"><span>TOTAL</span></th>
+                                        <th style="width: 9%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder8') }}</span></th>
+                                        <th style="width: 8%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder9') }}</span></th>
+                                        <th style="width: 13%;" class="kt-datatable__cell"><span>{{ @trans('font.admin.dashboard.statusorder10') }}</span></th>
                                         <!-- <th style="width: 10%;" class="kt-datatable__cell"><span>CREATE</span></th> -->
                                     </tr>
                                 </thead>

@@ -40,7 +40,7 @@
                 <a href="{{ route('home.index') }}"><img src="{{ url('image/logo_page.png') }}"></a>
             </div>
             <div id="col_between" class="col-6">
-                <a id="menu1" href="{{ route('products') }}">ALL PRODUCT</a>
+                <a id="menu1" href="{{ route('products') }}">{{ @trans('font.home.index.product' )}}</a>
                 <a id="menu1" href="#">{{trans('font.header.index.order')}}</a>
                 <a id="menu1" href="{{ route('gallery') }}">{{trans('font.header.index.smatebook')}}</a>
                 <a id="menu1" href="{{ route('support') }}">{{trans('font.header.index.support1')}}</a>

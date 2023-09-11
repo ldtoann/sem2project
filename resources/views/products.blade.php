@@ -33,14 +33,16 @@
         </select>
         <select id="selectcategory" class="shadow-lg" name="price_range" onchange="this.form.submit()">
             <option @if($price_range=='0:999999999' ) selected @endif value="0:999999999">{{ @trans('font.category2.index.title')}}</option>
-            <option @if($price_range=='0:1000000' ) selected @endif value="0:1000000">0-1tr
-            </option>
-            <option @if($price_range=='1000000:2000000' ) selected @endif value="1000000:2000000">1tr-2tr
-            </option>
-            <option @if($price_range=='2000000:3000000' ) selected @endif value="2000000:3000000">2tr-3tr
-            </option>
-            <option @if($price_range=='3000000:999999999' ) selected @endif value="3000000:999999999">3tr-....
-            </option>
+            <option @if($price_range=='0:1500000' ) selected @endif value="0:1500000">
+                < 1.500.000 </option>
+            <option @if($price_range=='0:3000000' ) selected @endif value="0:3000000">
+                < 3.000.000 </option>
+            <option @if($price_range=='0:4500000' ) selected @endif value="0:4500000">
+                < 4.500.000 </option>
+            <option @if($price_range=='0:6000000' ) selected @endif value="0:6000000">
+                < 6.000.000 </option>
+            <option @if($price_range=='6000000:999999999' ) selected @endif value="6000000:999999999">
+                > 6.000.000 </option>
         </select>
         <select id="selectcategory" class="shadow-lg" name="sort" onchange="this.form.submit()">
             <option @if($sort=='asc' ) selected @endif value="asc">{{ @trans('font.category3.index.title' )}}</option>
