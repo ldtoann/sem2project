@@ -77,7 +77,7 @@ return [
     'admin.product' => 'SẢN PHẨM',
     'admin.order' => 'ĐƠN HÀNG',
     'admin.orderitem' => 'CHI TIẾT ĐƠN HÀNG',
-    'admin.dashboard.revenue' => 'TỔNG DOANH THU',
+    'admin.dashboard.revenue' => 'TỔNG  DOANH THU',
     'admin.dashboard.productitem' => 'SẢN PHẨM',
     'admin.dashboard.productitem2' => 'Sản phẩm trong cơ sở dữ liệu',
     'admin.dashboard.order' => 'ĐƠN HÀNG',
@@ -157,38 +157,4 @@ return [
     'pay.index.title' => 'GIỎ HÀNG',
     'pay1.index.title' => 'THANH TOÁN',
     'GALLERY.index.title' => 'THƯ VIỆN',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];

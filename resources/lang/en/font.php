@@ -158,44 +158,4 @@ return [
     'pay.index.title' => 'CART',
     'pay1.index.title' => 'PAY',
     'GALLERY.index.title' => 'GALLERY',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];
