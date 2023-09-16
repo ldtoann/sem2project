@@ -36,13 +36,13 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-xl-3 col-lg-3 col-form-label">Avatar</label>
+                                                <label class="col-xl-3 col-lg-3 col-form-label">IMGs</label>
                                                 <div class="col-lg-9 col-xl-6">
                                                     <div class="kt-avatar kt-avatar--outline kt-avatar--circle-" id="kt_user_edit_avatar">
-                                                        <div class="kt-avatar__holder" style="background-image: url(&quot;http://keenthemes.com/metronic/preview/default/custom/user/assets/media/users/300_20.jpg&quot;);"></div>
+                                                        <div class="kt-avatar__holder" id="image-holder"></div>
                                                         <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                                             <i class="fa fa-pen"></i>
-                                                            <input type="file" name="images[]" multiple />
+                                                            <input type="file" name="images[]" multiple onchange="showImages(event)" />
                                                         </label>
                                                         <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                                             <i class="fa fa-times"></i>
@@ -50,6 +50,36 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <style>
+                                                .kt-avatar__holder img {
+                                                    max-width: 100%;
+                                                    height: auto;
+                                                    display: inline-block;
+                                                    margin-right: 10px;
+                                                    /* Khoảng cách giữa các hình ảnh */
+                                                }
+                                            </style>
+                                            <script>
+                                                function showImages(event) {
+                                                    var imageHolder = document.getElementById('image-holder');
+                                                    imageHolder.innerHTML = '';
+
+                                                    var files = event.target.files;
+
+                                                    for (var i = 0; i < files.length; i++) {
+                                                        var file = files[i];
+                                                        var reader = new FileReader();
+
+                                                        reader.onload = function() {
+                                                            var img = document.createElement('img');
+                                                            img.src = reader.result;
+                                                            imageHolder.appendChild(img);
+                                                        }
+
+                                                        reader.readAsDataURL(file);
+                                                    }
+                                                }
+                                            </script>
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
                                                 <div class="col-lg-9 col-xl-6">
