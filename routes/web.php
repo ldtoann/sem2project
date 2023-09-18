@@ -95,7 +95,7 @@ Route::middleware('admin')->prefix('admin')->group(function () {
 });
 
 
-Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'check.language'], 'as' => 'admin.'], function () {
 
     Route::get('dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
