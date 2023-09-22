@@ -205,5 +205,33 @@
 
         });
     </script>
+    @if(Session::has('message'))
+    <div class="notification success">
+        <p id="ss">{{Session::get('message')}}</p>
+    </div>
+    @endif
+    <style>
+        .notification {
+            position: fixed;
+            bottom: 612px;
+            right: 7px;
+            background-color: green;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            transition: 0.5s all;
+        }
+
+        .success {
+            color: white;
+        }
+
+        #ss {
+            margin-bottom: 3px;
+            font-weight: 900;
+        }
+    </style>
 </main>
 @endsection

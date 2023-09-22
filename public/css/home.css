@@ -271,7 +271,17 @@ main {
 }
 #line {
     height: 5px;
-    background-color: black;
+    background-image: linear-gradient(
+        to right,
+        black,
+        orange,
+        rgb(145, 7, 7),
+        black,
+        black,
+        rgb(145, 7, 7),
+        orange,
+        black
+    );
     margin: 0px 70px -27px 70px;
     border-radius: 15px;
 }

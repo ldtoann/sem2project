@@ -24,6 +24,12 @@
                         </div>
                     </form>
                 </div>
+                <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                @if(Session::has('message'))
+                <h3 class="kt-subheader__title" style="color: green;">
+                    {{Session::get('message')}}
+                </h3>
+                @endif
             </div>
             <div class="kt-subheader__toolbar">
                 <a href="#" class="">
