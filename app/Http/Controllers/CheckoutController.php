@@ -53,7 +53,7 @@ class CheckoutController extends Controller
                 )
             );
         }
-        request()->session()->flash('message', 'Checkout was successful!');
+        request()->session()->flash('message', 'SUCCESSFUL PURCHASE !');
         request()->session()->forget('cart');
 
         return redirect()->route('cart.index', ['price' => $price]);
